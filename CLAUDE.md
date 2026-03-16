@@ -10,23 +10,27 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Current Status
 
-The project is in **Phase 1 (specification phase)**. No code is implemented yet. The planned file structure (from `THE_KING_S_HAND_DEV_PLAN.md`):
+The project is in **Phase 1 (implementation complete, pending acceptance testing)**. All Phase 1 deliverables have been created:
 
 ```
 the-kings-hand/
-├── AGENTS.md                          # Entry point and system manifest
+├── AGENTS.md                              # ✅ Entry point and system manifest
 ├── skills/the-kings-hand/
-│   ├── SKILL.md                       # Core system prompt (XML-structured)
+│   ├── SKILL.md                           # ✅ Core system prompt (XML-structured)
 │   └── references/
-│       ├── software_stack_map.md
-│       ├── workaround_taxonomy.md
-│       ├── rag_status_criteria.md
-│       └── corporate_code_words.md
+│       ├── software_stack_map.md           # ✅ 5-layer stack knowledge base
+│       ├── workaround_taxonomy.md          # ✅ 8 workaround patterns with PPA costs
+│       ├── rag_status_criteria.md          # ✅ Green/Yellow/Red rules + override triggers
+│       └── corporate_code_words.md         # ✅ 25 disguised language patterns
 ├── tests/
-│   ├── test_cases/                    # 4 test cases (ADAS-X9, SmartLink-IoT, etc.)
-│   └── evaluation_rubric.md
+│   ├── test_cases/
+│   │   ├── project_adas_x9.md             # ✅ Yellow-to-Red override (TC-001)
+│   │   ├── project_smartlink_iot.md        # ✅ Green-to-Yellow override (TC-002)
+│   │   ├── project_valkyrie_npu.md         # ✅ Multi-layer friction (TC-003)
+│   │   └── project_greenlight_trap.md      # ✅ Pure watermelon effect (TC-004)
+│   └── evaluation_rubric.md               # ✅ 10-category scoring criteria
 └── compliance/
-    └── output_rules.json
+    └── output_rules.json                  # ✅ Machine-readable formatting constraints
 ```
 
 ## Key Specification Documents
