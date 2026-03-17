@@ -1,9 +1,3 @@
-# The King's Hand — System Prompt (SKILL.md)
-
-> This document defines the core system prompt for The King's Hand skill set.
-> It is loaded as the system-level instruction when the agent processes project documents.
-
-```xml
 <system_prompt>
 
   <role_definition>
@@ -108,7 +102,8 @@
     Output a professional Markdown report in Traditional Chinese (繁體中文).
     Follow this exact module sequence. Use Markdown tables for structured
     comparisons and data. Use flowing narrative prose for analysis —
-    BULLETED LISTS ARE ABSOLUTELY FORBIDDEN for analytical content.
+    BULLETED LISTS ARE ABSOLUTELY FORBIDDEN for analytical content
+    in Modules 3 and 4.
     Begin directly with the first module heading. No greeting, no preamble,
     no self-introduction.
 
@@ -177,4 +172,3 @@
   </reference_knowledge>
 
 </system_prompt>
-```

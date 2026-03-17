@@ -120,7 +120,7 @@ commit d6e2b90 — Week 11 — S.Park — [X9-BSP] PLL lock wait workaround for 
 | Element | Expected Value |
 |---------|---------------|
 | Status Light | 🔴 Red (override from official 🟡 Yellow) |
-| Override Triggers Activated | R1 (AXI architectural flaw, no HW fix path), R3 (24.6 TOPS vs. 30 TOPS commitment = PPA spec breach), R7 (safety monitor timeout temporarily extended = safety mechanism compromised) |
+| Override Triggers Activated | R1 (AXI architectural flaw, no HW fix path), R3 (24.6 TOPS vs. 30 TOPS commitment = PPA spec breach), R8 (NPU performance 18% below committed 30 TOPS specification with no recovery plan) |
 
 ### Expected Key Findings
 
