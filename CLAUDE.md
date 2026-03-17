@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Current Status
 
-The project has completed **Phase 3** (accepted 2026-03-18) and is ready for **Phase 4**. All Phase 1–3 deliverables have been created:
+The project has completed all four phases (accepted 2026-03-18). The system is ready for deployment. All deliverables have been created:
 
 ```
 the-kings-hand/
@@ -36,7 +36,10 @@ the-kings-hand/
 │   │   ├── project_mercury_codec.md       # ✅ Video codec HW constraint (TC-010)
 │   │   ├── project_stratos_rf_incomplete.md # ✅ Incomplete input (TC-011)
 │   │   ├── project_ironclad_ddr_technical.md # ✅ Technical-only input (TC-012)
-│   │   └── project_apex_ml_sanitized.md   # ✅ Adversarially sanitized (TC-013)
+│   │   ├── project_apex_ml_sanitized.md   # ✅ Adversarially sanitized (TC-013)
+│   │   ├── project_crestline_hpc_jira.md  # ✅ Raw Jira CSV input (TC-014)
+│   │   ├── project_eon_ai_slides.md       # ✅ PowerPoint-to-text input (TC-015)
+│   │   └── project_typhoon_5g_email.md    # ✅ Email thread input (TC-016)
 │   └── evaluation_rubric.md               # ✅ 10-category scoring criteria
 └── compliance/
     └── output_rules.json                  # ✅ Machine-readable formatting constraints

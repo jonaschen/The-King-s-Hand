@@ -17,10 +17,122 @@ In complex matrix organizations, project reports are often "Green" on the outsid
 **The King's Hand** exists to pierce through this corporate fog. It analyzes raw data—Jira logs, Git commits, and meeting notes—to surface the truth that doesn't make it into the official PowerPoint slides.
 
 #### Key Capabilities
-*   **Adversarial Analysis:** Detects hidden silicon errata being masked by firmware workarounds.
-*   **PPA Quantification:** Calculates the real cost of software "optimizations" in terms of Power, Performance, and Area (PPA).
-*   **Cross-Layer Friction Detection:** Identifies where hardware and software teams' assumptions have diverged.
-*   **Strategic Arming:** Provides "The King's Three Soul-Searching Questions"—sharp, unanswerable questions that force accountability during review meetings.
+- **Adversarial Analysis:** Detects hidden silicon errata being masked by firmware workarounds.
+- **PPA Quantification:** Calculates the real cost of software "optimizations" in terms of Power, Performance, and Area (PPA).
+- **Cross-Layer Friction Detection:** Identifies where hardware and software teams' assumptions have diverged.
+- **Strategic Arming:** Provides "The King's Three Soul-Searching Questions"—sharp, unanswerable questions that force accountability during review meetings.
+
+---
+
+## Usage Guide for Henry's Team
+
+This section is written for the executive team and the executive assistant preparing documents for The King's Hand. No technical background is required to operate the system.
+
+---
+
+### Recommended Cadence
+
+Run The King's Hand **once per week, the day before the cross-functional project review meeting.**
+
+The optimal submission window is 24–36 hours before the meeting. This gives you time to read the report, select which of the three questions to ask, and decide whether any findings require a pre-meeting conversation with a specific team lead.
+
+Do not run it the morning of the meeting — you will not have time to act on what it finds.
+
+---
+
+### What to Submit
+
+For each project under review, collect as many of the following documents as available. The system is designed to work with partial evidence — you do not need all of them. More evidence produces a more confident analysis.
+
+| Document Type | What to Submit | Why It Matters |
+|---|---|---|
+| **Weekly PM status report** | The project manager's weekly update, any format | Establishes the official narrative the system will interrogate |
+| **Jira export** | Raw CSV export directly from Jira, no preprocessing | Bug labels, priorities, and comment histories contain the engineering truth |
+| **Git commit log** | Paste of `git log --oneline -50` output, or a recent commit summary | Commit messages reveal when workarounds were introduced |
+| **Cross-functional meeting notes** | Minutes or action items from the most recent engineering sync | Where disagreements between teams appear in plain language |
+| **Customer communications** | Forwarded emails or FAE escalation summaries | Tier-1 customer escalations are the strongest Red signal |
+| **Internal engineering reports** | Verification closure reports, characterization summaries, DV sign-off docs | Technical documents that PMs rarely include in upward reports |
+| **PowerPoint presentation** | Slide deck exported to plain text (see instructions below) | Program reviews often contain technical data slides that contradict the executive summary |
+
+**Minimum viable submission:** A weekly PM report alone is sufficient to produce a useful output. The system will flag what is missing and adjust its confidence levels accordingly.
+
+---
+
+### How to Prepare Each Document Type
+
+#### PM Status Reports and Meeting Notes
+Copy and paste the text directly. Any format is acceptable — plain text, Markdown, copied from email, copied from a shared document. Preserve the original structure.
+
+#### Jira CSV Export
+In Jira: go to the project board → select **Issues** → use the **Export** function → choose **Export Excel CSV (all fields)** or **Export CSV (current fields)** depending on your Jira version. Do not open or edit the CSV. Paste its raw contents into the submission. The system reads the raw CSV format directly.
+
+#### PowerPoint Slide Deck
+Open the presentation in PowerPoint. Go to **File → Save As → Plain Text (.txt)**. Paste the contents of the saved text file. Alternatively, select all text in each slide manually and copy-paste. Preserve slide titles and the order of slides. Speaker notes are optional but useful if available.
+
+#### Email Threads
+Forward the email thread to a text file, or copy the full email chain including **From**, **To**, **Date**, and **Subject** headers. Preserve the thread chronology. If an email has been forwarded internally with additional commentary, include all layers — the internal comments are often the most valuable input.
+
+---
+
+### How to Submit
+
+Open a new conversation with The King's Hand agent. Paste the documents one after another with a brief label identifying what each document is:
+
+```
+--- DOCUMENT 1: Weekly PM Report (Project Ares, Week 11) ---
+[paste document here]
+
+--- DOCUMENT 2: Jira CSV Export (Project Ares, exported 2026-03-15) ---
+[paste CSV here]
+
+--- DOCUMENT 3: Email thread (Customer escalation, NordicTel, forwarded 2026-03-14) ---
+[paste email here]
+```
+
+No further instruction is needed. The system knows what to do.
+
+---
+
+### Understanding the Output
+
+The system produces a five-module report in Traditional Chinese (繁體中文). Here is what each module contains:
+
+| Module | Chinese Title | What It Tells You |
+|---|---|---|
+| **Module 1** | 專案光譜定位與賦能價值 | Why this project matters commercially — connects the technical work to a specific market outcome |
+| **Module 2** | 專案穿透性摘要與紅綠燈 | The status light (🟢/🟡/🔴) and a single-sentence verdict. If this overrides the PM's official status, the reason is stated explicitly. |
+| **Module 3** | 跨層級協作摩擦力與風險 | The full adversarial analysis — every workaround found, its cost, which team is responsible, and what is being concealed. Ends with a friction table. |
+| **Module 4** | 客戶/市場連動效應 | The commercial consequence if the project fails — which customer commitment is at risk, which competitor benefits. |
+| **Module 5** | 國王的靈魂三問 | Three questions to ask in the review meeting. Each one is designed to be unanswerable with a reassuring generality — forcing the team to confront a specific problem. |
+
+#### How to Use Module 5 in the Review Meeting
+
+You do not need to ask all three questions. The three question types are:
+- **[Defensive/Accountability]:** For when you suspect a team is concealing a crisis
+- **[Strategic/Scale-Out]:** For when you want to know if a problem will infect the next product
+- **[Strategic/Ecosystem Moat]:** For when a customer relationship or market position is at risk
+
+Choose the one most relevant to what you are seeing, and read it as written. Do not soften or rephrase it — the specificity is the point.
+
+---
+
+### What the System Will Tell You When Evidence Is Incomplete
+
+If critical documents (especially Jira or commit logs) are absent, the system will open Module 3 with an **Evidence Inventory** section that states:
+- Which document types are missing
+- What each missing source would have revealed
+- Whether each finding in the analysis is **Confirmed** (supported by available evidence), **Suspected** (consistent with available evidence but unverified), or **Undetectable without [X]** (requires a specific missing source to verify)
+
+This is by design. A suspected finding with an evidence gap is more valuable than a confident finding with no acknowledgment of uncertainty. The evidence inventory tells you exactly what to ask the team to provide at the next review.
+
+---
+
+### What the System Will Not Do
+
+- It will **not** invent specific bugs, measurements, or data points not present in the submitted documents. If it cannot find evidence, it will say so.
+- It will **not** reassure you. If the evidence is damning, the output will be damning.
+- It will **not** softened its language to protect someone's feelings. Module 3 names teams and decisions.
+- It will **not** assign Red status without evidence. A clean project with clean evidence will receive a 🟢 Green.
 
 ---
 
@@ -37,14 +149,68 @@ In complex matrix organizations, project reports are often "Green" on the outsid
 **「國王之手」** 的使命是刺破企業內部的資訊迷霧。它直接分析原始資料（如 Jira 日誌、Git 提交紀錄、會議記錄），挖掘出那些永遠不會出現在官方簡報中的真實情況。
 
 #### 核心能力
-*   **敵對性分析：** 識破那些被封裝成「韌體修補」的硬體瑕疵 (Silicon Errata)。
-*   **PPA 量化評估：** 精確計算軟體「優化」在功耗、性能與晶片面積 (PPA) 上付出的真實代價。
-*   **跨層級協作摩擦監測：** 識別硬體團隊的假設與軟體團隊的執行現狀何時發生脫節。
-*   **戰略武裝：** 提供「國王的靈魂三問」——在專案審查會議上，提供犀利且無法閃躲的問題，迫使團隊面對現實並負起責任。
+- **敵對性分析：** 識破那些被封裝成「韌體修補」的硬體瑕疵 (Silicon Errata)。
+- **PPA 量化評估：** 精確計算軟體「優化」在功耗、性能與晶片面積 (PPA) 上付出的真實代價。
+- **跨層級協作摩擦監測：** 識別硬體團隊的假設與軟體團隊的執行現狀何時發生脫節。
+- **戰略武裝：** 提供「國王的靈魂三問」——在專案審查會議上，提供犀利且無法閃躲的問題，迫使團隊面對現實並負起責任。
+
+---
+
+## 使用指南（給 Henry 的團隊）
+
+本節專為執行團隊及負責準備文件的執行助理撰寫，無需任何技術背景即可操作本系統。
+
+---
+
+### 建議使用頻率
+
+建議於**每週跨職能專案審查會議的前一天**執行「國王之手」。
+
+最佳提交時間為會議前 24–36 小時。這樣您將有充分時間閱讀報告、選取最適合在會議中提出的問題，並決定是否需要在會前與特定團隊負責人進行預先溝通。
+
+請勿在會議當天早晨才提交——您將沒有足夠時間根據分析結果採取行動。
+
+---
+
+### 提交文件類型
+
+針對每個待審查專案，請盡可能蒐集以下文件。本系統設計為可處理不完整的證據——您無需備齊所有文件。文件愈完整，分析結果的可信度愈高。
+
+| 文件類型 | 提交內容 | 重要性說明 |
+|---|---|---|
+| **專案週報（PM 狀態報告）** | 專案經理的週度更新，任何格式均可 | 建立系統將進行深度審查的官方敘述基線 |
+| **Jira 匯出檔** | 直接從 Jira 匯出的原始 CSV，無需預處理 | Bug 標籤、優先級及評論歷史中隱藏著工程實況 |
+| **Git 提交記錄** | `git log --oneline -50` 輸出內容，或近期提交摘要 | 提交訊息揭示了臨時修補方案（Workaround）的引入時間點 |
+| **跨職能會議記錄** | 最近一次工程同步會議的記錄或行動項目 | 團隊間的分歧往往以直白的語言呈現於此 |
+| **客戶往來郵件** | 轉發的郵件或 FAE 升級摘要 | 一級客戶的升級（Escalation）是最強烈的紅燈信號 |
+| **內部工程報告** | 驗證完成報告、矽片特性量測摘要、DV 簽核文件 | 此類技術文件通常不會出現在 PM 向上匯報的摘要中 |
+| **PowerPoint 簡報** | 匯出為純文字的投影片內容（詳見下方說明） | 程序審查會的技術數據投影片，往往與執行摘要的結論相互矛盾 |
+
+**最低可行提交：** 僅憑一份每週 PM 報告，系統即可產出有用的分析結果。系統將明確標示缺少哪些資料，並據此調整各項發現的信心等級。
+
+---
+
+### 提交方式
+
+開啟與「國王之手」代理的新對話，依序貼上各份文件，並以簡短標籤標明每份文件的性質：
+
+```
+--- 文件 1：每週 PM 報告（Ares 專案，第 11 週）---
+[貼上文件內容]
+
+--- 文件 2：Jira CSV 匯出（Ares 專案，匯出日期：2026-03-15）---
+[貼上 CSV 內容]
+
+--- 文件 3：郵件往來記錄（客戶升級，NordicTel，轉發日期：2026-03-14）---
+[貼上郵件內容]
+```
+
+無需提供任何額外指示，系統將自動進行完整分析。
 
 ---
 
 ## Technical Core / 技術核心
+
 - **Analysis Engine:** Five-module intelligence report (5-module intelligence report / 五大模組情報報告).
 - **Domain Focus:** Full semiconductor software stack (Bootloader to AI SDK).
 - **Goal:** Transform technical debt into executive accountability.

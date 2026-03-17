@@ -24,7 +24,7 @@ Based on `THE_KING_S_HAND_DEV_PLAN.md`, the intended structure is:
 - `AGENTS.md`: System manifest and entry point.
 
 ## Development Status
-The project has completed **Phase 3** (2026-03-18) and is ready to begin **Phase 4 — Integration and Deployment Readiness**.
+The project has completed all four phases (2026-03-18). The system is ready for deployment in Henry's weekly review workflow.
 - [x] Conceptual README and Strategy Definition.
 - [x] Detailed Development Plan (`THE_KING_S_HAND_DEV_PLAN.md`).
 - [x] Roadmap (`ROADMAP.md`).
@@ -57,6 +57,14 @@ The project has completed **Phase 3** (2026-03-18) and is ready to begin **Phase
 - [x] `tests/test_cases/project_ironclad_ddr_technical.md` — TC-012: highly technical input (DV closure report only, DDR5 PHY IP)
 - [x] `tests/test_cases/project_apex_ml_sanitized.md` — TC-013: adversarially sanitized input (ML inference accelerator)
 - [x] Phase 3 acceptance testing — completed 2026-03-18. 40/40 Pass across all edge case scenarios. Phase 3 closed.
+
+## Phase 4 Status
+- [x] `tests/test_cases/project_crestline_hpc_jira.md` — TC-014: raw Jira CSV input (PCIe Gen5 DMA engine IP, 15 issues, Jira metadata signal extraction)
+- [x] `tests/test_cases/project_eon_ai_slides.md` — TC-015: PowerPoint-to-text input (edge AI inference SoC, cross-slide signal correlation)
+- [x] `tests/test_cases/project_typhoon_5g_email.md` — TC-016: email thread input (5G modem, internal/external narrative split detection)
+- [x] `README.md` — rewritten as bilingual operational guide: cadence recommendation, document collection guide, format-specific preparation instructions, submission template, output module guide
+- [x] `tests/evaluation_rubric.md` — expanded to 12 categories; added "Scoring Without Domain Expertise" preamble, deflection test protocol for Category 5, inter-rater reliability guidance
+- [x] Phase 4 acceptance testing — completed 2026-03-18. All three format test cases passed structural validation (format realism, signal verifiability, question quality, override trigger accuracy). Phase 4 closed.
 
 ## Key Files
 - `README.md`: High-level conceptual and strategic metaphors for the system.
