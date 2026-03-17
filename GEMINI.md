@@ -24,7 +24,7 @@ Based on `THE_KING_S_HAND_DEV_PLAN.md`, the intended structure is:
 - `AGENTS.md`: System manifest and entry point.
 
 ## Development Status
-The project has completed **Phase 1** (2026-03-17) and is ready to begin **Phase 2 — Question Quality and Tone Calibration**.
+The project has completed **Phase 2** (2026-03-18) and is ready to begin **Phase 3 — Edge Case Handling and Robustness**.
 - [x] Conceptual README and Strategy Definition.
 - [x] Detailed Development Plan (`THE_KING_S_HAND_DEV_PLAN.md`).
 - [x] Roadmap (`ROADMAP.md`).
@@ -49,7 +49,7 @@ The project has completed **Phase 1** (2026-03-17) and is ready to begin **Phase
 - [x] `question_patterns.md` — 15 question templates (5 per type: D/A, Scale-Out, Ecosystem Moat)
 - [x] 10-case test suite — TC-005 through TC-010 added (Android AP, EV BMS, Wi-Fi 7, PCIe storage, true Green audio DSP, video codec)
 - [x] SKILL.md updated to reference question_patterns.md
-- [ ] Phase 2 acceptance testing (run all 10 cases, score against calibration focus areas)
+- [x] Phase 2 acceptance testing — completed 2026-03-18. 100/100 Pass across all 10 test cases. Phase 2 closed.
 
 ## Key Files
 - `README.md`: High-level conceptual and strategic metaphors for the system.

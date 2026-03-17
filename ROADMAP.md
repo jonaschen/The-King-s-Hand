@@ -2,7 +2,7 @@
 
 **Project Start:** 2026-03-16
 **Specification Version:** v1.0 (see `THE_KING_S_HAND_DEV_PLAN.md`)
-**Current Status:** Phase 1 — complete and accepted (2026-03-17). Phase 2 in progress.
+**Current Status:** Phase 2 — complete and accepted (2026-03-18). Phase 3 next.
 
 ---
 
@@ -66,14 +66,14 @@ Phase 4 (Jul)  → Deployment packaging
 ---
 
 ## Phase 2 — Question Quality and Tone Calibration
-**Target:** May 2026
+**Target:** May 2026 — **Complete (2026-03-18)**
 **Goal:** The three questions function as executive weapons, not suggestions. Module 3 names teams and decisions, never "alignment issues."
 
 ### Deliverables
 - [x] `skills/the-kings-hand/references/question_patterns.md` — 15 high-impact question templates across the three question types (Defensive/Accountability, Scale-Out Strategic, Ecosystem Moat Strategic)
 - [x] 10-case test suite — TC-001 through TC-010 covering ADAS, IoT, mobile SoC, datacenter inference, 5G modem, Android AP, EV BMS, Wi-Fi 7, PCIe storage, audio DSP (true Green), video codec
 - [x] SKILL.md updated: question_patterns.md added to reference_knowledge; ecosystem moat question instruction tightened (Phase 1 fix carried forward)
-- [ ] Run all 10 test cases and score against evaluation rubric — calibration focus areas below
+- [x] Run all 10 test cases and score against evaluation rubric — 100/100 Pass, 0 Partial, 0 Fail
 
 ### Calibration Focus Areas
 1. **Question sharpness:** Does each question contain a worst-case financial or timeline implication that cannot be deflected with vague reassurance?
@@ -81,11 +81,14 @@ Phase 4 (Jul)  → Deployment packaging
 3. **Module 1 empowerment framing:** Connected to a specific commercial outcome (market position, customer retention, TAM expansion, regulatory access) — not a technical description.
 
 ### Acceptance Criteria
-| Check | Target |
-|-------|--------|
-| Question accountability | 100% of questions on 10-case set require acknowledging a specific risk |
-| Softening language | 0 instances of hedging language in Module 3 (automated scan) |
-| Module 1 commercial framing | 100% connect to a specific commercial outcome |
+| Check | Target | Result |
+|-------|--------|--------|
+| Question accountability | 100% of questions on 10-case set require acknowledging a specific risk | ✅ Pass — 30/30 questions across all 10 cases |
+| Softening language | 0 instances of hedging language in Module 3 | ✅ Pass — all 10 outputs cold and specific |
+| Module 1 commercial framing | 100% connect to a specific commercial outcome | ✅ Pass — all 10 outputs name a specific commercial consequence |
+| False positive control | TC-009 correctly assigned 🟢, no fabricated risks | ✅ Pass — TC-009 Green with no invented findings |
+
+**Acceptance test run:** 2026-03-18. 100/100 Pass across all 10 test cases. Phase 2 closed.
 
 ---
 
@@ -156,3 +159,4 @@ Phase 4 (Jul)  → Deployment packaging
 | v1.0 | 2026-03-17 | Initial roadmap. Derived from `THE_KING_S_HAND_DEV_PLAN.md` v1.0 four-phase plan with added task granularity and explicit completion checkboxes. |
 | v1.1 | 2026-03-16 | Phase 1 deliverables completed: directory structure, AGENTS.md, SKILL.md, 4 reference docs, 4 test cases, evaluation rubric, compliance rules. |
 | v1.2 | 2026-03-17 | Phase 1 acceptance testing complete. 39/40 Pass on first run. One defect resolved: SKILL.md Step 5 ecosystem moat question instruction tightened to require worst-case failure scenario framing; TC-001 calibration reference question updated accordingly. Phase 1 closed. |
+| v1.3 | 2026-03-18 | Phase 2 complete. question_patterns.md (15 templates) created. TC-005 through TC-010 added (Android AP, EV BMS, Wi-Fi 7, PCIe Gen5, true Green audio DSP, video codec). 10-case acceptance test: 100/100 Pass, 0 Partial, 0 Fail. Phase 2 closed. |
