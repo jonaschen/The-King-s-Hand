@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Current Status
 
-The project is in **Phase 1 (implementation complete, pending acceptance testing)**. All Phase 1 deliverables have been created:
+The project has completed **Phase 1** (accepted 2026-03-17) and is ready for **Phase 2**. All Phase 1 deliverables have been created:
 
 ```
 the-kings-hand/

@@ -2,7 +2,7 @@
 
 **Project Start:** 2026-03-16
 **Specification Version:** v1.0 (see `THE_KING_S_HAND_DEV_PLAN.md`)
-**Current Status:** Phase 1 — all deliverables created, pending acceptance testing
+**Current Status:** Phase 1 — complete and accepted (2026-03-17). Phase 2 in progress.
 
 ---
 
@@ -53,13 +53,15 @@ Phase 4 (Jul)  → Deployment packaging
 - [x] `compliance/output_rules.json` — machine-readable formatting constraints
 
 ### Acceptance Criteria
-| Check | Target |
-|-------|--------|
-| Status override accuracy | 100% correct Red on both Red-override test cases |
-| Workaround detection | ≥2 identified per test case when present |
-| PPA quantification | Every workaround has a specific cost estimate (not "may impact performance") |
-| Tone compliance | 0 bullet lists in Module 3 or 4 |
-| Question quality | All three questions unanswerable with reassuring generalities (human eval) |
+| Check | Target | Result |
+|-------|--------|--------|
+| Status override accuracy | 100% correct Red on both Red-override test cases | ✅ Pass — TC-001 🔴, TC-003 🔴, TC-004 🔴, TC-002 🟡 all correct |
+| Workaround detection | ≥2 identified per test case when present | ✅ Pass — all 4 test cases ≥2 named workarounds |
+| PPA quantification | Every workaround has a specific cost estimate | ✅ Pass — all workarounds carry numeric PPA cost |
+| Tone compliance | 0 bullet lists in Module 3 or 4 | ✅ Pass — all 4 outputs narrative prose only |
+| Question quality | All three questions unanswerable with reassuring generalities | ✅ Pass after fixing TC-001 Ecosystem Moat question (SKILL.md updated to require worst-case failure scenario framing) |
+
+**Acceptance test run:** 2026-03-17. One defect found and resolved: TC-001 Ecosystem Moat question was initially deflectable; fix applied to SKILL.md Step 5 instruction and TC-001 calibration reference.
 
 ---
 
@@ -152,3 +154,4 @@ Phase 4 (Jul)  → Deployment packaging
 |---------|------|---------|
 | v1.0 | 2026-03-17 | Initial roadmap. Derived from `THE_KING_S_HAND_DEV_PLAN.md` v1.0 four-phase plan with added task granularity and explicit completion checkboxes. |
 | v1.1 | 2026-03-16 | Phase 1 deliverables completed: directory structure, AGENTS.md, SKILL.md, 4 reference docs, 4 test cases, evaluation rubric, compliance rules. |
+| v1.2 | 2026-03-17 | Phase 1 acceptance testing complete. 39/40 Pass on first run. One defect resolved: SKILL.md Step 5 ecosystem moat question instruction tightened to require worst-case failure scenario framing; TC-001 calibration reference question updated accordingly. Phase 1 closed. |

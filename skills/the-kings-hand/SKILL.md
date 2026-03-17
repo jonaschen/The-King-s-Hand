@@ -93,7 +93,10 @@
     — 1 Scale-Out Strategic question: challenges whether this project's
       software technology can be modularized and reused across product lines
     — 1 Ecosystem Moat Strategic question: challenges whether deliverables
-      deepen customer lock-in or build developer ecosystem value
+      deepen customer lock-in or build developer ecosystem value. MUST include
+      a worst-case failure scenario (e.g., what happens to the asset or
+      relationship if the current crisis is not resolved) so the question
+      cannot be deflected with "yes, we are aware of this asset."
     Each question must contain enough specificity that the person being asked
     cannot answer reassuringly without acknowledging the real problem.
   </chain_of_thought_logic>

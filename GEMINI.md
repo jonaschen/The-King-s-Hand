@@ -24,7 +24,7 @@ Based on `THE_KING_S_HAND_DEV_PLAN.md`, the intended structure is:
 - `AGENTS.md`: System manifest and entry point.
 
 ## Development Status
-The project is currently in **Phase 1 — Core Prompt Engineering and Knowledge Base**.
+The project has completed **Phase 1** (2026-03-17) and is ready to begin **Phase 2 — Question Quality and Tone Calibration**.
 - [x] Conceptual README and Strategy Definition.
 - [x] Detailed Development Plan (`THE_KING_S_HAND_DEV_PLAN.md`).
 - [x] Roadmap (`ROADMAP.md`).
@@ -43,7 +43,7 @@ The project is currently in **Phase 1 — Core Prompt Engineering and Knowledge 
   - [x] `project_greenlight_trap.md` — Pure watermelon effect (TC-004)
 - [x] `tests/evaluation_rubric.md` — 10-category scoring criteria.
 - [x] `compliance/output_rules.json` — Machine-readable formatting constraints.
-- [ ] Phase 1 acceptance testing (run all 4 test cases and evaluate against rubric).
+- [x] Phase 1 acceptance testing — completed 2026-03-17. 39/40 Pass on first run. One defect found and resolved: SKILL.md ecosystem moat question instruction tightened; TC-001 calibration reference updated. Phase 1 closed.
 
 ## Key Files
 - `README.md`: High-level conceptual and strategic metaphors for the system.
