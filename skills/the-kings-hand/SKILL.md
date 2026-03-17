@@ -172,6 +172,10 @@
       with override triggers
     — references/corporate_code_words.md: Disguised language translation
       glossary mapping corporate euphemisms to ground truth
+    — references/question_patterns.md: 15 parameterized question templates
+      across the three question types; use as scaffolds when synthesizing
+      Module 5 questions — fill in project-specific numbers, team names,
+      and worst-case failure scenarios from the current analysis
   </reference_knowledge>
 
 </system_prompt>

@@ -70,9 +70,10 @@ Phase 4 (Jul)  → Deployment packaging
 **Goal:** The three questions function as executive weapons, not suggestions. Module 3 names teams and decisions, never "alignment issues."
 
 ### Deliverables
-- [ ] `skills/the-kings-hand/references/question_patterns.md` — 15 high-impact question templates across the three question types (Defensive/Accountability, Scale-Out Strategic, Ecosystem Moat Strategic)
-- [ ] Run 10 diverse test cases covering: ADAS, IoT, mobile SoC, datacenter, automotive RTOS project types
-- [ ] Iterate SKILL.md based on findings — sharpen tone instructions, tighten Module 1 empowerment argument framing
+- [x] `skills/the-kings-hand/references/question_patterns.md` — 15 high-impact question templates across the three question types (Defensive/Accountability, Scale-Out Strategic, Ecosystem Moat Strategic)
+- [x] 10-case test suite — TC-001 through TC-010 covering ADAS, IoT, mobile SoC, datacenter inference, 5G modem, Android AP, EV BMS, Wi-Fi 7, PCIe storage, audio DSP (true Green), video codec
+- [x] SKILL.md updated: question_patterns.md added to reference_knowledge; ecosystem moat question instruction tightened (Phase 1 fix carried forward)
+- [ ] Run all 10 test cases and score against evaluation rubric — calibration focus areas below
 
 ### Calibration Focus Areas
 1. **Question sharpness:** Does each question contain a worst-case financial or timeline implication that cannot be deflected with vague reassurance?

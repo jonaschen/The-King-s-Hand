@@ -45,6 +45,12 @@ The project has completed **Phase 1** (2026-03-17) and is ready to begin **Phase
 - [x] `compliance/output_rules.json` — Machine-readable formatting constraints.
 - [x] Phase 1 acceptance testing — completed 2026-03-17. 39/40 Pass on first run. One defect found and resolved: SKILL.md ecosystem moat question instruction tightened; TC-001 calibration reference updated. Phase 1 closed.
 
+## Phase 2 Status
+- [x] `question_patterns.md` — 15 question templates (5 per type: D/A, Scale-Out, Ecosystem Moat)
+- [x] 10-case test suite — TC-005 through TC-010 added (Android AP, EV BMS, Wi-Fi 7, PCIe storage, true Green audio DSP, video codec)
+- [x] SKILL.md updated to reference question_patterns.md
+- [ ] Phase 2 acceptance testing (run all 10 cases, score against calibration focus areas)
+
 ## Key Files
 - `README.md`: High-level conceptual and strategic metaphors for the system.
 - `THE_KING_S_HAND_DEV_PLAN.md`: **Crucial.** Contains the complete specification, architecture, and roadmap for building the system. Read this before any implementation.
