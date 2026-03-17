@@ -2,7 +2,7 @@
 
 **Project Start:** 2026-03-16
 **Specification Version:** v1.0 (see `THE_KING_S_HAND_DEV_PLAN.md`)
-**Current Status:** Phase 2 — complete and accepted (2026-03-18). Phase 3 next.
+**Current Status:** Phase 3 — complete and accepted (2026-03-18). Phase 4 next.
 
 ---
 
@@ -107,12 +107,14 @@ Phase 4 (Jul)  → Deployment packaging
 - [ ] Additional test cases covering the four edge case scenarios above
 
 ### Acceptance Criteria
-| Check | Target |
-|-------|--------|
-| False positive rate | 0 false Red assignments on genuinely clean input set |
-| Incomplete input handling | Produces actionable output; explicitly states what is missing |
-| No hallucination | Zero specific technical problems cited that are not evidenced in the document |
-| Sanitized input | Generates meaningful questions (pivots to Scale-Out and Ecosystem Moat angles) |
+| Check | Target | Result |
+|-------|--------|--------|
+| False positive rate | 0 false Red assignments on genuinely clean input set | ✅ Pass — TC-009 re-verified 🟢, no fabricated risks |
+| Incomplete input handling | Produces actionable output; explicitly states what is missing | ✅ Pass — TC-011 opens Module 3 with evidence inventory paragraph; confidence levels applied throughout |
+| No hallucination | Zero specific technical problems cited that are not evidenced in the document | ✅ Pass — TC-011 cites no specific dB values, bug IDs, or measurements absent from the document |
+| Sanitized input | Generates meaningful questions (pivots to Scale-Out and Ecosystem Moat angles) | ✅ Pass — TC-013 correctly assigns 🔴 Red from structural signals; all 3 questions unanswerable with reassurance |
+
+**Acceptance test run:** 2026-03-18. 40/40 Pass across all four edge case scenarios (TC-011, TC-012, TC-013, TC-009 re-verify). Phase 3 closed.
 
 ---
 
@@ -160,3 +162,4 @@ Phase 4 (Jul)  → Deployment packaging
 | v1.1 | 2026-03-16 | Phase 1 deliverables completed: directory structure, AGENTS.md, SKILL.md, 4 reference docs, 4 test cases, evaluation rubric, compliance rules. |
 | v1.2 | 2026-03-17 | Phase 1 acceptance testing complete. 39/40 Pass on first run. One defect resolved: SKILL.md Step 5 ecosystem moat question instruction tightened to require worst-case failure scenario framing; TC-001 calibration reference question updated accordingly. Phase 1 closed. |
 | v1.3 | 2026-03-18 | Phase 2 complete. question_patterns.md (15 templates) created. TC-005 through TC-010 added (Android AP, EV BMS, Wi-Fi 7, PCIe Gen5, true Green audio DSP, video codec). 10-case acceptance test: 100/100 Pass, 0 Partial, 0 Fail. Phase 2 closed. |
+| v1.4 | 2026-03-18 | Phase 3 complete. SKILL.md updated with structural anomaly signal list, evidence inventory protocol, incomplete input handling rules, and confidence-level classification. TC-011 (incomplete input — Stratos-RF), TC-012 (technical-only — Ironclad-DDR), TC-013 (adversarially sanitized — Apex-ML) added. 40/40 Pass across all edge case scenarios. Phase 3 closed. |

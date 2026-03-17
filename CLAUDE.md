@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Current Status
 
-The project has completed **Phase 2** (accepted 2026-03-18) and is ready for **Phase 3**. All Phase 1 deliverables have been created:
+The project has completed **Phase 3** (accepted 2026-03-18) and is ready for **Phase 4**. All Phase 1–3 deliverables have been created:
 
 ```
 the-kings-hand/
@@ -27,7 +27,16 @@ the-kings-hand/
 │   │   ├── project_adas_x9.md             # ✅ Yellow-to-Red override (TC-001)
 │   │   ├── project_smartlink_iot.md        # ✅ Green-to-Yellow override (TC-002)
 │   │   ├── project_valkyrie_npu.md         # ✅ Multi-layer friction (TC-003)
-│   │   └── project_greenlight_trap.md      # ✅ Pure watermelon effect (TC-004)
+│   │   ├── project_greenlight_trap.md      # ✅ Pure watermelon effect (TC-004)
+│   │   ├── project_nova_ap.md             # ✅ Android AP thermal throttle (TC-005)
+│   │   ├── project_titan_ev.md            # ✅ EV BMS ASIL-B violation (TC-006)
+│   │   ├── project_helios_wifi7.md        # ✅ Wi-Fi 7 cert failure (TC-007)
+│   │   ├── project_clearwater_pcie.md     # ✅ PCIe Gen5 race condition (TC-008)
+│   │   ├── project_athena_true_green.md   # ✅ True Green control case (TC-009)
+│   │   ├── project_mercury_codec.md       # ✅ Video codec HW constraint (TC-010)
+│   │   ├── project_stratos_rf_incomplete.md # ✅ Incomplete input (TC-011)
+│   │   ├── project_ironclad_ddr_technical.md # ✅ Technical-only input (TC-012)
+│   │   └── project_apex_ml_sanitized.md   # ✅ Adversarially sanitized (TC-013)
 │   └── evaluation_rubric.md               # ✅ 10-category scoring criteria
 └── compliance/
     └── output_rules.json                  # ✅ Machine-readable formatting constraints

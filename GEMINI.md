@@ -24,7 +24,7 @@ Based on `THE_KING_S_HAND_DEV_PLAN.md`, the intended structure is:
 - `AGENTS.md`: System manifest and entry point.
 
 ## Development Status
-The project has completed **Phase 2** (2026-03-18) and is ready to begin **Phase 3 — Edge Case Handling and Robustness**.
+The project has completed **Phase 3** (2026-03-18) and is ready to begin **Phase 4 — Integration and Deployment Readiness**.
 - [x] Conceptual README and Strategy Definition.
 - [x] Detailed Development Plan (`THE_KING_S_HAND_DEV_PLAN.md`).
 - [x] Roadmap (`ROADMAP.md`).
@@ -50,6 +50,13 @@ The project has completed **Phase 2** (2026-03-18) and is ready to begin **Phase
 - [x] 10-case test suite — TC-005 through TC-010 added (Android AP, EV BMS, Wi-Fi 7, PCIe storage, true Green audio DSP, video codec)
 - [x] SKILL.md updated to reference question_patterns.md
 - [x] Phase 2 acceptance testing — completed 2026-03-18. 100/100 Pass across all 10 test cases. Phase 2 closed.
+
+## Phase 3 Status
+- [x] SKILL.md updated: structural anomaly signal list, evidence inventory protocol, incomplete input handling (confidence levels: Confirmed/Suspected/Undetectable), fallback language guidelines
+- [x] `tests/test_cases/project_stratos_rf_incomplete.md` — TC-011: incomplete input (weekly report only, RF transceiver)
+- [x] `tests/test_cases/project_ironclad_ddr_technical.md` — TC-012: highly technical input (DV closure report only, DDR5 PHY IP)
+- [x] `tests/test_cases/project_apex_ml_sanitized.md` — TC-013: adversarially sanitized input (ML inference accelerator)
+- [x] Phase 3 acceptance testing — completed 2026-03-18. 40/40 Pass across all edge case scenarios. Phase 3 closed.
 
 ## Key Files
 - `README.md`: High-level conceptual and strategic metaphors for the system.
