@@ -2,7 +2,7 @@
 
 **Project Start:** 2026-03-16
 **Specification Version:** v1.0 (see `THE_KING_S_HAND_DEV_PLAN.md`)
-**Current Status:** Pre-Phase 1 — directory structure not yet created
+**Current Status:** Phase 1 — all deliverables created, pending acceptance testing
 
 ---
 
@@ -26,31 +26,31 @@ Phase 4 (Jul)  → Deployment packaging
 ### Deliverables
 
 **Directory Structure**
-- [ ] Create full directory tree: `AGENTS.md`, `skills/the-kings-hand/`, `tests/`, `compliance/`
-- [ ] Write `AGENTS.md` (system manifest and entry point — template in dev plan §6)
+- [x] Create full directory tree: `AGENTS.md`, `skills/the-kings-hand/`, `tests/`, `compliance/`
+- [x] Write `AGENTS.md` (system manifest and entry point — template in dev plan §6)
 
 **SKILL.md (Core System Prompt)**
-- [ ] Write the full XML-structured system prompt (complete spec in dev plan §5)
+- [x] Write the full XML-structured system prompt (complete spec in dev plan §5)
   - Role definition (15-year IC design veteran persona)
   - Five-step Chain of Thought logic (`<thinking>` block, never shown in output)
   - Five output module specifications
   - Formatting rules (Traditional Chinese, narrative prose, no bullet lists)
 
 **Reference Knowledge Base** (`skills/the-kings-hand/references/`)
-- [ ] `software_stack_map.md` — five stack layers (Bootloader → AI SDK) with failure modes and business value translation
-- [ ] `workaround_taxonomy.md` — 8 workaround patterns with PPA cost estimates (polling spinlock, NOP insertion, data throttling, retry logic, software PLL, GPIO polling, header padding, watchdog disable)
-- [ ] `rag_status_criteria.md` — explicit Green/Yellow/Red assignment rules with override triggers
-- [ ] `corporate_code_words.md` — ≥20 disguised language patterns mapped to ground truth and status classification
+- [x] `software_stack_map.md` — five stack layers (Bootloader → AI SDK) with failure modes and business value translation
+- [x] `workaround_taxonomy.md` — 8 workaround patterns with PPA cost estimates (polling spinlock, NOP insertion, data throttling, retry logic, software PLL, GPIO polling, header padding, watchdog disable)
+- [x] `rag_status_criteria.md` — explicit Green/Yellow/Red assignment rules with override triggers
+- [x] `corporate_code_words.md` — ≥20 disguised language patterns mapped to ground truth and status classification
 
 **Test Suite**
-- [ ] `tests/test_cases/project_adas_x9.md` — Yellow-to-Red override (AXI bandwidth contention, ASIL-D compliance risk)
-- [ ] `tests/test_cases/project_smartlink_iot.md` — Green-to-Yellow override (hidden polling workaround, 25% standby power increase)
-- [ ] `tests/test_cases/project_valkyrie_npu.md` — Multi-layer friction (NPU performance model divergence)
-- [ ] `tests/test_cases/project_greenlight_trap.md` — Pure watermelon effect (all-green report concealing crisis)
-- [ ] `tests/evaluation_rubric.md` — Scoring criteria for all KPI categories
+- [x] `tests/test_cases/project_adas_x9.md` — Yellow-to-Red override (AXI bandwidth contention, ASIL-D compliance risk)
+- [x] `tests/test_cases/project_smartlink_iot.md` — Green-to-Yellow override (hidden polling workaround, 25% standby power increase)
+- [x] `tests/test_cases/project_valkyrie_npu.md` — Multi-layer friction (NPU performance model divergence)
+- [x] `tests/test_cases/project_greenlight_trap.md` — Pure watermelon effect (all-green report concealing crisis)
+- [x] `tests/evaluation_rubric.md` — Scoring criteria for all KPI categories
 
 **Compliance**
-- [ ] `compliance/output_rules.json` — machine-readable formatting constraints
+- [x] `compliance/output_rules.json` — machine-readable formatting constraints
 
 ### Acceptance Criteria
 | Check | Target |
@@ -151,3 +151,4 @@ Phase 4 (Jul)  → Deployment packaging
 | Version | Date | Summary |
 |---------|------|---------|
 | v1.0 | 2026-03-17 | Initial roadmap. Derived from `THE_KING_S_HAND_DEV_PLAN.md` v1.0 four-phase plan with added task granularity and explicit completion checkboxes. |
+| v1.1 | 2026-03-16 | Phase 1 deliverables completed: directory structure, AGENTS.md, SKILL.md, 4 reference docs, 4 test cases, evaluation rubric, compliance rules. |

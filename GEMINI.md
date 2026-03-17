@@ -24,16 +24,33 @@ Based on `THE_KING_S_HAND_DEV_PLAN.md`, the intended structure is:
 - `AGENTS.md`: System manifest and entry point.
 
 ## Development Status
-The project is currently in the **Initial Setup Phase** (Phase 1 as per the Dev Plan).
+The project is currently in **Phase 1 — Core Prompt Engineering and Knowledge Base**.
 - [x] Conceptual README and Strategy Definition.
 - [x] Detailed Development Plan (`THE_KING_S_HAND_DEV_PLAN.md`).
-- [ ] Directory structure implementation.
-- [ ] Reference knowledge base creation.
-- [ ] Core `SKILL.md` prompt engineering.
+- [x] Roadmap (`ROADMAP.md`).
+- [x] Directory structure implementation.
+- [x] `AGENTS.md` — System manifest and entry point.
+- [x] `skills/the-kings-hand/SKILL.md` — Core system prompt (XML-structured).
+- [x] Reference knowledge base creation:
+  - [x] `software_stack_map.md` — 5-layer stack with failure modes and business value
+  - [x] `workaround_taxonomy.md` — 8 workaround patterns with PPA cost estimates
+  - [x] `rag_status_criteria.md` — Red/Yellow/Green rules with override triggers
+  - [x] `corporate_code_words.md` — 25 disguised language patterns (≥20 required)
+- [x] Test suite (4 test cases):
+  - [x] `project_adas_x9.md` — Yellow-to-Red override (TC-001)
+  - [x] `project_smartlink_iot.md` — Green-to-Yellow override (TC-002)
+  - [x] `project_valkyrie_npu.md` — Multi-layer friction (TC-003)
+  - [x] `project_greenlight_trap.md` — Pure watermelon effect (TC-004)
+- [x] `tests/evaluation_rubric.md` — 10-category scoring criteria.
+- [x] `compliance/output_rules.json` — Machine-readable formatting constraints.
+- [ ] Phase 1 acceptance testing (run all 4 test cases and evaluate against rubric).
 
 ## Key Files
 - `README.md`: High-level conceptual and strategic metaphors for the system.
 - `THE_KING_S_HAND_DEV_PLAN.md`: **Crucial.** Contains the complete specification, architecture, and roadmap for building the system. Read this before any implementation.
+- `ROADMAP.md`: Four-phase roadmap with deliverable checklists and acceptance criteria.
+- `AGENTS.md`: System manifest and entry point for the skill set.
+- `skills/the-kings-hand/SKILL.md`: The core system prompt loaded when analyzing project documents.
 
 ## Operational Guidelines
 - **Always be adversarial:** Don't trust official "green" statuses; look for evidence of hardware bugs masked by software workarounds.

@@ -1,0 +1,222 @@
+{
+  "schema_version": "1.0",
+  "description": "Machine-readable formatting and compliance rules for The King's Hand output validation",
+  "language": {
+    "required": "Traditional Chinese (繁體中文)",
+    "code": "zh-TW",
+    "exceptions": ["Technical terms (e.g., TOPS, PPA, ASIL-D)", "Proper nouns (company names, product names)", "Jira issue IDs", "Status light labels in Module 2"]
+  },
+  "structure": {
+    "module_count": 5,
+    "module_order": [
+      {
+        "number": 1,
+        "title_zh": "專案光譜定位與賦能價值",
+        "title_en": "Project Spectrum Positioning and Empowerment Value",
+        "format": "markdown_table",
+        "required_rows": [
+          "Technical Spectrum Classification",
+          "Core Empowerment Value"
+        ]
+      },
+      {
+        "number": 2,
+        "title_zh": "專案穿透性摘要與紅綠燈",
+        "title_en": "Penetration Summary and Status Light",
+        "format": "structured",
+        "required_elements": [
+          {
+            "name": "status_light",
+            "type": "enum",
+            "allowed_values": ["🟢", "🟡", "🔴"],
+            "count": 1
+          },
+          {
+            "name": "objective",
+            "type": "single_sentence",
+            "description": "One-sentence project objective"
+          },
+          {
+            "name": "verdict",
+            "type": "single_sentence",
+            "description": "One-sentence status verdict with quantified evidence"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "title_zh": "跨層級協作摩擦力與風險",
+        "title_en": "Cross-Layer Collaboration Friction and Risk",
+        "format": "narrative_prose_with_table",
+        "required_content": [
+          "Performance model gap between hardware and software teams",
+          "Workaround exposure with PPA cost for each",
+          "Accountability gap naming specific teams and decisions"
+        ],
+        "required_table": {
+          "name": "Friction hotspot summary",
+          "columns": ["Conflict Type", "Teams Involved", "Technical Debt Consequence"]
+        }
+      },
+      {
+        "number": 4,
+        "title_zh": "客戶/市場連動效應",
+        "title_en": "Customer and Market Ripple Effect",
+        "format": "narrative_prose",
+        "required_paragraphs": [
+          {
+            "number": 1,
+            "topic": "Critical path analysis — customer or tape-out milestone at risk"
+          },
+          {
+            "number": 2,
+            "topic": "Competitive and geopolitical pressure — external forces compressing the project"
+          }
+        ],
+        "paragraph_count": 2
+      },
+      {
+        "number": 5,
+        "title_zh": "國王的靈魂三問",
+        "title_en": "The King's Three Soul-Searching Questions",
+        "format": "labeled_questions",
+        "required_questions": [
+          {
+            "label": "Defensive/Accountability",
+            "description": "Attacks worst current risk; demands specific numbers or Plan B"
+          },
+          {
+            "label": "Strategic/Scale-Out",
+            "description": "Challenges reuse and scalability across product lines"
+          },
+          {
+            "label": "Strategic/Ecosystem Moat",
+            "description": "Challenges long-term customer lock-in and ecosystem value"
+          }
+        ],
+        "question_count": 3
+      }
+    ]
+  },
+  "formatting_rules": {
+    "preamble_forbidden": true,
+    "greeting_forbidden": true,
+    "self_introduction_forbidden": true,
+    "signature_forbidden": true,
+    "thinking_visible_forbidden": true,
+    "start_with": "Module 1 heading",
+    "markdown_required": true,
+    "tables_allowed": true,
+    "bullet_lists_in_analysis": {
+      "allowed": false,
+      "applies_to_modules": [3, 4],
+      "description": "Bulleted and numbered lists are absolutely forbidden in analytical prose in Modules 3 and 4. Tables are allowed."
+    }
+  },
+  "tone_rules": {
+    "register": "extremely professional, cold, objective, precise",
+    "persona": "senior advisor to C-suite executive",
+    "forbidden_tone": "middle manager status update",
+    "softening_language_forbidden": {
+      "enabled": true,
+      "applies_to_modules": [3],
+      "forbidden_patterns": [
+        "may be",
+        "might be",
+        "could potentially",
+        "it appears that",
+        "there seems to be",
+        "some concerns exist",
+        "challenges have been noted",
+        "issues are being addressed",
+        "alignment opportunities",
+        "areas for improvement",
+        "potential for optimization",
+        "the team is working hard to",
+        "progress has been made",
+        "efforts are underway",
+        "misalignment"
+      ]
+    }
+  },
+  "status_light_rules": {
+    "green": {
+      "emoji": "🟢",
+      "label": "On Track",
+      "conditions": [
+        "PPA on spec",
+        "Budget clean",
+        "Milestones met within ±1 week",
+        "No unresolved critical hardware bugs",
+        "No customer escalations",
+        "Test coverage increasing",
+        "All HW/SW interfaces frozen"
+      ]
+    },
+    "yellow": {
+      "emoji": "🟡",
+      "label": "Latent Risk / Resource Bottleneck",
+      "conditions": [
+        "No tape-out slip yet",
+        "Emerging risk signals present",
+        "Resource contention",
+        "Interface definitions not frozen",
+        "Test coverage plateauing",
+        "Workaround accepted but not stress-tested"
+      ]
+    },
+    "red": {
+      "emoji": "🔴",
+      "label": "Critical Blockage / Customer Escalation",
+      "conditions": [
+        "Tape-out delay confirmed",
+        "Customer escalation received",
+        "Critical hardware bug with no viable fix",
+        "PPA spec missed with no recovery plan",
+        "Official status contradicts technical evidence"
+      ]
+    },
+    "override_rule": "Technical evidence always trumps official report status. Only override to a worse status, never to a better one."
+  },
+  "ppa_quantification_rules": {
+    "required": true,
+    "applies_to": "Every identified workaround in Module 3",
+    "forbidden_vague_language": [
+      "may impact performance",
+      "could affect power",
+      "potential performance degradation",
+      "might reduce throughput"
+    ],
+    "required_format": "Specific number + unit (e.g., '+25% standby power', '-18% TOPS', '+167% P99 latency')"
+  },
+  "question_rules": {
+    "count": 3,
+    "types": ["Defensive/Accountability", "Strategic/Scale-Out", "Strategic/Ecosystem Moat"],
+    "quality_criteria": {
+      "unanswerable_with_reassurance": true,
+      "must_contain_specificity": true,
+      "must_imply_worst_case": true,
+      "must_demand_concrete_response": true
+    }
+  },
+  "workaround_detection_rules": {
+    "minimum_per_document": 2,
+    "required_fields_per_workaround": [
+      "Name/type of workaround",
+      "Hardware failure it masks",
+      "PPA cost estimate (quantified)",
+      "Technical debt classification"
+    ],
+    "anomaly_keywords": [
+      "workaround", "temporary fix", "patch", "bypass",
+      "spinlock", "polling", "busy-wait",
+      "race condition", "timing violation", "deadlock",
+      "memory leak", "buffer overflow", "stack corruption",
+      "silicon errata", "hardware bug", "metal spin", "ECO",
+      "bandwidth bottleneck", "throughput drop", "performance regression",
+      "schedule slip", "tape-out delay", "milestone miss",
+      "second source", "customer escalation", "design-win risk",
+      "technical debt", "architecture refactor", "code smell"
+    ]
+  }
+}
