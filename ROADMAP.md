@@ -158,6 +158,32 @@ Phase 4 (Jul)  → Deployment packaging
 
 ---
 
+---
+
+## Addendum — Self-Adjustment and Domain Portability
+**Added:** 2026-03-18 (post Phase 4)
+**Goal:** Make The King's Hand deployable for any domain and any manager without manual reconfiguration.
+
+### Deliverables
+- [x] `SKILL.md` updated: role definition expanded to cross-domain analyst; Step 0 (Domain Inference and Manager Calibration) added before Step 1
+  - Sub-step 0A: Manager Profile consumption — reads prepended `[MANAGER PROFILE]` block, applies domain vocabulary mappings, priority order, question style preferences, historical patterns
+  - Sub-step 0B: Domain identification — infers industry from document vocabulary, job titles, metrics
+  - Sub-step 0C: Domain framework construction — maps Hard Constraint, Patch Pattern, Irreversible Milestone, Trade-Off Axes, Tier-1 Relationship, Blame Transfer Seam for the identified domain
+  - Sub-step 0D: Anomaly signal extension — extends red-flag keyword list with domain-specific equivalents
+  - Sub-step 0E: Output calibration note — records domain inference result in `<thinking>` block
+- [x] `skills/the-kings-hand/CALIBRATE.md` — Meta-skill (XML-structured) that distills a session transcript into a Manager Profile; invoked by calibrate.sh, runs in CALIBRATION MODE separate from analysis mode
+- [x] `manager_profiles/henry.md` — Starter profile for Henry: IC design domain context, 24-row corporate vocabulary table, priority ordering, calibration rules from Phase 1–4 defect findings, historical patterns from test suite
+- [x] `tools/calibrate.sh` — Wrapper that assembles CALIBRATE.md + existing profile + session transcript, runs gemini-cli from `/tmp` (to avoid GEMINI.md King's Hand context), validates output, backs up previous profile before overwriting
+- [x] `tools/analyze_pptx.sh` updated with `--manager NAME` flag — injects Manager Profile as a prefix before running analysis
+- [x] `tools/markitdown_analyze.sh` updated with `--manager NAME` flag — same profile injection logic
+
+### Design Principles
+- **Zero-setup deployment:** Works without any manager profile; Step 0B–0D provide domain inference from the document itself
+- **Progressive enrichment:** Each calibrate.sh run makes the profile richer; by session 4–5 the profile should cover all recurring vocabulary and question preferences
+- **Domain-agnostic:** The Hard Constraint / Patch Pattern / Irreversible Milestone / Trade-Off Axes framework maps to any hardware-software, manufacturing, regulatory, or financial domain — not only IC design
+
+---
+
 ## Revision History
 
 | Version | Date | Summary |
@@ -168,3 +194,4 @@ Phase 4 (Jul)  → Deployment packaging
 | v1.3 | 2026-03-18 | Phase 2 complete. question_patterns.md (15 templates) created. TC-005 through TC-010 added (Android AP, EV BMS, Wi-Fi 7, PCIe Gen5, true Green audio DSP, video codec). 10-case acceptance test: 100/100 Pass, 0 Partial, 0 Fail. Phase 2 closed. |
 | v1.4 | 2026-03-18 | Phase 3 complete. SKILL.md updated with structural anomaly signal list, evidence inventory protocol, incomplete input handling rules, and confidence-level classification. TC-011 (incomplete input — Stratos-RF), TC-012 (technical-only — Ironclad-DDR), TC-013 (adversarially sanitized — Apex-ML) added. 40/40 Pass across all edge case scenarios. Phase 3 closed. |
 | v1.5 | 2026-03-18 | Phase 4 complete. TC-014 (Jira CSV — Crestline-HPC), TC-015 (PowerPoint-to-text — Eon-AI), TC-016 (email thread — Typhoon-5G) added. README.md rewritten as bilingual operational guide for Henry's team (cadence, document collection, submission instructions, output module guide). evaluation_rubric.md expanded to 12 categories with scoring-without-domain-expertise preamble and inter-rater reliability guidance. All three format test cases passed structural validation. Phase 4 closed. |
+| v1.6 | 2026-03-18 | Self-adjustment addendum. SKILL.md Step 0 (Domain Inference and Manager Calibration) added. CALIBRATE.md meta-skill created. manager_profiles/henry.md starter profile created. tools/calibrate.sh created. tools/analyze_pptx.sh and tools/markitdown_analyze.sh updated with --manager flag and profile injection. AGENTS.md and ROADMAP.md updated to document the self-adjustment system. |

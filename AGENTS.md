@@ -81,9 +81,36 @@ Located in `tests/test_cases/` — 16 cases across 4 phases:
 ## Document Preprocessing Tools
 Located in `tools/` — convert real-format inputs before submission:
 
-- `tools/analyze_pptx.sh` — End-to-end pipeline: .pptx → extract text → gemini-cli King's Hand report. Uses LibreOffice (zero extra installs) or python-pptx if available. Usage: `./tools/analyze_pptx.sh file.pptx`
-- `tools/markitdown_analyze.sh` — Multi-format pipeline: .pdf/.docx/.xlsx/.pptx → Markdown → gemini-cli report. Usage: `./tools/markitdown_analyze.sh file.pdf` (requires `pip install markitdown`)
+- `tools/analyze_pptx.sh` — End-to-end pipeline: .pptx → extract text → gemini-cli King's Hand report. Supports `--manager NAME` for profile injection. Usage: `./tools/analyze_pptx.sh file.pptx [--manager henry]`
+- `tools/markitdown_analyze.sh` — Multi-format pipeline: .pdf/.docx/.xlsx/.pptx → Markdown → gemini-cli report. Supports `--manager NAME`. Usage: `./tools/markitdown_analyze.sh file.pdf [--manager henry]` (requires `pip install markitdown`)
 - `tools/pptx_to_text.py` — Python extractor for structured .pptx → [SLIDE N] formatted text for manual submission. Usage: `python3 tools/pptx_to_text.py file.pptx` (requires `pip install python-pptx`)
+
+## Self-Adjustment / Domain Calibration
+The King's Hand adapts to any domain and any manager without manual reconfiguration.
+
+**How it works:**
+1. On every analysis, SKILL.md Step 0 infers the domain from the submitted documents (vocabulary, titles, metrics) and constructs a domain-equivalent framework mapping Hard Constraint, Patch Pattern, Irreversible Milestone, Trade-Off Axes, Tier-1 Relationship, and Blame Transfer Seam.
+2. If a Manager Profile is prepended to the input, Step 0A applies the manager's vocabulary mappings, priority weights, and question style preferences directly.
+3. After each session, run `tools/calibrate.sh` to distill what was learned into an updated Manager Profile that enriches future sessions.
+
+**Files:**
+- `skills/the-kings-hand/CALIBRATE.md` — Meta-skill invoked by calibrate.sh; reads a session transcript and produces a structured Manager Profile
+- `manager_profiles/[name].md` — Per-manager profile: domain context, vocabulary table, priorities, calibration rules, historical patterns, session log
+- `tools/calibrate.sh` — Updates a Manager Profile from a session transcript: `./tools/calibrate.sh --manager henry --session session.txt`
+
+**Usage cycle:**
+```
+# Week 1: first session (no profile yet)
+./tools/analyze_pptx.sh weekly_report.pptx
+
+# After session: calibrate from the conversation transcript
+./tools/calibrate.sh --manager henry --session session_transcript.txt
+
+# Week 2+: analysis uses manager profile automatically
+./tools/analyze_pptx.sh weekly_report.pptx --manager henry
+```
+
+**Starter profile:** `manager_profiles/henry.md` — pre-seeded from Phases 1–4 test suite calibration with full IC design domain vocabulary, priorities, and historical patterns.
 
 ## Compliance
 Machine-readable formatting rules in `compliance/output_rules.json`.

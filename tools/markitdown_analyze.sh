@@ -38,11 +38,13 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 INPUT_FILE=""
 EXTRACT_ONLY=false
 OUTPUT_FILE=""
+MANAGER_NAME=""
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --extract-only) EXTRACT_ONLY=true; shift ;;
         --output|-o)    OUTPUT_FILE="$2"; shift 2 ;;
+        --manager|-m)   MANAGER_NAME="$2"; shift 2 ;;
         --help|-h)
             sed -n '2,/^# REQUIRES/{ /^# REQUIRES/d; s/^# \{0,3\}//; p }' "$0"
             exit 0
@@ -101,6 +103,31 @@ echo "[markitdown_analyze] Extracted $LINE_COUNT lines." >&2
 if [[ "$EXTRACT_ONLY" == true ]]; then
     cat "$EXTRACTED_FILE"
     exit 0
+fi
+
+# ─── Manager profile injection ───────────────────────────────────────────────
+
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+if [[ -n "$MANAGER_NAME" ]]; then
+    MANAGER_SLUG="$(echo "$MANAGER_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')"
+    PROFILE_PATH="$REPO_ROOT/manager_profiles/$MANAGER_SLUG.md"
+    if [[ -f "$PROFILE_PATH" ]]; then
+        COMBINED_FILE="$TMPDIR_WORK/with_profile.txt"
+        {
+            cat "$PROFILE_PATH"
+            echo ""
+            echo "════════════════════════════════════════════════════════════════════════════════"
+            echo "PROJECT DOCUMENTS FOR ANALYSIS:"
+            echo "════════════════════════════════════════════════════════════════════════════════"
+            echo ""
+            cat "$EXTRACTED_FILE"
+        } > "$COMBINED_FILE"
+        EXTRACTED_FILE="$COMBINED_FILE"
+        echo "[markitdown_analyze] Manager profile injected: $PROFILE_PATH" >&2
+    else
+        echo "[markitdown_analyze] WARNING: No profile found for '$MANAGER_NAME' at $PROFILE_PATH" >&2
+    fi
 fi
 
 # ─── Pipe to gemini-cli King's Hand ──────────────────────────────────────────

@@ -7,11 +7,22 @@
 #
 # USAGE:
 #   ./tools/analyze_pptx.sh presentation.pptx
+#   ./tools/analyze_pptx.sh presentation.pptx --manager henry
+#   ./tools/analyze_pptx.sh presentation.pptx --manager henry --output report.md
 #   ./tools/analyze_pptx.sh presentation.pptx --output report.md
 #   ./tools/analyze_pptx.sh presentation.pptx --extract-only
 #   ./tools/analyze_pptx.sh presentation.pptx --extractor python
 #   ./tools/analyze_pptx.sh presentation.pptx --extractor soffice
 #   ./tools/analyze_pptx.sh presentation.pptx --extractor markitdown
+#
+# MANAGER PROFILE (--manager NAME):
+#   If a Manager Profile exists at manager_profiles/[NAME].md, it is
+#   prepended to the extracted document before analysis. The King's Hand
+#   Step 0 picks up the profile and calibrates domain vocabulary, priority
+#   weighting, and question style to that specific manager.
+#
+#   After each session, run tools/calibrate.sh to update the profile.
+#   The profile becomes richer with each session.
 #
 # EXTRACTORS (choose with --extractor):
 #   python      Uses python-pptx for structured extraction (recommended for
@@ -55,6 +66,7 @@ EXTRACTOR="auto"
 EXTRACT_ONLY=false
 OUTPUT_FILE=""
 INCLUDE_NOTES=false
+MANAGER_NAME=""
 
 usage() {
     sed -n '/^# USAGE/,/^# DEFAULT/{ /^# DEFAULT/d; s/^# \{0,3\}//; p }' "$0"
@@ -67,6 +79,7 @@ while [[ $# -gt 0 ]]; do
         --extract-only) EXTRACT_ONLY=true; shift ;;
         --output|-o)    OUTPUT_FILE="$2"; shift 2 ;;
         --notes)        INCLUDE_NOTES=true; shift ;;
+        --manager|-m)   MANAGER_NAME="$2"; shift 2 ;;
         --help|-h)      usage ;;
         -*)             echo "Unknown option: $1" >&2; usage ;;
         *)
@@ -222,7 +235,30 @@ esac
 LINE_COUNT="$(wc -l < "$EXTRACTED_TEXT_FILE")"
 echo "[analyze_pptx] Extracted $LINE_COUNT lines of text." >&2
 
-# ─── Output mode: extract only ───────────────────────────────────────────────
+# ─── Manager profile injection ───────────────────────────────────────────────
+
+if [[ -n "$MANAGER_NAME" ]]; then
+    MANAGER_SLUG="$(echo "$MANAGER_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')"
+    PROFILE_PATH="$REPO_ROOT/manager_profiles/$MANAGER_SLUG.md"
+    if [[ -f "$PROFILE_PATH" ]]; then
+        # Prepend profile to extracted text — Step 0 in SKILL.md will consume it
+        COMBINED_FILE="$TMPDIR_WORK/with_profile.txt"
+        {
+            cat "$PROFILE_PATH"
+            echo ""
+            echo "════════════════════════════════════════════════════════════════════════════════"
+            echo "PROJECT DOCUMENTS FOR ANALYSIS:"
+            echo "════════════════════════════════════════════════════════════════════════════════"
+            echo ""
+            cat "$EXTRACTED_TEXT_FILE"
+        } > "$COMBINED_FILE"
+        EXTRACTED_TEXT_FILE="$COMBINED_FILE"
+        echo "[analyze_pptx] Manager profile injected: $PROFILE_PATH" >&2
+    else
+        echo "[analyze_pptx] WARNING: No profile found for manager '$MANAGER_NAME' at $PROFILE_PATH" >&2
+        echo "[analyze_pptx]          Run: ./tools/calibrate.sh --manager $MANAGER_SLUG --session session.txt" >&2
+    fi
+fi
 
 if [[ "$EXTRACT_ONLY" == true ]]; then
     cat "$EXTRACTED_TEXT_FILE"
