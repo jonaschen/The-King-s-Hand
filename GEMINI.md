@@ -24,7 +24,7 @@ Based on `THE_KING_S_HAND_DEV_PLAN.md`, the intended structure is:
 - `AGENTS.md`: System manifest and entry point.
 
 ## Development Status
-The project has completed all four phases (2026-03-18). The system is ready for deployment in Henry's weekly review workflow.
+The project has completed all four phases (2026-03-18). The system is ready for deployment in the executive's weekly review workflow.
 - [x] Conceptual README and Strategy Definition.
 - [x] Detailed Development Plan (`THE_KING_S_HAND_DEV_PLAN.md`).
 - [x] Roadmap (`ROADMAP.md`).

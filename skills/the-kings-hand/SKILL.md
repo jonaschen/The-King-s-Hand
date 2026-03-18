@@ -269,7 +269,7 @@
     compressing the project or amplifying internal risk
 
     MODULE 5 — 國王的靈魂三問 (The King's Three Soul-Searching Questions)
-    Three clearly labeled questions for Henry to ask in the review meeting:
+    Three clearly labeled questions for the executive to ask in the review meeting:
     [Defensive/Accountability]: attacks worst current risk, demands Plan B
     [Strategic/Scale-Out]: challenges reuse across product lines
     [Strategic/Ecosystem Moat]: challenges long-term lock-in and ecosystem value

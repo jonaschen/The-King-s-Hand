@@ -24,7 +24,7 @@ In complex matrix organizations, project reports are often "Green" on the outsid
 
 ---
 
-## Usage Guide for Henry's Team
+## Usage Guide for the Executive Team
 
 This section is written for the executive team and the executive assistant preparing documents for The King's Hand. No technical background is required to operate the system.
 
@@ -206,7 +206,7 @@ This is by design. A suspected finding with an evidence gap is more valuable tha
 
 ---
 
-## 使用指南（給 Henry 的團隊）
+## 使用指南（給主管團隊）
 
 本節專為執行團隊及負責準備文件的執行助理撰寫，無需任何技術背景即可操作本系統。
 

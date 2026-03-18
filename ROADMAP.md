@@ -120,11 +120,11 @@ Phase 4 (Jul)  → Deployment packaging
 
 ## Phase 4 — Integration and Deployment Readiness
 **Target:** July 2026 — **Complete (2026-03-18)**
-**Goal:** Package for weekly use in Henry's pre-review-meeting workflow with real-format documents.
+**Goal:** Package for weekly use in the executive's pre-review-meeting workflow with real-format documents.
 
 ### Deliverables
 - [x] Test with real-format inputs: Jira CSV (TC-014), PowerPoint-to-text (TC-015), email threads (TC-016) — no preprocessing required
-- [x] Update `README.md` for Henry's team: cadence recommendation, document collection guide, submission instructions, output module guide, bilingual (English + 繁體中文)
+- [x] Update `README.md` for the executive team: cadence recommendation, document collection guide, submission instructions, output module guide, bilingual (English + 繁體中文)
 - [x] Finalize `tests/evaluation_rubric.md` — expanded to 12 categories, scoring-without-domain-expertise preamble, inter-rater reliability guidance
 - [x] Document cadence recommendation: weekly cadence, submitted the day before cross-functional review meetings (in README.md)
 
