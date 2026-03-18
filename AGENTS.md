@@ -78,5 +78,12 @@ Located in `tests/test_cases/` — 16 cases across 4 phases:
 - `project_eon_ai_slides.md` (TC-015) — PowerPoint-to-text export
 - `project_typhoon_5g_email.md` (TC-016) — Email thread with internal/external split
 
+## Document Preprocessing Tools
+Located in `tools/` — convert real-format inputs before submission:
+
+- `tools/analyze_pptx.sh` — End-to-end pipeline: .pptx → extract text → gemini-cli King's Hand report. Uses LibreOffice (zero extra installs) or python-pptx if available. Usage: `./tools/analyze_pptx.sh file.pptx`
+- `tools/markitdown_analyze.sh` — Multi-format pipeline: .pdf/.docx/.xlsx/.pptx → Markdown → gemini-cli report. Usage: `./tools/markitdown_analyze.sh file.pdf` (requires `pip install markitdown`)
+- `tools/pptx_to_text.py` — Python extractor for structured .pptx → [SLIDE N] formatted text for manual submission. Usage: `python3 tools/pptx_to_text.py file.pptx` (requires `pip install python-pptx`)
+
 ## Compliance
 Machine-readable formatting rules in `compliance/output_rules.json`.

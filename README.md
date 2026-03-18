@@ -52,9 +52,59 @@ For each project under review, collect as many of the following documents as ava
 | **Cross-functional meeting notes** | Minutes or action items from the most recent engineering sync | Where disagreements between teams appear in plain language |
 | **Customer communications** | Forwarded emails or FAE escalation summaries | Tier-1 customer escalations are the strongest Red signal |
 | **Internal engineering reports** | Verification closure reports, characterization summaries, DV sign-off docs | Technical documents that PMs rarely include in upward reports |
-| **PowerPoint presentation** | Slide deck exported to plain text (see instructions below) | Program reviews often contain technical data slides that contradict the executive summary |
+| **PowerPoint presentation** | Use the automated tools below — no manual export required | Program reviews often contain technical data slides that contradict the executive summary |
+| **PDF / Word / Excel** | Use the automated tools below | Many organizations distribute reports in PDF; Excel may contain Jira-like data exports |
 
 **Minimum viable submission:** A weekly PM report alone is sufficient to produce a useful output. The system will flag what is missing and adjust its confidence levels accordingly.
+
+---
+
+### Automated Document Processing Tools
+
+The `tools/` directory contains scripts that convert PowerPoint and other formats directly to a King's Hand report — no manual copy-paste required.
+
+#### One-command end-to-end analysis (recommended)
+
+```bash
+# Analyze a PowerPoint deck — produces a full 5-module report
+./tools/analyze_pptx.sh quarterly_review.pptx
+
+# Save the report to a file
+./tools/analyze_pptx.sh quarterly_review.pptx --output report_week11.md
+
+# Analyze PDF, Word, or Excel (install markitdown first)
+pip install markitdown
+./tools/markitdown_analyze.sh project_review.pdf
+./tools/markitdown_analyze.sh status_report.docx
+```
+
+These scripts extract text from the file and pipe it directly to the King's Hand gemini-cli agent. The full five-module report in Traditional Chinese is produced automatically.
+
+#### Extract text only (for pasting into Claude or another interface)
+
+```bash
+# Install python-pptx first (better extraction quality than LibreOffice)
+pip install python-pptx
+
+# Extract to stdout
+python3 tools/pptx_to_text.py quarterly_review.pptx
+
+# Extract to file
+python3 tools/pptx_to_text.py quarterly_review.pptx --output extracted.txt
+
+# Include speaker notes
+python3 tools/pptx_to_text.py quarterly_review.pptx --notes
+```
+
+#### Tool selection guide
+
+| Tool | When to use | Dependencies |
+|---|---|---|
+| `analyze_pptx.sh` | .pptx → full report, one command | `soffice` (already installed); optionally `pip install python-pptx` for better extraction |
+| `markitdown_analyze.sh` | PDF, Word, Excel, or mixed formats → full report | `pip install markitdown` |
+| `pptx_to_text.py` | Extract .pptx text for pasting manually | `pip install python-pptx` |
+
+The `analyze_pptx.sh` script works immediately with no installation (uses LibreOffice which is already present). Installing `python-pptx` improves slide structure and table formatting.
 
 ---
 
@@ -67,7 +117,7 @@ Copy and paste the text directly. Any format is acceptable — plain text, Markd
 In Jira: go to the project board → select **Issues** → use the **Export** function → choose **Export Excel CSV (all fields)** or **Export CSV (current fields)** depending on your Jira version. Do not open or edit the CSV. Paste its raw contents into the submission. The system reads the raw CSV format directly.
 
 #### PowerPoint Slide Deck
-Open the presentation in PowerPoint. Go to **File → Save As → Plain Text (.txt)**. Paste the contents of the saved text file. Alternatively, select all text in each slide manually and copy-paste. Preserve slide titles and the order of slides. Speaker notes are optional but useful if available.
+Use `./tools/analyze_pptx.sh` for automated processing (see above). If manual extraction is needed: open the presentation in PowerPoint, go to **File → Save As → Plain Text (.txt)**, and paste the text file contents. Preserve slide titles and the order of slides.
 
 #### Email Threads
 Forward the email thread to a text file, or copy the full email chain including **From**, **To**, **Date**, and **Subject** headers. Preserve the thread chronology. If an email has been forwarded internally with additional commentary, include all layers — the internal comments are often the most valuable input.
