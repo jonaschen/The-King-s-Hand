@@ -48,6 +48,16 @@
         "title_zh": "跨層級協作摩擦力與風險",
         "title_en": "Cross-Layer Collaboration Friction and Risk",
         "format": "narrative_prose_with_table",
+        "incomplete_evidence_opening": {
+          "required_when": "Any standard evidence source (Jira, Git log, PM report, meeting notes) is absent",
+          "label_zh": "證據清單與分析侷限",
+          "label_en": "Evidence Inventory and Analytical Limitations",
+          "must_contain": [
+            "List of missing document types by name",
+            "Description of what each missing source would have revealed",
+            "Confidence level for each finding: Confirmed / Suspected / Undetectable without [source]"
+          ]
+        },
         "required_content": [
           "Performance model gap between hardware and software teams",
           "Workaround exposure with PPA cost for each",
@@ -55,7 +65,8 @@
         ],
         "required_table": {
           "name": "Friction hotspot summary",
-          "columns": ["Conflict Type", "Teams Involved", "Technical Debt Consequence"]
+          "standard_columns": ["Conflict Type", "Teams Involved", "Technical Debt Consequence"],
+          "incomplete_evidence_columns": ["Conflict Type", "Teams Involved", "Technical Debt Consequence", "Evidence Confidence"]
         }
       },
       {
