@@ -1,7 +1,7 @@
 # ROADMAP.md — The King's Hand
 
 **Project Start:** 2026-03-16
-**Specification Version:** v2.0 (see `THE_KING_S_HAND_DEV_PLAN.md`, `MAKE_EVERYBODY_KING_OR_QUEEN.md`)
+**Specification Version:** v2.1 (see `THE_KING_S_HAND_DEV_PLAN.md`, `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.1)
 **Current Status:** Original Phases 1–4 complete (2026-03-18). Generalization initiative launched (2026-03-31). Entering Evolution Phase 0.
 
 ---
@@ -248,23 +248,58 @@ Evo Phase 5  → Community knowledge sharing & multi-user collaboration
 
 | Item | Description |
 |:-----|:------------|
-| `skills/universal-kings-hand/SKILL.md` | Generalized system prompt. Five-step CoT parameterized — specific instructions populated by domain framework |
+| `skills/universal-kings-hand/SKILL.md` | Generalized system prompt. CoT parameterized (Steps 0–0.5–1–2–3–4–5) with knowledge depth assessment; specific instructions populated by domain framework |
 | `skills/universal-kings-hand/references/framework_templates.md` | Six-element framework example mappings for ≥ 5 domains |
 | `skills/universal-kings-hand/references/domain_inference_signals.md` | Multi-signal domain inference rules (terminology density, job titles, KPI types, document structure) |
 | `skills/universal-kings-hand/domain_packs/ic_design/` | Original four reference files relocated into domain pack directory (no content changes) |
 | `skills/universal-kings-hand/domain_packs/_template/` | Blank domain pack template: `value_chain_map.md`, `patch_patterns.md`, `override_triggers.md`, `euphemism_dictionary.md` |
 | IC design 16-case regression | All original test cases pass at 100% on the refactored system |
 
-### Generalized Five-Step CoT
+### Generalized Chain of Thought (with Knowledge Depth Assessment)
 
-| Step | Original (IC Design) | Generalized |
-|:-----|:---------------------|:------------|
-| Step 0 | Domain inference & manager calibration | Unchanged — already generic |
-| Step 1 | Deconstruction & noise reduction | **Deconstruction & noise reduction:** Strip organizational polish, extract factual project state, flag anomaly signals defined in domain framework |
-| Step 2 | Spectrum positioning & empowerment | **Value chain positioning:** Locate the project within the domain's value chain; answer "why does this matter" |
-| Step 3 | Contradiction detection & root cause | **Contradiction detection:** Systematically search via six-element framework — claims vs. evidence gaps, hidden patch costs, blame transfer traces |
-| Step 4 | Market ripple extrapolation | **Impact extrapolation:** Translate internal issues to external consequences — Tier-1 relationship threats, irreversible milestone impact, trade-off axis degradation |
-| Step 5 | The King's Three Questions | **The Three Soul Questions:** Structure unchanged — Defensive/Accountability, Scale-Out, Ecosystem Moat. Content populated by domain knowledge |
+**Structural Design Principle: Top-Down / Bottom-Up Dynamic Ratio**
+
+The King's Hand in IC design uses near-pure Top-Down reasoning — the system hunts for known anomaly patterns using mature frameworks built over 16 test cases. But in generalized mode, dynamically constructed frameworks lack this depth. A just-inferred six-element framework and a battle-tested one are fundamentally different. If the system ignores this gap, it will hallucinate patterns that don't exist in unfamiliar domains and miss critical signals the framework doesn't define.
+
+The solution: **Step 0.5 (Knowledge Depth Assessment)** runs immediately after Step 0 and before Step 1. Its result determines the Top-Down vs Bottom-Up ratio for all subsequent steps.
+
+| Step | Name | Core Task |
+|:-----|:-----|:----------|
+| Step 0 | Domain inference & manager calibration | Identify domain, construct six-element framework, load User Profile |
+| **Step 0.5** | **Knowledge Depth Assessment** | Assess framework knowledge depth, determine Top-Down / Bottom-Up ratio, record in `<thinking>` |
+| Step 1 | Deconstruction & noise reduction | Per depth level: "keyword hunting" (L3) or "full-text anomaly detection" (L1) |
+| Step 2 | Value chain positioning | Per depth level: "precise positioning" (L3) or "inductive construction" (L1) |
+| Step 3 | Contradiction detection | Per depth level: "framework-driven search" (L3) or "contradiction surfacing" (L1) |
+| Step 4 | Impact extrapolation | Per depth level: "precise translation" (L3) or "conservative extrapolation" (L1) |
+| Step 5 | The Three Soul Questions | Per depth level: "precision strikes" (L3) or "exploratory questioning" (L1) |
+
+**Knowledge Depth Assessment Dimensions:**
+
+| Dimension | Assessment Question | Depth Indicator |
+|:----------|:-------------------|:----------------|
+| Framework source | Six-element framework loaded from verified Domain Pack, or inferred on-the-fly? | Pack = thick; inferred = thin |
+| Patch pattern library completeness | How many concrete patch pattern instances for this domain? | ≥ 5 named patterns = thick; abstract only = thin |
+| Euphemism dictionary coverage | How many "corporate speak → ground truth" mappings? | ≥ 10 = thick; < 3 = thin |
+| Override trigger rule specificity | Are override conditions quantified and verifiable? | Quantified thresholds = thick; qualitative only = thin |
+| Historical calibration depth | Has domain been calibrated through user feedback? | ≥ 3 calibrations = thick; first contact = thin |
+
+**Knowledge Depth Levels:**
+
+| Level | Condition | TD:BU Ratio | System Behavior |
+|:------|:----------|:------------|:----------------|
+| **L3 — Deep** | Complete Domain Pack + ≥ 3 calibrations | 70:30 | Full framework-driven hunting. High confidence. Assertive tone. |
+| **L2 — Moderate** | Partial Domain Pack or ≥ 5 same-domain interactions | 50:50 | Framework hunting and data surfacing in parallel. Conclusions annotated with confidence. Report distinguishes "framework-driven findings" from "data-surfaced findings." |
+| **L1 — Thin** | Only inferred framework, no Pack, no calibration history | 20:80 | Data-led analysis. Primary task: let the document speak — flag all anomaly patterns, contradictions, tone shifts, even if meaning is uncertain. Framework serves as output skeleton only, not hunting guide. Cautious tone ("evidence suggests" not "system determines"). Soul questions favor open-ended exploration over precision strikes. |
+
+**Per-Step Behavior at L3 (Deep) vs L1 (Thin):**
+
+| Step | L3 Deep (IC design current state) | L1 Thin (unfamiliar domain, first contact) |
+|:-----|:-----------------------------------|:--------------------------------------------|
+| Step 1 | Scan with known anomaly keyword library | **No presuppositions.** Full-text anomaly detection: flag all tone shifts (optimistic→vague), all number-vs-qualifier contradictions, all passive voice hiding actors ("was resolved"→by whom?), all timeline gaps |
+| Step 2 | Precise positioning via known value chain map | **Infer value chain from document.** Identify all stakeholders, deliverables, dependencies; construct draft value chain |
+| Step 3 | Systematic search for known patterns via framework | **Target contradictions themselves, not contradiction types.** Paragraph-by-paragraph claim-vs-evidence comparison. Execute "absence signal analysis": what is deliberately not mentioned? Which stakeholders are never referenced? Which time periods have no updates? |
+| Step 4 | Precise translation to known commercial consequences | **Conservative extrapolation.** Only infer from stakeholders and time pressures explicitly present in document; introduce no external assumptions |
+| Step 5 | All three questions are precision strikes with specific numbers and worst-case scenarios | Defensive/Accountability question fires normally (directly sourced from document contradictions). Scale-Out and Ecosystem Moat questions shift to **exploratory mode** — help user clarify these dimensions rather than accuse |
 
 ### Generalized Five-Module Report
 
@@ -275,6 +310,15 @@ Evo Phase 5  → Community knowledge sharing & multi-user collaboration
 | M3 | 跨層級協作摩擦力與風險 | **跨職能摩擦與隱性風險** | Friction identified via Blame Transfer Seam from six-element framework |
 | M4 | 客戶/市場連動效應 | **外部連動效應** | Impact targets = Tier-1 Relationships; timeline = Irreversible Milestones |
 | M5 | 國王的靈魂三問 | **靈魂三問** | Three-type structure unchanged; question content populated by domain knowledge |
+
+**Knowledge Depth Impact on Report Confidence:**
+
+| Module | L3 Deep | L1 Thin |
+|:-------|:--------|:--------|
+| M2 Status | Direct override, assertive: "System determines 🔴 Red" | Evidence presented with judgment space: "Based on the following contradictions, official status may be overestimated. System leans 🟡 Yellow, but this judgment is based on limited domain knowledge — recommend self-assessment using evidence below" |
+| M3 Friction | Precisely names patch patterns and responsibility attribution, quantifies hidden costs | Lists all detected anomaly signals and contradictions, labeled as "data-surfaced patterns" not "confirmed risks." Does not force-fit into specific patch patterns |
+| M5 Questions | All three are precision strikes with specific numbers and worst-case scenarios | Q1 (Defensive/Accountability) fires normally based on clearest contradiction; Q2–Q3 shift to open-ended exploration guiding user to clarify these dimensions |
+| Report tail | No additional notes | **"Analysis Foundation Statement"** appended: explicitly states knowledge depth level, framework source, which conclusions are high-confidence vs exploratory, and what additional information would improve next analysis |
 
 ### Target Directory Structure
 
@@ -315,6 +359,7 @@ skills/universal-kings-hand/
 | IC design regression | 16/16 test cases pass, output quality no degradation | |
 | Core/domain-pack separation | System runs in generic mode when `domain_packs/ic_design/` is removed (lower quality but no errors) | |
 | Framework template coverage | ≥ 5 domains with six-element framework examples | |
+| Step 0.5 implementation | Knowledge Depth Assessment produces correct L1/L2/L3 rating in `<thinking>` block | |
 
 ---
 
@@ -327,8 +372,10 @@ skills/universal-kings-hand/
 | Item | Description |
 |:-----|:------------|
 | Domain inference engine | Full SKILL.md Step 0 implementation with multi-signal fusion (user statement > profile > terminology density > job titles > KPI types > document structure) |
+| Knowledge Depth Assessment (Step 0.5) | Self-assessment producing L1/L2/L3 rating; controls Top-Down vs Bottom-Up ratio across Steps 1–5 |
 | Dynamic framework constructor | Real-time six-element framework construction in `<thinking>` block |
-| Generalized five-module report | Module titles and content guidelines dynamically adjusted per domain |
+| Generalized five-module report | Module titles, content guidelines, and confidence calibration dynamically adjusted per domain and knowledge depth level |
+| Analysis Foundation Statement | L1-mode reports include explicit declaration of knowledge depth, framework source, confidence distinctions, and recommendations for improving next analysis |
 | Cross-domain test suite | ≥ 3 non-IC-design domains with complete test cases and expected output baselines |
 | Software startup domain pack | First non-IC-design complete domain knowledge pack (example + validation) |
 
@@ -355,6 +402,9 @@ skills/universal-kings-hand/
 | Zero-config usability | Useful reports produced for 3 test domains with no Manager Profile and no Domain Pack | |
 | Domain inference accuracy | ≥ 90% on 10 blind-test documents across domains | |
 | Six-element framework completeness | All 6 elements populated and domain-plausible (expert review) | |
+| Knowledge depth self-assessment accuracy | IC design documents → L3; unfamiliar domain first contact → L1; partial Domain Pack → L2 (at least one test case per level) | |
+| L1 mode behavioral correctness | In L1 thin mode: system does not force-fit frameworks; report includes "Analysis Foundation Statement"; Q2–Q3 of soul questions are exploratory not precision strikes | |
+| L3-vs-L1 output quality difference is reasonable | L3 output assertive and precise; L1 output cautious but still valuable — difference reflects knowledge depth, not system capability | |
 | Soul questions cross-domain validity | All three questions pass "unanswerable with reassurance" test in non-IC domains | |
 | IC design zero regression | 16/16 regression pass | |
 
@@ -389,11 +439,37 @@ skills/universal-kings-hand/
 - **Recency over Seniority:** `recent behavior > early behavior`, `explicit statement > inferred preference`
 - **Confidence Decay:** Preferences not re-validated after N interactions have their confidence level gradually reduced
 
+### Knowledge Sedimentation Loop (Tier 1 ↔ Tier 2 Structural Relationship)
+
+All Tier 2 mechanisms — preference learning, memory maintenance, skill expansion — serve a single purpose: **deposit Bottom-Up surfaced knowledge into Top-Down usable frameworks, driving knowledge depth from L1 toward L3.**
+
+```
+Interactions 1-3 (L1 Thin)
+  ├─ Bottom-Up dominant: data surfaces anomaly patterns
+  ├─ System produces exploratory reports
+  └─ CALIBRATE.md extracts: domain terms, user focus areas, anomaly signals
+
+Interactions 4-8 (L2 Moderate)
+  ├─ Candidate knowledge passes quality gates, upgrades to confirmed
+  ├─ Patch pattern library gains concrete instances (not just abstractions)
+  ├─ Euphemism dictionary coverage rises
+  └─ Top-Down : Bottom-Up ratio approaches 50:50
+
+Interactions 9+ (toward L3 Deep)
+  ├─ Domain Pack accumulates sufficient verified knowledge
+  ├─ Override trigger rules gain quantified thresholds
+  ├─ Top-Down ratio increases; analysis precision and efficiency improve together
+  └─ System behavior converges on King's Hand IC design performance
+```
+
+**The generalized system is not a weakened King's Hand — it is the King's Hand in its youth.** Given sufficient interactions and calibration, it grows equally sharp in any domain. Step 0.5 ensures honesty throughout growth — the system never pretends maturity it hasn't earned.
+
 ### Acceptance Criteria
 
 | Check | Target | Result |
 |:------|:-------|:-------|
 | Preference match after 5 interactions | Report style significantly better aligned with user preferences (human evaluation) | |
+| Knowledge depth climbing | An L1 domain upgrades to L2 after ≥ 8 interactions; Step 0.5 self-assessment correctly reflects the upgrade | |
 | Cross-session memory consistency | Session N+1 correctly references knowledge from session N | |
 | Preference transparency | User can find all inferred preferences in Profile, descriptions are understandable | |
 | Knowledge expansion quality | Dynamically expanded knowledge introduces no errors or contradictions | |
@@ -491,8 +567,12 @@ skills/universal-kings-hand/
 | Zero-config usability | Useful report from unknown-domain document | Actionable output with no prior setup |
 | Domain inference | Correct domain identification | ≥ 90% on blind test set |
 | Framework completeness | Six elements populated and plausible | 100% expert-verified |
+| Knowledge depth self-assessment | Correct L1/L2/L3 rating | At least one test case per level |
+| L1 mode honesty | System does not force-fit frameworks; includes Analysis Foundation Statement | 100% on L1 test cases |
+| L3-vs-L1 quality gap | L3 assertive and precise, L1 cautious but valuable | Reasonable difference (expert review) |
 | Cross-domain question quality | Unanswerable with reassurance | 3/3 per case across domains |
 | IC design regression | No quality degradation | 16/16 test cases pass |
+| Knowledge depth climbing | L1 → L2 after ≥ 8 interactions | Step 0.5 correctly reflects upgrade |
 | Preference learning | Style match improvement over 5 interactions | Significant (human evaluation) |
 | Preference transparency | All inferences visible and editable | 100% |
 | Domain Pack auto-generation | Expert-reviewed accuracy | ≥ 80% |
@@ -524,3 +604,4 @@ skills/universal-kings-hand/
 | v1.5 | 2026-03-18 | Phase 4 complete. TC-014 (Jira CSV — Crestline-HPC), TC-015 (PowerPoint-to-text — Eon-AI), TC-016 (email thread — Typhoon-5G) added. README.md rewritten as bilingual operational guide for Henry's team (cadence, document collection, submission instructions, output module guide). evaluation_rubric.md expanded to 12 categories with scoring-without-domain-expertise preamble and inter-rater reliability guidance. All three format test cases passed structural validation. Phase 4 closed. |
 | v1.6 | 2026-03-18 | Self-adjustment addendum. SKILL.md Step 0 (Domain Inference and Manager Calibration) added. CALIBRATE.md meta-skill created. manager_profiles/henry.md starter profile created. tools/calibrate.sh created. tools/analyze_pptx.sh and tools/markitdown_analyze.sh updated with --manager flag and profile injection. AGENTS.md and ROADMAP.md updated to document the self-adjustment system. |
 | v2.0 | 2026-03-31 | Generalization initiative: "Make Everybody King or Queen." Added Evolution Phases 0–5 covering three tiers (Universal Adversarial Core, Continuous Evolution Engine, Proactive Intelligence). Defined generalized five-step CoT, five-module report, six-element domain framework, directory structure for `skills/universal-kings-hand/`, cross-domain test strategy, security & governance principles. Derived from `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.0. |
+| v2.1 | 2026-03-31 | Incorporated `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.1 updates: Step 0.5 Knowledge Depth Assessment (L1/L2/L3 levels controlling Top-Down vs Bottom-Up ratio), per-step behavior differences at each depth level, report confidence calibration (Analysis Foundation Statement at L1), knowledge sedimentation loop (Tier 1 ↔ Tier 2 structural relationship showing L1→L2→L3 progression), updated acceptance criteria for Evo Phases 0/1/2 and Generalization KPI Summary. |

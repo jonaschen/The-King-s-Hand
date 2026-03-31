@@ -7,20 +7,27 @@
 <a name="english"></a>
 ## English Version
 
-### Project Concept: Adversarial Intelligence for IC Design Executives
+### Project Concept: Adversarial Intelligence for Decision-Makers
 
-**The King's Hand** is a specialized AI Agent Skill Set designed for senior leadership (VP of Engineering, CEO) in top-tier fabless semiconductor companies. Inspired by the historical and fictional role of the "Hand of the King," this system acts as a cold, objective, and deeply technical Chief of Staff.
+**The King's Hand** is an AI Agent Skill Set that gives decision-makers adversarial intelligence about project health. Originally built for senior IC design executives, it is evolving into a **universal adversarial analysis system** that works across any domain — semiconductor, software startup, medical device, construction, finance, and beyond.
+
+Inspired by the historical and fictional role of the "Hand of the King," this system acts as a cold, objective Chief of Staff that serves truth, not comfort.
 
 #### The "Watermelon Effect"
-In complex matrix organizations, project reports are often "Green" on the outside (on track) but "Red" on the inside (in crisis). This is the **Watermelon Effect**. Project managers, under schedule pressure, often filter out technical risks, hardware-to-software blame transfers, and accumulating technical debt before they reach the executive level.
+In complex matrix organizations, project reports are often "Green" on the outside (on track) but "Red" on the inside (in crisis). This is the **Watermelon Effect**. It is not unique to semiconductors — it is the fate of every organization with layered reporting structures. The King's Hand exists to pierce through this corporate fog.
 
-**The King's Hand** exists to pierce through this corporate fog. It analyzes raw data—Jira logs, Git commits, and meeting notes—to surface the truth that doesn't make it into the official PowerPoint slides.
+It analyzes raw data — Jira logs, Git commits, meeting notes, status reports, email threads — to surface the truth that doesn't make it into the official slides.
 
 #### Key Capabilities
-- **Adversarial Analysis:** Detects hidden silicon errata being masked by firmware workarounds.
-- **PPA Quantification:** Calculates the real cost of software "optimizations" in terms of Power, Performance, and Area (PPA).
-- **Cross-Layer Friction Detection:** Identifies where hardware and software teams' assumptions have diverged.
-- **Strategic Arming:** Provides "The King's Three Soul-Searching Questions"—sharp, unanswerable questions that force accountability during review meetings.
+- **Adversarial Analysis:** Detects hidden problems being masked by short-term fixes and organizational euphemisms.
+- **Domain Self-Adaptation:** Automatically infers the domain from submitted documents, constructs a domain-specific analytical framework, and calibrates its confidence based on knowledge depth (L1 thin → L3 deep).
+- **Implicit Cost Quantification:** Calculates the real cost of workarounds along the domain's core trade-off axes (e.g., PPA in IC design, speed-vs-quality-vs-debt in software startups).
+- **Cross-Functional Friction Detection:** Identifies where different teams' assumptions have diverged and where blame transfer is occurring.
+- **Strategic Arming:** Provides "The Three Soul-Searching Questions" — sharp, unanswerable questions that force accountability during review meetings.
+
+#### Current State
+- **IC Design domain:** Fully operational with 16 verified test cases, complete domain knowledge pack, and battle-tested question patterns.
+- **Other domains:** Zero-config analysis available via automatic domain inference and dynamic framework construction. Quality improves progressively with each interaction (see `MAKE_EVERYBODY_KING_OR_QUEEN.md` for the generalization roadmap).
 
 ---
 
@@ -189,20 +196,27 @@ This is by design. A suspected finding with an evidence gap is more valuable tha
 <a name="中文"></a>
 ## 中文版本
 
-### 專案概念：專為 IC 設計高階主管打造的「敵對性情報系統」
+### 專案概念：為決策者打造的敵對性情報系統
 
-**「國王之手 (The King's Hand)」** 是一套為頂尖 Fabless 半導體公司高階主管（工程副總、CEO）量身打造的 AI 幕僚系統。其命名源於歷史與奇幻史詩中君主最親密的代理人與首席顧問。在系統設計中，它扮演著冷靜、客觀且具備深厚技術底蘊的「幕僚長 (Chief of Staff)」角色。
+**「國王之手 (The King's Hand)」** 是一套 AI 幕僚系統，為決策者提供專案健康度的敵對性情報。最初為 IC 設計高階主管打造，現正進化為**通用敵對性分析系統**——適用於半導體、軟體新創、醫療器材、營建工程、金融等任何領域。
+
+其命名源於歷史與奇幻史詩中「國王之手」的角色——一位冷靜、客觀的幕僚長，為真相服務，而非為安慰服務。
 
 #### 「西瓜效應」的終結者
-在複雜的矩陣組織中，專案報告往往呈現「外綠內紅」的**西瓜效應**：表面上進度超前，實則危機四伏。專案經理在時程壓力下，往往會過濾掉底層技術風險、硬體轉嫁軟體的責任推諉、以及不斷累積的技術債。
+在複雜的矩陣組織中，專案報告往往呈現「外綠內紅」的**西瓜效應**：表面上進度超前，實則危機四伏。西瓜效應不是半導體業的專利——它是所有存在層級彙報結構的組織的宿命。「國王之手」的使命是刺破這層資訊迷霧。
 
-**「國王之手」** 的使命是刺破企業內部的資訊迷霧。它直接分析原始資料（如 Jira 日誌、Git 提交紀錄、會議記錄），挖掘出那些永遠不會出現在官方簡報中的真實情況。
+它直接分析原始資料（Jira 日誌、Git 提交紀錄、會議記錄、狀態報告、郵件往來），挖掘出那些永遠不會出現在官方簡報中的真實情況。
 
 #### 核心能力
-- **敵對性分析：** 識破那些被封裝成「韌體修補」的硬體瑕疵 (Silicon Errata)。
-- **PPA 量化評估：** 精確計算軟體「優化」在功耗、性能與晶片面積 (PPA) 上付出的真實代價。
-- **跨層級協作摩擦監測：** 識別硬體團隊的假設與軟體團隊的執行現狀何時發生脫節。
-- **戰略武裝：** 提供「國王的靈魂三問」——在專案審查會議上，提供犀利且無法閃躲的問題，迫使團隊面對現實並負起責任。
+- **敵對性分析：** 偵測被短期修補與組織話術掩蓋的深層問題。
+- **領域自適應：** 自動從提交文件推斷領域、建構領域專用分析框架，並根據知識厚度（L1 淺薄 → L3 深厚）校準分析信心。
+- **隱性成本量化：** 沿領域核心取捨軸計算臨時修補的真實代價（IC 設計中為 PPA；軟體新創中為速度-品質-技術債）。
+- **跨職能摩擦監測：** 識別不同團隊的假設何時發生脫節、責任轉嫁在何處發生。
+- **戰略武裝：** 提供「靈魂三問」——犀利且無法閃躲的問題，迫使團隊在審查會議中面對現實。
+
+#### 目前狀態
+- **IC 設計領域：** 已全面運作，具備 16 個驗證測試案例、完整領域知識包、經實戰校準的提問模板。
+- **其他領域：** 透過自動領域推斷與動態框架建構提供零配置分析。品質隨每次互動持續提升（詳見 `MAKE_EVERYBODY_KING_OR_QUEEN.md` 通用化路線圖）。
 
 ---
 
@@ -261,6 +275,8 @@ This is by design. A suspected finding with an evidence gap is more valuable tha
 
 ## Technical Core / 技術核心
 
-- **Analysis Engine:** Five-module intelligence report (5-module intelligence report / 五大模組情報報告).
-- **Domain Focus:** Full semiconductor software stack (Bootloader to AI SDK).
-- **Goal:** Transform technical debt into executive accountability.
+- **Analysis Engine:** Five-module intelligence report with knowledge-depth-calibrated confidence (五大模組情報報告，依知識厚度校準信心等級).
+- **Reasoning Chain:** Steps 0 → 0.5 → 1 → 2 → 3 → 4 → 5 — domain inference, knowledge depth assessment, deconstruction, value chain positioning, contradiction detection, impact extrapolation, soul questions.
+- **Domain Framework:** Six-element universal framework — Hard Constraint, Patch Pattern, Irreversible Milestone, Trade-off Axes, Tier-1 Relationship, Blame Transfer Seam.
+- **IC Design Domain Pack:** Full semiconductor software stack (Bootloader to AI SDK) with 16 verified test cases.
+- **Goal:** Transform hidden risks into executive accountability — in any domain.
