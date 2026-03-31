@@ -1,20 +1,52 @@
 # ROADMAP.md — The King's Hand
 
 **Project Start:** 2026-03-16
-**Specification Version:** v1.0 (see `THE_KING_S_HAND_DEV_PLAN.md`)
-**Current Status:** Phase 4 — complete and accepted (2026-03-18). All four phases complete. System ready for deployment.
+**Specification Version:** v2.0 (see `THE_KING_S_HAND_DEV_PLAN.md`, `MAKE_EVERYBODY_KING_OR_QUEEN.md`)
+**Current Status:** Original Phases 1–4 complete (2026-03-18). Generalization initiative launched (2026-03-31). Entering Evolution Phase 0.
 
 ---
 
 ## Overview
 
-Four sequential phases over four months. Each phase gates the next: Phase 2 quality calibration work is meaningless without Phase 1's prompt foundation; Phase 3 robustness testing requires Phase 2's tone calibration to be stable first.
+### Original Delivery (Complete)
+
+Four sequential phases delivered in March 2026. The King's Hand is deployed and operational for IC design domain analysis.
 
 ```
-Phase 1 (Apr)  → Core prompt + knowledge base
-Phase 2 (May)  → Question quality + tone calibration
-Phase 3 (Jun)  → Edge case robustness
-Phase 4 (Jul)  → Deployment packaging
+Phase 1 (Complete)  → Core prompt + knowledge base
+Phase 2 (Complete)  → Question quality + tone calibration
+Phase 3 (Complete)  → Edge case robustness
+Phase 4 (Complete)  → Deployment packaging
+Self-Adjustment     → Domain inference, manager profiles, calibration engine
+```
+
+### Generalization: Make Everybody King or Queen
+
+Six evolution phases to transform The King's Hand from an IC-design-specific tool into a universal adversarial analysis system. See `MAKE_EVERYBODY_KING_OR_QUEEN.md` for the full specification. Each phase produces independently usable value, layered across three tiers:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  Tier 3: Proactive Intelligence (Phase 4–5)                 │
+│  — Trend detection, scheduled analysis, cross-project       │
+│    pattern matching, community knowledge sharing             │
+├─────────────────────────────────────────────────────────────┤
+│  Tier 2: Continuous Evolution Engine (Phase 2–3)            │
+│  — Cross-session memory, implicit preference learning,      │
+│    dynamic skill expansion, multi-domain validation          │
+├─────────────────────────────────────────────────────────────┤
+│  Tier 1: Universal Adversarial Core (Phase 0–1)             │
+│  — Architecture refactor, domain inference, dynamic          │
+│    framework construction, zero-config startup               │
+└─────────────────────────────────────────────────────────────┘
+```
+
+```
+Evo Phase 0  → Architecture refactor & core abstraction
+Evo Phase 1  → Universal adversarial analysis core
+Evo Phase 2  → Cross-session memory & preference learning
+Evo Phase 3  → Dynamic skill expansion & multi-domain validation
+Evo Phase 4  → Trend detection & proactive early warning
+Evo Phase 5  → Community knowledge sharing & multi-user collaboration
 ```
 
 ---
@@ -141,7 +173,7 @@ Phase 4 (Jul)  → Deployment packaging
 
 ---
 
-## Full KPI Summary
+## Original KPI Summary (Phases 1–4)
 
 | Category | Metric | Target |
 |----------|--------|--------|
@@ -155,8 +187,6 @@ Phase 4 (Jul)  → Deployment packaging
 | Domain accuracy | Corporate code word translation | ≥90% vs. ground truth |
 | Empowerment quality | Module 1 connects to commercial outcome | 100% |
 | Robustness | Useful output from incomplete input | Actionable even without Jira data |
-
----
 
 ---
 
@@ -184,6 +214,304 @@ Phase 4 (Jul)  → Deployment packaging
 
 ---
 
+---
+
+# Generalization: Make Everybody King or Queen
+
+**Initiative Start:** 2026-03-31
+**Specification:** `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.0
+**Core Thesis:** The Watermelon Effect is not unique to semiconductors — it is the fate of every matrix organization with layered reporting structures. The King's Hand's analytical architecture (contradiction detection, implicit cost quantification, euphemism translation, unanswerable questions) is domain-agnostic and can be generalized.
+
+**Verified Reusable Assets from Original Phases:**
+- Five-step Chain of Thought reasoning engine
+- Five-module report structure with narrative prose rules
+- Status light override mechanism ("technical evidence always trumps official status")
+- Three-type soul question taxonomy (Defensive/Accountability, Scale-Out, Ecosystem Moat)
+- Step 0 self-adaptive reasoning (domain inference + manager calibration)
+- CALIBRATE.md meta-skill for progressive profile enrichment
+
+**Six-Element Domain Framework** (established in Self-Adjustment Addendum, now the generalization cornerstone):
+1. Hard Constraint — inviolable limits in the domain
+2. Patch Pattern — short-term fixes masking structural problems
+3. Irreversible Milestone — points of no return
+4. Trade-off Axes — core resource trade-off dimensions
+5. Tier-1 Relationship — most critical external stakeholders
+6. Blame Transfer Seam — organizational boundaries where responsibility shifts
+
+---
+
+## Evolution Phase 0 — Architecture Refactor & Core Abstraction
+**Target:** TBD
+**Goal:** Separate The King's Hand into a domain-agnostic core and an IC design domain pack, without breaking existing functionality.
+
+### Deliverables
+
+| Item | Description |
+|:-----|:------------|
+| `skills/universal-kings-hand/SKILL.md` | Generalized system prompt. Five-step CoT parameterized — specific instructions populated by domain framework |
+| `skills/universal-kings-hand/references/framework_templates.md` | Six-element framework example mappings for ≥ 5 domains |
+| `skills/universal-kings-hand/references/domain_inference_signals.md` | Multi-signal domain inference rules (terminology density, job titles, KPI types, document structure) |
+| `skills/universal-kings-hand/domain_packs/ic_design/` | Original four reference files relocated into domain pack directory (no content changes) |
+| `skills/universal-kings-hand/domain_packs/_template/` | Blank domain pack template: `value_chain_map.md`, `patch_patterns.md`, `override_triggers.md`, `euphemism_dictionary.md` |
+| IC design 16-case regression | All original test cases pass at 100% on the refactored system |
+
+### Generalized Five-Step CoT
+
+| Step | Original (IC Design) | Generalized |
+|:-----|:---------------------|:------------|
+| Step 0 | Domain inference & manager calibration | Unchanged — already generic |
+| Step 1 | Deconstruction & noise reduction | **Deconstruction & noise reduction:** Strip organizational polish, extract factual project state, flag anomaly signals defined in domain framework |
+| Step 2 | Spectrum positioning & empowerment | **Value chain positioning:** Locate the project within the domain's value chain; answer "why does this matter" |
+| Step 3 | Contradiction detection & root cause | **Contradiction detection:** Systematically search via six-element framework — claims vs. evidence gaps, hidden patch costs, blame transfer traces |
+| Step 4 | Market ripple extrapolation | **Impact extrapolation:** Translate internal issues to external consequences — Tier-1 relationship threats, irreversible milestone impact, trade-off axis degradation |
+| Step 5 | The King's Three Questions | **The Three Soul Questions:** Structure unchanged — Defensive/Accountability, Scale-Out, Ecosystem Moat. Content populated by domain knowledge |
+
+### Generalized Five-Module Report
+
+| Module | Original Title | Generalized Title | Adjustment |
+|:-------|:---------------|:-------------------|:-----------|
+| M1 | 專案光譜定位與賦能價值 | **專案定位與戰略價值** | Value chain positioning table, linked to domain-specific commercial/organizational goals |
+| M2 | 專案穿透性摘要與紅綠燈 | **穿透性摘要與狀態判定** | Override triggers defined by domain framework |
+| M3 | 跨層級協作摩擦力與風險 | **跨職能摩擦與隱性風險** | Friction identified via Blame Transfer Seam from six-element framework |
+| M4 | 客戶/市場連動效應 | **外部連動效應** | Impact targets = Tier-1 Relationships; timeline = Irreversible Milestones |
+| M5 | 國王的靈魂三問 | **靈魂三問** | Three-type structure unchanged; question content populated by domain knowledge |
+
+### Target Directory Structure
+
+```
+skills/universal-kings-hand/
+├── SKILL.md                              # Generalized core system prompt
+├── CALIBRATE.md                          # Calibration meta-skill (extended)
+├── references/
+│   ├── domain_inference_signals.md        # Domain inference signal library
+│   └── framework_templates.md             # Six-element framework example templates
+├── domain_packs/
+│   ├── ic_design/                         # Semiconductor IC design (complete, verified)
+│   │   ├── software_stack_map.md
+│   │   ├── workaround_taxonomy.md
+│   │   ├── rag_status_criteria.md
+│   │   └── corporate_code_words.md
+│   ├── software_startup/                  # Software startup (Phase 1 deliverable)
+│   │   ├── value_chain_map.md
+│   │   ├── patch_patterns.md
+│   │   ├── override_triggers.md
+│   │   └── euphemism_dictionary.md
+│   └── _template/                         # Blank domain pack template
+│       ├── value_chain_map.md
+│       ├── patch_patterns.md
+│       ├── override_triggers.md
+│       └── euphemism_dictionary.md
+├── manager_profiles/
+│   └── henry.md                           # Existing (IC design)
+└── tests/
+    ├── ic_design/                          # Original 16 test cases
+    └── cross_domain/                       # Cross-domain test cases
+```
+
+### Acceptance Criteria
+
+| Check | Target | Result |
+|:------|:-------|:-------|
+| IC design regression | 16/16 test cases pass, output quality no degradation | |
+| Core/domain-pack separation | System runs in generic mode when `domain_packs/ic_design/` is removed (lower quality but no errors) | |
+| Framework template coverage | ≥ 5 domains with six-element framework examples | |
+
+---
+
+## Evolution Phase 1 — Universal Adversarial Analysis Core
+**Target:** TBD
+**Goal:** Zero-config analysis of project documents from any domain. A user drops in a document from a domain the system has never seen, and gets a useful adversarial report.
+
+### Deliverables
+
+| Item | Description |
+|:-----|:------------|
+| Domain inference engine | Full SKILL.md Step 0 implementation with multi-signal fusion (user statement > profile > terminology density > job titles > KPI types > document structure) |
+| Dynamic framework constructor | Real-time six-element framework construction in `<thinking>` block |
+| Generalized five-module report | Module titles and content guidelines dynamically adjusted per domain |
+| Cross-domain test suite | ≥ 3 non-IC-design domains with complete test cases and expected output baselines |
+| Software startup domain pack | First non-IC-design complete domain knowledge pack (example + validation) |
+
+### Domain Inference Classification
+
+| Result | Condition | Behavior |
+|:-------|:----------|:---------|
+| **Recognized Domain** | Built-in domain pack exists | Load full domain-specific references |
+| **Inferable Domain** | System can construct six-element framework from document | Dynamic framework construction, confidence levels noted |
+| **Unknown Domain** | Insufficient signals | Generic framework analysis, proactively ask user for domain context |
+
+### Test Domain Recommendations
+
+| Domain | Rationale |
+|:-------|:----------|
+| Software startup | High-frequency use case, Agile report formats widely available |
+| Medical device / Pharma | Regulation-driven organization, structurally similar "hard constraints" to IC design but entirely different domain |
+| Construction engineering | Traditional industry, validates applicability beyond tech sector |
+
+### Acceptance Criteria
+
+| Check | Target | Result |
+|:------|:-------|:-------|
+| Zero-config usability | Useful reports produced for 3 test domains with no Manager Profile and no Domain Pack | |
+| Domain inference accuracy | ≥ 90% on 10 blind-test documents across domains | |
+| Six-element framework completeness | All 6 elements populated and domain-plausible (expert review) | |
+| Soul questions cross-domain validity | All three questions pass "unanswerable with reassurance" test in non-IC domains | |
+| IC design zero regression | 16/16 regression pass | |
+
+---
+
+## Evolution Phase 2 — Cross-Session Memory & Preference Learning
+**Target:** TBD
+**Goal:** The system learns from every interaction — remembers user preferences, communication style, focus areas — and gets more accurate over time.
+
+### Deliverables
+
+| Item | Description |
+|:-----|:------------|
+| Extended CALIBRATE.md | Incremental update mode, conflict resolution logic, confidence decay mechanism, cross-domain preference migration |
+| User Profile v2 structure | New sections: `style_preferences`, `priority_order`, `question_preferences`, `analysis_history` |
+| Implicit preference extraction | SKILL.md instructions for detecting preferences when user modifies output or follows up on specific areas |
+| Preference learning test suite | Simulated 5-interaction sequence verifying preference convergence |
+
+### Preference Extraction Triggers
+
+| Trigger Event | Extraction | Storage |
+|:-------------|:-----------|:--------|
+| User modifies report wording | Original vs. modified → style preference | Profile `style_preferences` |
+| User follows up on a specific module/direction | Follow-up direction → priority inference | Profile `priority_order` |
+| User rejects an analysis conclusion | Rejection reason → domain knowledge correction | Domain Pack |
+| User provides unknown document type | Document structure → new input format rules | Domain Pack `input_formats` |
+| User indicates a question type is particularly useful | Question type preference | Profile `question_preferences` |
+
+### Design Principles
+
+- **White-Box Preferences:** All inferred preferences stored as natural language in the User Profile. Users can inspect, edit, or delete any preference at any time.
+- **Recency over Seniority:** `recent behavior > early behavior`, `explicit statement > inferred preference`
+- **Confidence Decay:** Preferences not re-validated after N interactions have their confidence level gradually reduced
+
+### Acceptance Criteria
+
+| Check | Target | Result |
+|:------|:-------|:-------|
+| Preference match after 5 interactions | Report style significantly better aligned with user preferences (human evaluation) | |
+| Cross-session memory consistency | Session N+1 correctly references knowledge from session N | |
+| Preference transparency | User can find all inferred preferences in Profile, descriptions are understandable | |
+| Knowledge expansion quality | Dynamically expanded knowledge introduces no errors or contradictions | |
+| No regression | Preference learning does not degrade analysis quality (IC design 16-case regression) | |
+
+---
+
+## Evolution Phase 3 — Dynamic Skill Expansion & Multi-Domain Validation
+**Target:** TBD
+**Goal:** The system solidifies interaction-learned domain knowledge into reusable Domain Packs and proves stability across multiple real-world domains.
+
+### Deliverables
+
+| Item | Description |
+|:-----|:------------|
+| Domain Pack auto-generation | From ≥ 5 same-domain interactions, auto-generate candidate Domain Pack and request user confirmation |
+| Quality gate mechanism | Three-layer gate: consistency check, minimum usage count (≥ 3 interactions), user confirmation |
+| 5 complete Domain Packs | IC design (existing) + 4 new domains, each with all four reference files |
+| Cross-domain stress test | Switch between 3 different domain documents within one Profile; verify no cross-contamination |
+
+### Quality Gate Rules
+
+1. **Consistency check:** New knowledge must not contradict existing knowledge base (unless user explicitly overrides)
+2. **Minimum usage count:** An inferred preference or new knowledge point must be used in ≥ 3 interactions without being rejected to upgrade from "candidate" to "confirmed"
+3. **User confirmation:** Major knowledge base changes (e.g., new complete Domain Pack) notify user and request confirmation
+
+### Acceptance Criteria
+
+| Check | Target | Result |
+|:------|:-------|:-------|
+| Auto-generated Domain Pack quality | Expert review accuracy ≥ 80% | |
+| Cross-domain switching stability | Analysis quality for each domain unaffected by other domains in Profile | |
+| Community contribution feasibility | Domain Pack format clear enough for a domain expert to complete in 2 hours | |
+
+---
+
+## Evolution Phase 4 — Trend Detection & Proactive Early Warning
+**Target:** TBD
+**Goal:** Evolve from single-shot analysis to longitudinal tracking — detect risk trends across repeated analyses and proactively warn before crises emerge.
+
+### Deliverables
+
+| Item | Description |
+|:-----|:------------|
+| Analysis history summary | After each analysis, auto-write key findings to project history table |
+| Trend comparison section | Reports include "comparison with previous analysis" paragraph |
+| Cross-project pattern matching | New project signals compared against historical project crisis precursors |
+| Scheduled analysis reminder | Environment-appropriate scheduling support (Claude.ai reminder / Claude Code cron / MCP webhook) |
+
+### Deployment-Dependent Scheduling
+
+| Environment | Implementation | Limitation |
+|:------------|:---------------|:-----------|
+| Claude.ai conversation | Profile records "last analysis date" and "suggested next date"; remind on new conversation | No true background execution |
+| Claude Code + Cron | `crontab` schedules `analyze_pptx.sh --manager {user}`, output to designated path | Requires local environment |
+| MCP Server integration | Long-running service receives webhooks (Jira events, Git push), triggers analysis and push notification | Requires MCP infrastructure |
+
+### Acceptance Criteria
+
+| Check | Target | Result |
+|:------|:-------|:-------|
+| Trend detection | Correctly identify worsening/improving trends across 3 consecutive weeks of simulated data | |
+| Proactive alert false positive rate | < 20% | |
+| Cross-project pattern match hit rate | ≥ 80% on known crisis precursors | |
+
+---
+
+## Evolution Phase 5 — Community Knowledge Sharing & Multi-User Collaboration
+**Target:** TBD
+**Goal:** Enable different users to share, rate, and merge Domain Packs, creating network effects in domain knowledge accumulation.
+
+### Deliverables
+
+| Item | Description |
+|:-----|:------------|
+| Domain Pack rating mechanism | Users can rate community-contributed Domain Packs |
+| Pack merge tool | Merge multiple users' Packs for the same domain into a more complete version |
+| Privacy separation | Strict separation: User Profile (private) vs. Domain Pack (opt-in sharing) |
+| Domain leaderboard | Display most active and highest-quality domain Packs |
+
+### Acceptance Criteria
+
+| Check | Target | Result |
+|:------|:-------|:-------|
+| Privacy enforcement | No personally identifiable information leaks from Profile to shared Packs | |
+| Merge quality | Merged Pack is more complete than any single contributor's Pack (expert review) | |
+| Contributor experience | Domain expert can contribute a Pack via a clear, documented process | |
+
+---
+
+## Generalization KPI Summary
+
+| Category | Metric | Target |
+|:---------|:-------|:-------|
+| Zero-config usability | Useful report from unknown-domain document | Actionable output with no prior setup |
+| Domain inference | Correct domain identification | ≥ 90% on blind test set |
+| Framework completeness | Six elements populated and plausible | 100% expert-verified |
+| Cross-domain question quality | Unanswerable with reassurance | 3/3 per case across domains |
+| IC design regression | No quality degradation | 16/16 test cases pass |
+| Preference learning | Style match improvement over 5 interactions | Significant (human evaluation) |
+| Preference transparency | All inferences visible and editable | 100% |
+| Domain Pack auto-generation | Expert-reviewed accuracy | ≥ 80% |
+| Trend detection | Correct trend identification | 3-week simulated data |
+| Proactive alert precision | False positive rate | < 20% |
+| Cross-project pattern matching | Known precursor hit rate | ≥ 80% |
+
+---
+
+## Security & Governance Principles
+
+1. **User Data Sovereignty:** User Profiles belong entirely to the user. Never shared without consent. Domain Pack sharing is opt-in; auto-strip PII before sharing.
+2. **Analysis Integrity:** No matter how the system evolves, the core oath stands — *"Will not comfort you, will not cover for anyone, will not fabricate a red light without evidence."* Preference learning can change report style, never analytical objectivity.
+3. **Preference ≠ Bias:** If a user's preferences create blind spots (e.g., preferring to ignore certain risk signals), the system follows the preference but explicitly flags: "This analysis has omitted the following signal types per your preference settings. Periodic unfiltered analysis recommended."
+4. **Dynamic Expansion Safety:** When deployment involves code execution (e.g., Claude Code automation scripts), all dynamically generated scripts must run in sandboxed environments.
+5. **Progressive Trust Model:** System autonomy grows with established trust. Initial state: all knowledge base changes require user confirmation. After stable interaction history: low-risk changes (new euphemism translations) auto-apply; high-risk changes (override trigger modifications) always require human confirmation.
+
+---
+
 ## Revision History
 
 | Version | Date | Summary |
@@ -195,3 +523,4 @@ Phase 4 (Jul)  → Deployment packaging
 | v1.4 | 2026-03-18 | Phase 3 complete. SKILL.md updated with structural anomaly signal list, evidence inventory protocol, incomplete input handling rules, and confidence-level classification. TC-011 (incomplete input — Stratos-RF), TC-012 (technical-only — Ironclad-DDR), TC-013 (adversarially sanitized — Apex-ML) added. 40/40 Pass across all edge case scenarios. Phase 3 closed. |
 | v1.5 | 2026-03-18 | Phase 4 complete. TC-014 (Jira CSV — Crestline-HPC), TC-015 (PowerPoint-to-text — Eon-AI), TC-016 (email thread — Typhoon-5G) added. README.md rewritten as bilingual operational guide for Henry's team (cadence, document collection, submission instructions, output module guide). evaluation_rubric.md expanded to 12 categories with scoring-without-domain-expertise preamble and inter-rater reliability guidance. All three format test cases passed structural validation. Phase 4 closed. |
 | v1.6 | 2026-03-18 | Self-adjustment addendum. SKILL.md Step 0 (Domain Inference and Manager Calibration) added. CALIBRATE.md meta-skill created. manager_profiles/henry.md starter profile created. tools/calibrate.sh created. tools/analyze_pptx.sh and tools/markitdown_analyze.sh updated with --manager flag and profile injection. AGENTS.md and ROADMAP.md updated to document the self-adjustment system. |
+| v2.0 | 2026-03-31 | Generalization initiative: "Make Everybody King or Queen." Added Evolution Phases 0–5 covering three tiers (Universal Adversarial Core, Continuous Evolution Engine, Proactive Intelligence). Defined generalized five-step CoT, five-module report, six-element domain framework, directory structure for `skills/universal-kings-hand/`, cross-domain test strategy, security & governance principles. Derived from `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.0. |
