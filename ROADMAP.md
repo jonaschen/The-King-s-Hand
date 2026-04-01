@@ -203,7 +203,7 @@ Evo Phase 5  → Community knowledge sharing & multi-user collaboration
   - Sub-step 0E: Output calibration note — records domain inference result in `<thinking>` block
 - [x] `skills/the-kings-hand/CALIBRATE.md` — Meta-skill (XML-structured) that distills a session transcript into a Manager Profile; invoked by calibrate.sh, runs in CALIBRATION MODE separate from analysis mode
 - [x] `manager_profiles/henry.md` — Starter profile for Henry: IC design domain context, 24-row corporate vocabulary table, priority ordering, calibration rules from Phase 1–4 defect findings, historical patterns from test suite
-- [x] `tools/calibrate.sh` — Wrapper that assembles CALIBRATE.md + existing profile + session transcript, runs gemini-cli from `/tmp` (to avoid GEMINI.md King's Hand context), validates output, backs up previous profile before overwriting
+- [x] `tools/calibrate.sh` — Wrapper that assembles CALIBRATE.md + existing profile + session transcript into calibration input for pasting into an agent session
 - [x] `tools/analyze_pptx.sh` updated with `--manager NAME` flag — injects Manager Profile as a prefix before running analysis
 - [x] `tools/markitdown_analyze.sh` updated with `--manager NAME` flag — same profile injection logic
 

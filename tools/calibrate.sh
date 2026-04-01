@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
-# calibrate.sh — Update a Manager Profile from a King's Hand session transcript
+# calibrate.sh — Assemble calibration input from a King's Hand session transcript
 #
 # Reads a session transcript (project documents + King's Hand output + manager
-# questions/feedback), runs it through the CALIBRATE.md meta-skill, and writes
-# an updated Manager Profile to manager_profiles/[name].md.
+# questions/feedback), assembles it with the CALIBRATE.md meta-skill prompt
+# and any existing Manager Profile, and outputs the combined calibration input.
+#
+# Paste the output into your AI agent session (Claude, etc.) to generate an
+# updated Manager Profile. Save the agent's output to manager_profiles/[name].md.
 #
 # Run this after each weekly review session to keep the profile current.
 # The richer the profile becomes, the more calibrated future analyses will be.
 #
 # USAGE:
 #   ./tools/calibrate.sh --manager NAME --session session.txt
-#   ./tools/calibrate.sh --manager NAME --session session.txt --output custom_path.md
+#   ./tools/calibrate.sh --manager NAME --session session.txt --output calibration_input.txt
 #   ./tools/calibrate.sh --manager NAME  (reads session transcript from stdin)
 #
 # SESSION TRANSCRIPT FORMAT:
@@ -32,7 +35,7 @@
 #   manager_profiles/henry.md based on the test suite calibration.
 #
 # EXAMPLES:
-#   # After a session, save the transcript and calibrate
+#   # After a session, save the transcript and assemble calibration input
 #   ./tools/calibrate.sh --manager henry --session weekly_session_2026-03-25.txt
 #
 #   # For a new manager in a different domain
@@ -42,7 +45,7 @@
 #   cat session_transcript.txt | ./tools/calibrate.sh --manager henry
 #
 # DEPENDENCIES:
-#   gemini-cli (already installed)
+#   None (text assembly only)
 
 set -euo pipefail
 
@@ -78,7 +81,7 @@ fi
 
 # Normalize manager name to lowercase with underscores for filename
 MANAGER_SLUG="$(echo "$MANAGER_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')"
-PROFILE_PATH="${OUTPUT_FILE:-$PROFILES_DIR/$MANAGER_SLUG.md}"
+PROFILE_PATH="$PROFILES_DIR/$MANAGER_SLUG.md"
 
 # ─── Build session input ──────────────────────────────────────────────────────
 
@@ -142,47 +145,15 @@ CALIBRATION_INPUT="$TMPDIR_WORK/calibration_input.txt"
     cat "$SESSION_CONTENT_FILE"
 } > "$CALIBRATION_INPUT"
 
-# ─── Run calibration via gemini-cli ──────────────────────────────────────────
+# ─── Output calibration input ────────────────────────────────────────────────
 
-# Run from /tmp to avoid picking up GEMINI.md (which would override with
-# King's Hand analysis persona instead of calibration mode).
-CALIBRATION_PROMPT="You are in CALIBRATION MODE. Ignore any previous role instructions. Follow ONLY the instructions in the CALIBRATE.md prompt above. Produce ONLY the Manager Profile in the specified format. Begin with [MANAGER PROFILE]. No other text."
-
-echo "[calibrate] Running calibration via gemini-cli..." >&2
-
-UPDATED_PROFILE="$TMPDIR_WORK/updated_profile.md"
-
-cd /tmp && gemini \
-    --output-format text \
-    -p "$CALIBRATION_PROMPT" \
-    < "$CALIBRATION_INPUT" \
-    > "$UPDATED_PROFILE"
-
-cd "$REPO_ROOT"
-
-# ─── Validate and save ────────────────────────────────────────────────────────
-
-if ! grep -q "\[MANAGER PROFILE\]" "$UPDATED_PROFILE"; then
-    echo "ERROR: Calibration output does not contain [MANAGER PROFILE] block." >&2
-    echo "       Raw output saved to: $TMPDIR_WORK/updated_profile.md" >&2
-    echo "       Inspect it manually and save to $PROFILE_PATH if correct." >&2
-    # Don't delete tmpdir on error
-    trap - EXIT
-    exit 1
+if [[ -n "$OUTPUT_FILE" ]]; then
+    cp "$CALIBRATION_INPUT" "$OUTPUT_FILE"
+    echo "[calibrate] Calibration input written to: $OUTPUT_FILE" >&2
+else
+    cat "$CALIBRATION_INPUT"
 fi
-
-mkdir -p "$(dirname "$PROFILE_PATH")"
-
-# Backup existing profile if it exists
-if [[ -f "$PROFILE_PATH" ]]; then
-    BACKUP="${PROFILE_PATH%.md}_$(date +%Y%m%d_%H%M%S).md.bak"
-    cp "$PROFILE_PATH" "$BACKUP"
-    echo "[calibrate] Previous profile backed up to: $BACKUP" >&2
-fi
-
-cp "$UPDATED_PROFILE" "$PROFILE_PATH"
 
 echo "" >&2
-echo "[calibrate] ✓ Manager profile updated: $PROFILE_PATH" >&2
-echo "[calibrate] Profile will be used automatically in future analysis sessions." >&2
-echo "[calibrate] To use: ./tools/analyze_pptx.sh file.pptx --manager $MANAGER_SLUG" >&2
+echo "[calibrate] Paste the output above into your AI agent session." >&2
+echo "[calibrate] Save the agent's [MANAGER PROFILE] output to: $PROFILE_PATH" >&2

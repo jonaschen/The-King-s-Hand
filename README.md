@@ -87,7 +87,7 @@ pip install markitdown
 ./tools/markitdown_analyze.sh status_report.docx
 ```
 
-These scripts extract text from the file and pipe it directly to the King's Hand gemini-cli agent. The full five-module report in Traditional Chinese is produced automatically.
+These scripts extract text from the file. Paste the output into your King's Hand agent session for analysis.
 
 #### Extract text only (for pasting into Claude or another interface)
 

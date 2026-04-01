@@ -81,8 +81,8 @@ Located in `tests/test_cases/` — 16 cases across 4 phases:
 ## Document Preprocessing Tools
 Located in `tools/` — convert real-format inputs before submission:
 
-- `tools/analyze_pptx.sh` — End-to-end pipeline: .pptx → extract text → gemini-cli King's Hand report. Supports `--manager NAME` for profile injection. Usage: `./tools/analyze_pptx.sh file.pptx [--manager henry]`
-- `tools/markitdown_analyze.sh` — Multi-format pipeline: .pdf/.docx/.xlsx/.pptx → Markdown → gemini-cli report. Supports `--manager NAME`. Usage: `./tools/markitdown_analyze.sh file.pdf [--manager henry]` (requires `pip install markitdown`)
+- `tools/analyze_pptx.sh` — Extract text from .pptx files. Supports `--manager NAME` for profile prepending. Output to stdout or `--output FILE`. Usage: `./tools/analyze_pptx.sh file.pptx [--manager henry]`
+- `tools/markitdown_analyze.sh` — Extract text from .pdf/.docx/.xlsx/.pptx to Markdown. Supports `--manager NAME`. Usage: `./tools/markitdown_analyze.sh file.pdf [--manager henry]` (requires `pip install markitdown`)
 - `tools/pptx_to_text.py` — Python extractor for structured .pptx → [SLIDE N] formatted text for manual submission. Usage: `python3 tools/pptx_to_text.py file.pptx` (requires `pip install python-pptx`)
 
 ## Self-Adjustment / Domain Calibration

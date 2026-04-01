@@ -1,28 +1,23 @@
 #!/usr/bin/env bash
-# analyze_pptx.sh — End-to-end PowerPoint analysis pipeline for The King's Hand
+# analyze_pptx.sh — PowerPoint text extraction pipeline for The King's Hand
 #
-# Converts a .pptx file to structured text and pipes it directly to the
-# gemini-cli King's Hand agent, producing a complete five-module intelligence
-# report in Traditional Chinese (繁體中文).
+# Converts a .pptx file to structured text suitable for pasting into
+# The King's Hand agent. Optionally prepends a Manager Profile.
 #
 # USAGE:
 #   ./tools/analyze_pptx.sh presentation.pptx
 #   ./tools/analyze_pptx.sh presentation.pptx --manager henry
-#   ./tools/analyze_pptx.sh presentation.pptx --manager henry --output report.md
-#   ./tools/analyze_pptx.sh presentation.pptx --output report.md
-#   ./tools/analyze_pptx.sh presentation.pptx --extract-only
+#   ./tools/analyze_pptx.sh presentation.pptx --manager henry --output extracted.txt
+#   ./tools/analyze_pptx.sh presentation.pptx --output extracted.txt
 #   ./tools/analyze_pptx.sh presentation.pptx --extractor python
 #   ./tools/analyze_pptx.sh presentation.pptx --extractor soffice
 #   ./tools/analyze_pptx.sh presentation.pptx --extractor markitdown
 #
 # MANAGER PROFILE (--manager NAME):
 #   If a Manager Profile exists at manager_profiles/[NAME].md, it is
-#   prepended to the extracted document before analysis. The King's Hand
-#   Step 0 picks up the profile and calibrates domain vocabulary, priority
-#   weighting, and question style to that specific manager.
-#
-#   After each session, run tools/calibrate.sh to update the profile.
-#   The profile becomes richer with each session.
+#   prepended to the extracted document. The King's Hand Step 0 picks up
+#   the profile and calibrates domain vocabulary, priority weighting, and
+#   question style to that specific manager.
 #
 # EXTRACTORS (choose with --extractor):
 #   python      Uses python-pptx for structured extraction (recommended for
@@ -43,13 +38,11 @@
 #   2. markitdown (if installed)
 #   3. soffice (always available as fallback)
 #
-# OUTPUT MODES:
-#   Default:          Pipe extracted text to gemini-cli → full King's Hand report
-#   --extract-only:   Print extracted text to stdout without running gemini-cli
-#   --output FILE:    Write the final King's Hand report to FILE (Markdown)
+# OUTPUT:
+#   Prints extracted text to stdout (default) or writes to --output FILE.
+#   Paste the output into your King's Hand agent session for analysis.
 #
 # DEPENDENCIES:
-#   Always required:  gemini-cli (already installed at v0.34.0)
 #   Always available: soffice/LibreOffice (already installed)
 #   Optional:         pip install python-pptx  (better extraction)
 #   Optional:         pip install markitdown   (multi-format support)
@@ -63,7 +56,6 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 INPUT_FILE=""
 EXTRACTOR="auto"
-EXTRACT_ONLY=false
 OUTPUT_FILE=""
 INCLUDE_NOTES=false
 MANAGER_NAME=""
@@ -76,7 +68,6 @@ usage() {
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --extractor)    EXTRACTOR="$2"; shift 2 ;;
-        --extract-only) EXTRACT_ONLY=true; shift ;;
         --output|-o)    OUTPUT_FILE="$2"; shift 2 ;;
         --notes)        INCLUDE_NOTES=true; shift ;;
         --manager|-m)   MANAGER_NAME="$2"; shift 2 ;;
@@ -260,33 +251,11 @@ if [[ -n "$MANAGER_NAME" ]]; then
     fi
 fi
 
-if [[ "$EXTRACT_ONLY" == true ]]; then
-    cat "$EXTRACTED_TEXT_FILE"
-    exit 0
-fi
-
-# ─── Pipe to gemini-cli King's Hand ──────────────────────────────────────────
-
-# The gemini-cli in this environment is pre-configured as The King's Hand.
-# We pipe the extracted text as stdin; the -p flag provides the analysis trigger.
-# The King's Hand system prompt takes over from there.
-
-ANALYSIS_PROMPT="以下是待分析的專案文件，請直接開始產出五模組情報報告，勿加任何前言或自我介紹。"
-
-echo "[analyze_pptx] Running King's Hand analysis via gemini-cli..." >&2
-echo "" >&2
+# ─── Output extracted text ───────────────────────────────────────────────────
 
 if [[ -n "$OUTPUT_FILE" ]]; then
-    gemini \
-        --output-format text \
-        -p "$ANALYSIS_PROMPT" \
-        < "$EXTRACTED_TEXT_FILE" \
-        | tee "$OUTPUT_FILE"
-    echo "" >&2
-    echo "[analyze_pptx] Report written to: $OUTPUT_FILE" >&2
+    cp "$EXTRACTED_TEXT_FILE" "$OUTPUT_FILE"
+    echo "[analyze_pptx] Extracted text written to: $OUTPUT_FILE" >&2
 else
-    gemini \
-        --output-format text \
-        -p "$ANALYSIS_PROMPT" \
-        < "$EXTRACTED_TEXT_FILE"
+    cat "$EXTRACTED_TEXT_FILE"
 fi

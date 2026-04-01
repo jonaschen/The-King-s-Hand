@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-# markitdown_analyze.sh — Multi-format document analysis for The King's Hand
+# markitdown_analyze.sh — Multi-format document extraction for The King's Hand
 #
-# Uses Microsoft markitdown to convert a document to Markdown, then pipes
-# to the gemini-cli King's Hand agent. Handles pptx, pdf, docx, xlsx, and more.
+# Uses Microsoft markitdown to convert a document to Markdown text suitable
+# for pasting into The King's Hand agent. Handles pptx, pdf, docx, xlsx, and more.
 #
 # USAGE:
 #   ./tools/markitdown_analyze.sh document.pptx
 #   ./tools/markitdown_analyze.sh report.pdf
 #   ./tools/markitdown_analyze.sh status_report.docx
 #   ./tools/markitdown_analyze.sh jira_export.xlsx
-#   ./tools/markitdown_analyze.sh document.pptx --output report.md
-#   ./tools/markitdown_analyze.sh document.pptx --extract-only
+#   ./tools/markitdown_analyze.sh document.pptx --output extracted.md
+#   ./tools/markitdown_analyze.sh document.pptx --manager henry
 #
 # SUPPORTED FORMATS (via markitdown):
 #   .pptx   PowerPoint presentations
@@ -21,13 +21,12 @@
 #   .csv    Comma-separated values
 #   .txt    Plain text
 #
-# This is the recommended tool when document format varies week-to-week.
-# For .pptx specifically, python-pptx (pptx_to_text.py) gives better slide
-# structure. Use this tool when you receive reports in PDF or Word format.
+# OUTPUT:
+#   Prints extracted Markdown to stdout (default) or writes to --output FILE.
+#   Paste the output into your King's Hand agent session for analysis.
 #
 # REQUIRES:
 #   pip install markitdown
-#   gemini-cli (already installed)
 
 set -euo pipefail
 
@@ -36,13 +35,11 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # ─── Argument parsing ─────────────────────────────────────────────────────────
 
 INPUT_FILE=""
-EXTRACT_ONLY=false
 OUTPUT_FILE=""
 MANAGER_NAME=""
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --extract-only) EXTRACT_ONLY=true; shift ;;
         --output|-o)    OUTPUT_FILE="$2"; shift 2 ;;
         --manager|-m)   MANAGER_NAME="$2"; shift 2 ;;
         --help|-h)
@@ -98,13 +95,6 @@ PYEOF
 LINE_COUNT="$(wc -l < "$EXTRACTED_FILE")"
 echo "[markitdown_analyze] Extracted $LINE_COUNT lines." >&2
 
-# ─── Output mode: extract only ───────────────────────────────────────────────
-
-if [[ "$EXTRACT_ONLY" == true ]]; then
-    cat "$EXTRACTED_FILE"
-    exit 0
-fi
-
 # ─── Manager profile injection ───────────────────────────────────────────────
 
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
@@ -130,24 +120,11 @@ if [[ -n "$MANAGER_NAME" ]]; then
     fi
 fi
 
-# ─── Pipe to gemini-cli King's Hand ──────────────────────────────────────────
-
-ANALYSIS_PROMPT="以下是待分析的專案文件，請直接開始產出五模組情報報告，勿加任何前言或自我介紹。"
-
-echo "[markitdown_analyze] Running King's Hand analysis via gemini-cli..." >&2
-echo "" >&2
+# ─── Output extracted text ───────────────────────────────────────────────────
 
 if [[ -n "$OUTPUT_FILE" ]]; then
-    gemini \
-        --output-format text \
-        -p "$ANALYSIS_PROMPT" \
-        < "$EXTRACTED_FILE" \
-        | tee "$OUTPUT_FILE"
-    echo "" >&2
-    echo "[markitdown_analyze] Report written to: $OUTPUT_FILE" >&2
+    cp "$EXTRACTED_FILE" "$OUTPUT_FILE"
+    echo "[markitdown_analyze] Extracted text written to: $OUTPUT_FILE" >&2
 else
-    gemini \
-        --output-format text \
-        -p "$ANALYSIS_PROMPT" \
-        < "$EXTRACTED_FILE"
+    cat "$EXTRACTED_FILE"
 fi

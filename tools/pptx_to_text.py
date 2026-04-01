@@ -10,7 +10,7 @@ USAGE:
     python3 pptx_to_text.py presentation.pptx
     python3 pptx_to_text.py presentation.pptx --notes
     python3 pptx_to_text.py presentation.pptx --output extracted.txt
-    python3 pptx_to_text.py presentation.pptx | gemini -p "" --output-format text
+    python3 pptx_to_text.py presentation.pptx > extracted.txt
 
 REQUIRES:
     pip install python-pptx
@@ -57,7 +57,7 @@ def pptx_to_text(path, include_notes=False):
     Extract text from a .pptx file, slide by slide.
 
     Returns a string in [SLIDE N] format suitable for pasting into
-    The King's Hand or piping to gemini-cli.
+    The King's Hand agent session.
     """
     from pptx import Presentation
     from pptx.enum.text import PP_ALIGN

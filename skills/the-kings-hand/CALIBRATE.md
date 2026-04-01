@@ -7,8 +7,8 @@
     was learned about the manager's domain and preferences into a persistent
     Manager Profile. It is NOT the main analysis skill (SKILL.md).
 
-    INVOCATION: This prompt is prepended to a session transcript and run
-    through gemini-cli in headless mode. The output is saved as a Manager
+    INVOCATION: This prompt is prepended to a session transcript and
+    pasted into an AI agent session. The output is saved as a Manager
     Profile file in manager_profiles/[name].md.
 
     See tools/calibrate.sh for the invocation wrapper.
