@@ -21,13 +21,15 @@ It analyzes raw data — Jira logs, Git commits, meeting notes, status reports, 
 #### Key Capabilities
 - **Adversarial Analysis:** Detects hidden problems being masked by short-term fixes and organizational euphemisms.
 - **Domain Self-Adaptation:** Automatically infers the domain from submitted documents, constructs a domain-specific analytical framework, and calibrates its confidence based on knowledge depth (L1 thin → L3 deep).
+- **Calibration Conversation:** For new users in unfamiliar domains, the system conducts a brief 3-5 question conversation to understand your world — your role, anxieties, judgment criteria — before starting analysis. It maps your answers to its analytical framework without you ever seeing the technical scaffolding.
+- **Three Operating Modes:** Calibration (first meeting), Quick Scan (hallway question), Full Report (pre-meeting weapon) — evolving naturally with trust, not toggled as features.
 - **Implicit Cost Quantification:** Calculates the real cost of workarounds along the domain's core trade-off axes (e.g., PPA in IC design, speed-vs-quality-vs-debt in software startups).
 - **Cross-Functional Friction Detection:** Identifies where different teams' assumptions have diverged and where blame transfer is occurring.
 - **Strategic Arming:** Provides "The Three Soul-Searching Questions" — sharp, unanswerable questions that force accountability during review meetings.
 
 #### Current State
 - **IC Design domain:** Fully operational with 16 verified test cases, complete domain knowledge pack, and battle-tested question patterns.
-- **Other domains:** Zero-config analysis available via automatic domain inference and dynamic framework construction. Quality improves progressively with each interaction (see `MAKE_EVERYBODY_KING_OR_QUEEN.md` for the generalization roadmap).
+- **Other domains:** Zero-config analysis available via automatic domain inference, calibration conversation, and dynamic framework construction. Quality improves progressively with each interaction (see `MAKE_EVERYBODY_KING_OR_QUEEN.md` for the generalization roadmap).
 
 ---
 
@@ -210,13 +212,15 @@ This is by design. A suspected finding with an evidence gap is more valuable tha
 #### 核心能力
 - **敵對性分析：** 偵測被短期修補與組織話術掩蓋的深層問題。
 - **領域自適應：** 自動從提交文件推斷領域、建構領域專用分析框架，並根據知識厚度（L1 淺薄 → L3 深厚）校準分析信心。
+- **校準對話：** 對於陌生領域的新使用者，系統會先透過 3-5 個自然語言問題了解你的世界——你的角色、焦慮、判斷標準——然後才開始分析。你不會感受到任何技術框架，只會感受到一位幕僚在認真認識你。
+- **三種運作模式：** 校準對話（初識）、快速掃描（走廊上的問題）、完整報告（會議前的武器）——隨信任自然演進，而非功能切換。
 - **隱性成本量化：** 沿領域核心取捨軸計算臨時修補的真實代價（IC 設計中為 PPA；軟體新創中為速度-品質-技術債）。
 - **跨職能摩擦監測：** 識別不同團隊的假設何時發生脫節、責任轉嫁在何處發生。
 - **戰略武裝：** 提供「靈魂三問」——犀利且無法閃躲的問題，迫使團隊在審查會議中面對現實。
 
 #### 目前狀態
 - **IC 設計領域：** 已全面運作，具備 16 個驗證測試案例、完整領域知識包、經實戰校準的提問模板。
-- **其他領域：** 透過自動領域推斷與動態框架建構提供零配置分析。品質隨每次互動持續提升（詳見 `MAKE_EVERYBODY_KING_OR_QUEEN.md` 通用化路線圖）。
+- **其他領域：** 透過自動領域推斷、校準對話與動態框架建構提供零配置分析。品質隨每次互動持續提升（詳見 `MAKE_EVERYBODY_KING_OR_QUEEN.md` 通用化路線圖）。
 
 ---
 

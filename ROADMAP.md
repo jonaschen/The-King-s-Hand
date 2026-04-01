@@ -1,7 +1,7 @@
 # ROADMAP.md — The King's Hand
 
 **Project Start:** 2026-03-16
-**Specification Version:** v2.1 (see `THE_KING_S_HAND_DEV_PLAN.md`, `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.1)
+**Specification Version:** v2.2 (see `THE_KING_S_HAND_DEV_PLAN.md`, `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.2)
 **Current Status:** Original Phases 1–4 complete (2026-03-18). Generalization initiative launched (2026-03-31). Entering Evolution Phase 0.
 
 ---
@@ -242,13 +242,15 @@ Evo Phase 5  → Community knowledge sharing & multi-user collaboration
 
 ## Evolution Phase 0 — Architecture Refactor & Core Abstraction
 **Target:** TBD
-**Goal:** Separate The King's Hand into a domain-agnostic core and an IC design domain pack, without breaking existing functionality.
+**Goal:** Separate The King's Hand into a domain-agnostic core and an IC design domain pack, without breaking existing functionality. Establish Step 0's dual-mode (passive inference + active interview) skeleton and three operating mode routing logic.
 
 ### Deliverables
 
 | Item | Description |
 |:-----|:------------|
-| `skills/universal-kings-hand/SKILL.md` | Generalized system prompt. CoT parameterized (Steps 0–0.5–1–2–3–4–5) with knowledge depth assessment; specific instructions populated by domain framework |
+| `skills/universal-kings-hand/SKILL.md` | Generalized system prompt. CoT parameterized (Steps 0 dual-mode → 0.5 → 1–5 depth-controlled); specific instructions populated by domain framework |
+| Step 0 dual-mode logic | SKILL.md defines Step 0 switching: passive inference → self-assessment → if L1 with no Profile, enter active interview → re-assess. Includes calibration interview question design templates (5 directions × example questions) |
+| Three operating mode routing | SKILL.md defines Calibration, Quick Scan, and Full Report modes with trigger conditions and execution scope |
 | `skills/universal-kings-hand/references/framework_templates.md` | Six-element framework example mappings for ≥ 5 domains |
 | `skills/universal-kings-hand/references/domain_inference_signals.md` | Multi-signal domain inference rules (terminology density, job titles, KPI types, document structure) |
 | `skills/universal-kings-hand/domain_packs/ic_design/` | Original four reference files relocated into domain pack directory (no content changes) |
@@ -261,17 +263,48 @@ Evo Phase 5  → Community knowledge sharing & multi-user collaboration
 
 The King's Hand in IC design uses near-pure Top-Down reasoning — the system hunts for known anomaly patterns using mature frameworks built over 16 test cases. But in generalized mode, dynamically constructed frameworks lack this depth. A just-inferred six-element framework and a battle-tested one are fundamentally different. If the system ignores this gap, it will hallucinate patterns that don't exist in unfamiliar domains and miss critical signals the framework doesn't define.
 
-The solution: **Step 0.5 (Knowledge Depth Assessment)** runs immediately after Step 0 and before Step 1. Its result determines the Top-Down vs Bottom-Up ratio for all subsequent steps.
+The solution: **Step 0.5 (Knowledge Depth Assessment)** runs immediately after Step 0 and before Step 1. Its result determines the Top-Down vs Bottom-Up ratio for all subsequent steps — and whether to activate the calibration conversation.
 
 | Step | Name | Core Task |
 |:-----|:-----|:----------|
-| Step 0 | Domain inference & manager calibration | Identify domain, construct six-element framework, load User Profile |
+| Step 0 | Domain inference & manager calibration (passive mode) | Read documents, read Manager Profile (if exists), infer domain, construct six-element framework |
 | **Step 0.5** | **Knowledge Depth Assessment** | Assess framework knowledge depth, determine Top-Down / Bottom-Up ratio, record in `<thinking>` |
+| **Step 0.5→0 backflow** | **Calibration Conversation (conditional)** | If L1 + no Manager Profile: conduct 3-5 natural-language questions to understand the user's world, map answers to six-element framework in `<thinking>`, build initial Profile, re-assess → typically L1.5–L2 |
 | Step 1 | Deconstruction & noise reduction | Per depth level: "keyword hunting" (L3) or "full-text anomaly detection" (L1) |
 | Step 2 | Value chain positioning | Per depth level: "precise positioning" (L3) or "inductive construction" (L1) |
 | Step 3 | Contradiction detection | Per depth level: "framework-driven search" (L3) or "contradiction surfacing" (L1) |
 | Step 4 | Impact extrapolation | Per depth level: "precise translation" (L3) or "conservative extrapolation" (L1) |
 | Step 5 | The Three Soul Questions | Per depth level: "precision strikes" (L3) or "exploratory questioning" (L1) |
+
+**Step 0 Dual-Mode Design: A Chief of Staff's First Day**
+
+Imagine a highly capable chief of staff walking into the office on day one. A stack of project reports sits on his desk. He doesn't pick them up and start writing analysis. He flips through them to get a sense of the industry, organization, and project type. Then he walks into the executive's office, sits down, and says: "Before I dive into these, I'd like to hear from you."
+
+- **Passive mode** (always runs): Read documents, read existing Profile, infer domain and context from the text. The chief of staff flipping through the stack.
+- **Active mode** (conditional): Sit down and talk with the user — understand their world, anxieties, judgment criteria. The chief of staff's first conversation.
+
+Active mode triggers only when Step 0.5 yields L1 *and* no Manager Profile exists. As the Profile grows thicker, the system no longer needs to ask — it reads the documents and already knows what to focus on. **The more mature the system, the quieter it becomes.**
+
+**Two Questioning Capabilities — Two Sides of the Same Coin:**
+
+| Dimension | Step 5: Soul Questions | Step 0: Calibration Conversation |
+|:----------|:----------------------|:---------------------------------|
+| Metaphor | The sword sharpened for the king | The chief of staff's first dinner |
+| Purpose | Force the reviewed party to face reality | Understand the user's world, anxieties, judgment criteria |
+| Posture | Adversarial — you cannot evade | Collaborative — I'm seriously getting to know you |
+| Question design | Contains worst-case scenarios, blocks escape routes | Open, curious, follows the conversation |
+| Pacing | Three questions fired together, no breathing room | Progressive — each answer shapes the next question |
+| User experience | "This question cuts to the heart of it" | "This person is genuinely trying to understand my situation" |
+
+**Three Operating Modes — Trust Evolution, Not Feature Toggles:**
+
+| Stage | System Mode | What Happens |
+|:------|:------------|:-------------|
+| **First meeting** | **Calibration** | Chief of staff just arrived — sit down and talk. Understand user's role, anxieties, judgment criteria. Build initial Manager Profile. May also do a preliminary analysis of one document, or just finish the conversation |
+| **Day-to-day** | **Quick Scan** | User stops chief of staff in the hallway: "Look at this email — is this person hiding something?" No full report needed — quick read, share observations, ask 1-2 follow-ups. Five-minute interaction |
+| **Deep trust** | **Full Report** | User hands over a full document stack: "Before next week's review, go through all of this and tell me the truth." Chief of staff closes the door, runs complete five-module analysis, delivers a weapon for the meeting room |
+
+Quick Scan is the **trust accelerator** — each one is an opportunity for the system to demonstrate judgment. Simultaneously, the user's follow-ups, corrections, and additions build domain knowledge invisibly. Quick Scan isn't just a lightweight service — it's the optimal context for learning and trust-building.
 
 **Knowledge Depth Assessment Dimensions:**
 
@@ -365,7 +398,7 @@ skills/universal-kings-hand/
 
 ## Evolution Phase 1 — Universal Adversarial Analysis Core
 **Target:** TBD
-**Goal:** Zero-config analysis of project documents from any domain. A user drops in a document from a domain the system has never seen, and gets a useful adversarial report.
+**Goal:** Zero-config analysis of project documents from any domain. Calibration conversation can lift an unfamiliar domain from L1 to L1.5/L2 within 3-5 questions. All three operating modes functional.
 
 ### Deliverables
 
@@ -373,11 +406,15 @@ skills/universal-kings-hand/
 |:-----|:------------|
 | Domain inference engine | Full SKILL.md Step 0 implementation with multi-signal fusion (user statement > profile > terminology density > job titles > KPI types > document structure) |
 | Knowledge Depth Assessment (Step 0.5) | Self-assessment producing L1/L2/L3 rating; controls Top-Down vs Bottom-Up ratio across Steps 1–5 |
+| Calibration interview engine | Step 0 active-mode implementation: question generation logic (5 directions × templates + dynamic follow-up based on previous answer), answer→framework mapping in `<thinking>`, stop condition (framework key elements filled to L2 threshold) |
+| Three operating modes | Calibration, Quick Scan, and Full Report — complete implementation with routing logic |
 | Dynamic framework constructor | Real-time six-element framework construction in `<thinking>` block |
 | Generalized five-module report | Module titles, content guidelines, and confidence calibration dynamically adjusted per domain and knowledge depth level |
 | Analysis Foundation Statement | L1-mode reports include explicit declaration of knowledge depth, framework source, confidence distinctions, and recommendations for improving next analysis |
 | Cross-domain test suite | ≥ 3 non-IC-design domains with complete test cases and expected output baselines |
+| Cold-start experience test | Simulate new user's complete path: Calibration conversation → Quick Scan → Full Report; verify experience quality at each step |
 | Software startup domain pack | First non-IC-design complete domain knowledge pack (example + validation) |
+| Medical device domain pack | Second high-quality Domain Pack (enables more users to start at L2/L3, mitigating cold-start risk) |
 
 ### Domain Inference Classification
 
@@ -385,7 +422,7 @@ skills/universal-kings-hand/
 |:-------|:----------|:---------|
 | **Recognized Domain** | Built-in domain pack exists | Load full domain-specific references |
 | **Inferable Domain** | System can construct six-element framework from document | Dynamic framework construction, confidence levels noted |
-| **Unknown Domain** | Insufficient signals | Generic framework analysis, proactively ask user for domain context |
+| **Unknown Domain** | Insufficient signals | Generic framework analysis; if no Profile, activate calibration conversation |
 
 ### Test Domain Recommendations
 
@@ -393,7 +430,7 @@ skills/universal-kings-hand/
 |:-------|:----------|
 | Software startup | High-frequency use case, Agile report formats widely available |
 | Medical device / Pharma | Regulation-driven organization, structurally similar "hard constraints" to IC design but entirely different domain |
-| Construction engineering | Traditional industry, validates applicability beyond tech sector |
+| Construction engineering | Traditional industry, validates applicability beyond tech sector (no pre-built Domain Pack — pure L1 → calibration conversation test) |
 
 ### Acceptance Criteria
 
@@ -403,6 +440,9 @@ skills/universal-kings-hand/
 | Domain inference accuracy | ≥ 90% on 10 blind-test documents across domains | |
 | Six-element framework completeness | All 6 elements populated and domain-plausible (expert review) | |
 | Knowledge depth self-assessment accuracy | IC design documents → L3; unfamiliar domain first contact → L1; partial Domain Pack → L2 (at least one test case per level) | |
+| Calibration interview effectiveness | Post-interview Step 0.5 re-assessment rises from L1 to ≥ L1.5; interview ≤ 5 questions; user does not feel interrogated (human experience evaluation) | |
+| Quick Scan usability | When user submits a text fragment + specific question, system provides targeted conversational analysis without forcing a full five-module report | |
+| Cold-start experience | Complete path from calibration conversation to first full report — no step makes user feel "this is just a generic tool" | |
 | L1 mode behavioral correctness | In L1 thin mode: system does not force-fit frameworks; report includes "Analysis Foundation Statement"; Q2–Q3 of soul questions are exploratory not precision strikes | |
 | L3-vs-L1 output quality difference is reasonable | L3 output assertive and precise; L1 output cautious but still valuable — difference reflects knowledge depth, not system capability | |
 | Soul questions cross-domain validity | All three questions pass "unanswerable with reassurance" test in non-IC domains | |
@@ -568,6 +608,9 @@ Interactions 9+ (toward L3 Deep)
 | Domain inference | Correct domain identification | ≥ 90% on blind test set |
 | Framework completeness | Six elements populated and plausible | 100% expert-verified |
 | Knowledge depth self-assessment | Correct L1/L2/L3 rating | At least one test case per level |
+| Calibration interview | Post-interview depth upgrade from L1 | ≥ L1.5, within ≤ 5 questions, user not interrogated |
+| Quick Scan usability | Targeted conversational analysis without full report | Fragment + question → useful response |
+| Cold-start experience | Full path feels personalized, not generic | Human experience evaluation |
 | L1 mode honesty | System does not force-fit frameworks; includes Analysis Foundation Statement | 100% on L1 test cases |
 | L3-vs-L1 quality gap | L3 assertive and precise, L1 cautious but valuable | Reasonable difference (expert review) |
 | Cross-domain question quality | Unanswerable with reassurance | 3/3 per case across domains |
@@ -605,3 +648,4 @@ Interactions 9+ (toward L3 Deep)
 | v1.6 | 2026-03-18 | Self-adjustment addendum. SKILL.md Step 0 (Domain Inference and Manager Calibration) added. CALIBRATE.md meta-skill created. manager_profiles/henry.md starter profile created. tools/calibrate.sh created. tools/analyze_pptx.sh and tools/markitdown_analyze.sh updated with --manager flag and profile injection. AGENTS.md and ROADMAP.md updated to document the self-adjustment system. |
 | v2.0 | 2026-03-31 | Generalization initiative: "Make Everybody King or Queen." Added Evolution Phases 0–5 covering three tiers (Universal Adversarial Core, Continuous Evolution Engine, Proactive Intelligence). Defined generalized five-step CoT, five-module report, six-element domain framework, directory structure for `skills/universal-kings-hand/`, cross-domain test strategy, security & governance principles. Derived from `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.0. |
 | v2.1 | 2026-03-31 | Incorporated `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.1 updates: Step 0.5 Knowledge Depth Assessment (L1/L2/L3 levels controlling Top-Down vs Bottom-Up ratio), per-step behavior differences at each depth level, report confidence calibration (Analysis Foundation Statement at L1), knowledge sedimentation loop (Tier 1 ↔ Tier 2 structural relationship showing L1→L2→L3 progression), updated acceptance criteria for Evo Phases 0/1/2 and Generalization KPI Summary. |
+| v2.2 | 2026-04-01 | Incorporated `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.2 (chief of staff narrative reframing). Step 0 dual-mode design (passive inference + active calibration conversation). Three operating modes as trust evolution (Calibration → Quick Scan → Full Report). Two questioning capabilities distinguished (soul questions as sword vs. calibration conversation as first dinner). Updated Evo Phase 0 deliverables (dual-mode logic, three-mode routing). Updated Evo Phase 1 deliverables (calibration interview engine, cold-start experience test, medical device Domain Pack) and acceptance criteria. Updated Generalization KPI Summary. |
