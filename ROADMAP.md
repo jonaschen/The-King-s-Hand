@@ -1,8 +1,8 @@
 # ROADMAP.md — The King's Hand
 
 **Project Start:** 2026-03-16
-**Specification Version:** v2.2 (see `THE_KING_S_HAND_DEV_PLAN.md`, `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.2)
-**Current Status:** Original Phases 1–4 complete (2026-03-18). Generalization initiative launched (2026-03-31). Entering Evolution Phase 0.
+**Specification Version:** v3.0 (see `THE_KING_S_HAND_DEV_PLAN.md`, `MAKE_EVERYBODY_KING_OR_QUEEN.md` v2.0)
+**Current Status:** Original Phases 1–4 complete (2026-03-18). Generalization initiative launched (2026-03-31). System identity pivot (2026-04-02): from occasional analyst to persistent working partner. Entering Evolution Phase 0.
 
 ---
 
@@ -22,32 +22,49 @@ Self-Adjustment     → Domain inference, manager profiles, calibration engine
 
 ### Generalization: Make Everybody King or Queen
 
-Six evolution phases to transform The King's Hand from an IC-design-specific tool into a universal adversarial analysis system. See `MAKE_EVERYBODY_KING_OR_QUEEN.md` for the full specification. Each phase produces independently usable value, layered across three tiers:
+Five evolution phases to transform The King's Hand from an IC-design-specific analysis tool into a **persistent working partner** for any domain. See `MAKE_EVERYBODY_KING_OR_QUEEN.md` v2.0 for the full specification.
+
+**Core identity pivot (v2.0):** The system's foundation is no longer "an analyst you consult occasionally" — it is "a persistent working partner who is always there." Adversarial analysis becomes one skill the partner deploys when needed, not its entire identity.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Tier 3: Proactive Intelligence (Phase 4–5)                 │
-│  — Trend detection, scheduled analysis, cross-project       │
-│    pattern matching, community knowledge sharing             │
+│  Tier 3: Proactive Intelligence (Phase 3–4)                 │
+│  — Stagnation detection, deadline alerts, auto-generated     │
+│    weekly reports, trend detection, cross-project matching    │
 ├─────────────────────────────────────────────────────────────┤
-│  Tier 2: Continuous Evolution Engine (Phase 2–3)            │
-│  — Cross-session memory, implicit preference learning,      │
-│    dynamic skill expansion, multi-domain validation          │
+│  Tier 2: Analytical Arsenal & Continuous Evolution (Phase 1–2)│
+│  — King's Hand adversarial analysis as a skill, preference   │
+│    learning, knowledge sedimentation, Domain Pack generation  │
 ├─────────────────────────────────────────────────────────────┤
-│  Tier 1: Universal Adversarial Core (Phase 0–1)             │
-│  — Architecture refactor, domain inference, dynamic          │
-│    framework construction, zero-config startup               │
+│  Tier 1: Persistent Partner Foundation (Phase 0)             │
+│  — First-day dialogue, Living Work State, daily update       │
+│    ingestion, natural-language task tracking                  │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 ```
-Evo Phase 0  → Architecture refactor & core abstraction
-Evo Phase 1  → Universal adversarial analysis core
-Evo Phase 2  → Cross-session memory & preference learning
-Evo Phase 3  → Dynamic skill expansion & multi-domain validation
-Evo Phase 4  → Trend detection & proactive early warning
-Evo Phase 5  → Community knowledge sharing & multi-user collaboration
+Evo Phase 0  → Persistent partner core: first-day dialogue + Living Work State + daily updates
+Evo Phase 1  → Analytical arsenal: adversarial analysis as skill + cross-domain validation
+Evo Phase 2  → Continuous evolution: preference learning + knowledge sedimentation + auto Domain Packs
+Evo Phase 3  → Proactive intelligence: stagnation detection + deadline alerts + auto weekly reports
+Evo Phase 4  → Multi-user & community: knowledge sharing + collaboration
 ```
+
+**Four Operating Modes:**
+| Mode | When | What Happens |
+|:-----|:-----|:-------------|
+| Calibration | First meeting (L1, no Profile) | 3-5 question conversation to understand user's world; builds Manager Profile + initial Living Work State |
+| Daily Conversation | Everyday interactions | User shares updates naturally; system maintains Living Work State (tasks, events, commitments) |
+| Quick Scan | User asks about a specific document/email | Targeted Step 1 + Step 3 analysis, conversational response, no full report |
+| Full Analysis | User requests deep analysis or system detects crisis signals | Complete five-step CoT → five-module report (The King's Hand) |
+
+**Four-Layer Memory Architecture:**
+| Layer | Content | Persistence | Update Frequency |
+|:------|:--------|:------------|:-----------------|
+| Working Memory | Current conversation context | Session-only | Continuous |
+| Living Work State | Tasks, project status, commitments, events | Cross-session | Daily (from conversation) |
+| User Profile | Domain, role, priorities, style preferences, terminology | Cross-session | Low (calibration-driven) |
+| Domain Knowledge Base | Frameworks, patch patterns, euphemism dictionaries | Cross-user | Rare (pack updates) |
 
 ---
 
@@ -219,18 +236,22 @@ Evo Phase 5  → Community knowledge sharing & multi-user collaboration
 # Generalization: Make Everybody King or Queen
 
 **Initiative Start:** 2026-03-31
-**Specification:** `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.0
-**Core Thesis:** The Watermelon Effect is not unique to semiconductors — it is the fate of every matrix organization with layered reporting structures. The King's Hand's analytical architecture (contradiction detection, implicit cost quantification, euphemism translation, unanswerable questions) is domain-agnostic and can be generalized.
+**Specification:** `MAKE_EVERYBODY_KING_OR_QUEEN.md` v2.0
+**Core Thesis:** The system's value is not in occasional analysis — it is in persistent presence. A truly useful chief of staff is someone who is there every day, understands your world, tracks your reality, and pulls out adversarial analysis when you need it. The King's Hand's analytical capability becomes one skill of a persistent working partner.
+
+**System Identity:**
+> **Old:** "Give me a document, I'll tell you what's hidden."
+> **New:** "Be your persistent working partner. Know your world. Track your reality. When you need to cut through the fog, draw the blade."
 
 **Verified Reusable Assets from Original Phases:**
-- Five-step Chain of Thought reasoning engine
+- Five-step Chain of Thought reasoning engine (becomes Tier 2 analytical skill)
 - Five-module report structure with narrative prose rules
 - Status light override mechanism ("technical evidence always trumps official status")
 - Three-type soul question taxonomy (Defensive/Accountability, Scale-Out, Ecosystem Moat)
 - Step 0 self-adaptive reasoning (domain inference + manager calibration)
 - CALIBRATE.md meta-skill for progressive profile enrichment
 
-**Six-Element Domain Framework** (established in Self-Adjustment Addendum, now the generalization cornerstone):
+**Six-Element Domain Framework** (established in Self-Adjustment Addendum, used across all tiers):
 1. Hard Constraint — inviolable limits in the domain
 2. Patch Pattern — short-term fixes masking structural problems
 3. Irreversible Milestone — points of no return
@@ -238,32 +259,76 @@ Evo Phase 5  → Community knowledge sharing & multi-user collaboration
 5. Tier-1 Relationship — most critical external stakeholders
 6. Blame Transfer Seam — organizational boundaries where responsibility shifts
 
+**Core Data Flow Change (v2.0):**
+
+| Dimension | Previous (Analyst Model) | New (Partner Model) |
+|:----------|:------------------------|:--------------------|
+| Primary input | Document packages (weekly reports, Jira, meeting notes) | Daily conversation flow ("boss gave me a new project", "build study is stuck") |
+| Primary output | Five-module analysis report | Living Work State + on-demand analysis + auto-generated weekly reports |
+| Interaction frequency | Weekly (pre-meeting analysis) | Daily (continuous updates) |
+| Core state | Stateless (each analysis independent) | **Stateful** (maintains live TODO, project status, commitment tracking) |
+| Analysis trigger | User submits documents | Partner detects crisis signals from daily conversation, or user explicitly requests |
+
 ---
 
-## Evolution Phase 0 — Architecture Refactor & Core Abstraction
+## Evolution Phase 0 — Persistent Partner Core
 **Target:** TBD
-**Goal:** Separate The King's Hand into a domain-agnostic core and an IC design domain pack, without breaking existing functionality. Establish Step 0's dual-mode (passive inference + active interview) skeleton and three operating mode routing logic.
+**Goal:** Establish the system's foundation identity as a persistent working partner. Users can conduct a first-day dialogue, share daily updates in natural language, and have the system maintain a Living Work State. Quick Scan and Full Analysis modes are available. Existing IC design users (e.g., Henry) experience zero friction — document-in, report-out works exactly as before.
 
 ### Deliverables
 
 | Item | Description |
 |:-----|:------------|
-| `skills/universal-kings-hand/SKILL.md` | Generalized system prompt. CoT parameterized (Steps 0 dual-mode → 0.5 → 1–5 depth-controlled); specific instructions populated by domain framework |
-| Step 0 dual-mode logic | SKILL.md defines Step 0 switching: passive inference → self-assessment → if L1 with no Profile, enter active interview → re-assess. Includes calibration interview question design templates (5 directions × example questions) |
-| Three operating mode routing | SKILL.md defines Calibration, Quick Scan, and Full Report modes with trigger conditions and execution scope |
+| `skills/universal-kings-hand/SKILL.md` | Generalized system prompt defining four operating modes (Calibration / Daily / Quick Scan / Full Analysis) with trigger conditions and execution logic. CoT parameterized (Steps 0 dual-mode → 0.5 → 1–5 depth-controlled) |
+| First-day dialogue engine | Step 0 active-mode: 3-5 natural-language questions mapping to six-element framework in `<thinking>`, Manager Profile initialization, initial Living Work State seeding |
+| Living Work State mechanism | Data structure (task table + event log + commitment tracker). Natural-language input → structured state update parsing in `<thinking>`. Persistence via `work_state/{user}.md` |
+| Daily conversation mode | User shares updates in natural language; system parses to state updates, maintains Living Work State. No analysis triggered unless explicitly requested |
+| Quick Scan mode | User submits fragment + specific question; system runs Step 1 + Step 3 subset, responds conversationally |
+| Four-layer memory architecture | Working Memory / Living Work State (high-frequency) / User Profile (low-frequency) / Domain Knowledge Base. Persistence mechanisms for each layer |
 | `skills/universal-kings-hand/references/framework_templates.md` | Six-element framework example mappings for ≥ 5 domains |
-| `skills/universal-kings-hand/references/domain_inference_signals.md` | Multi-signal domain inference rules (terminology density, job titles, KPI types, document structure) |
-| `skills/universal-kings-hand/domain_packs/ic_design/` | Original four reference files relocated into domain pack directory (no content changes) |
-| `skills/universal-kings-hand/domain_packs/_template/` | Blank domain pack template: `value_chain_map.md`, `patch_patterns.md`, `override_triggers.md`, `euphemism_dictionary.md` |
-| IC design 16-case regression | All original test cases pass at 100% on the refactored system |
+| `skills/universal-kings-hand/references/domain_inference_signals.md` | Multi-signal domain inference rules |
+| `skills/universal-kings-hand/domain_packs/ic_design/` | Original reference files relocated into domain pack directory (no content changes) |
+| `skills/universal-kings-hand/domain_packs/_template/` | Blank domain pack templates for new domains |
+| IC design 16-case regression | Triggered via Full Analysis mode, maintains 100% pass rate |
 
-### Generalized Chain of Thought (with Knowledge Depth Assessment)
+### Living Work State — Core Data Structure
 
-**Structural Design Principle: Top-Down / Bottom-Up Dynamic Ratio**
+The Living Work State is the heart of the persistent partner. It is a structured, continuously updated representation of the user's work reality, maintained from natural daily conversation.
 
-The King's Hand in IC design uses near-pure Top-Down reasoning — the system hunts for known anomaly patterns using mature frameworks built over 16 test cases. But in generalized mode, dynamically constructed frameworks lack this depth. A just-inferred six-element framework and a battle-tested one are fundamentally different. If the system ignores this gap, it will hallucinate patterns that don't exist in unfamiliar domains and miss critical signals the framework doesn't define.
+```markdown
+## Work State: {user}
+Last updated: 2026-03-22 14:30
 
-The solution: **Step 0.5 (Knowledge Depth Assessment)** runs immediately after Step 0 and before Step 1. Its result determines the Top-Down vs Bottom-Up ratio for all subsequent steps — and whether to activate the calibration conversation.
+### Active Projects & Tasks
+| ID | Item | Status | Last Update | Stale Days | Notes |
+|:---|:-----|:-------|:------------|:-----------|:------|
+| T-001 | Android build study | 🔴 Stuck | 03-20 | 2 | root cause verification failed |
+| T-002 | Q2 HC planning (25%) | 🟡 In Progress | 03-22 | 0 | waiting for HR headcount ceiling |
+| T-003 | NPU compiler benchmark | 🟢 On Track | 03-21 | 1 | results match expectations |
+
+### Recent Key Events
+- 2026-03-22: Boss asked about build study in weekly meeting, committed to update by Monday
+- 2026-03-20: Build study root cause verification failed
+
+### Tracked Commitments
+- Monday update to boss on build study → 3 days away
+- HR headcount ceiling response → waiting
+```
+
+**Maintenance triggers:**
+
+| User Says | System Does |
+|:----------|:-----------|
+| "Boss gave me a new task" | Create task entry, infer priority and deadline |
+| "Build study made progress" | Update task status, reset stale days |
+| "The API proposal can wait" | Change status to ⚪ Waiting |
+| "Benchmark is done, results OK" | Mark ✅ Complete, move to history |
+| "Here, analyze this report" | Trigger Tier 2 Full Analysis; link findings to relevant task |
+| Task stale > threshold | Mention naturally in next conversation |
+
+### Generalized Chain of Thought (Tier 2 — Analytical Arsenal)
+
+The King's Hand's five-step CoT + Step 0.5 Knowledge Depth Assessment operates as the Full Analysis mode. It is triggered on-demand, not on every interaction.
 
 | Step | Name | Core Task |
 |:-----|:-----|:----------|
@@ -389,99 +454,77 @@ skills/universal-kings-hand/
 
 | Check | Target | Result |
 |:------|:-------|:-------|
-| IC design regression | 16/16 test cases pass, output quality no degradation | |
-| Core/domain-pack separation | System runs in generic mode when `domain_packs/ic_design/` is removed (lower quality but no errors) | |
+| First-day dialogue | 3-5 questions → Manager Profile accurately reflects user's work context | |
+| Daily update ingestion | ≥ 90% accuracy extracting task status updates from 10 natural conversation segments | |
+| Living Work State consistency | After 5 simulated days, work state table accurately reflects all task statuses | |
+| Quick Scan | Targeted conversational response to fragment + question, no forced full report | |
+| **Existing user zero friction** | User with complete Profile + Domain Pack (e.g., Henry) submits documents → system does NOT trigger calibration dialogue, goes straight to Full Analysis, experience identical to original King's Hand | |
+| IC design regression | 16/16 test cases pass via Full Analysis mode | |
+| Core/domain-pack separation | System runs in generic mode when `domain_packs/ic_design/` is removed | |
 | Framework template coverage | ≥ 5 domains with six-element framework examples | |
 | Step 0.5 implementation | Knowledge Depth Assessment produces correct L1/L2/L3 rating in `<thinking>` block | |
 
 ---
 
-## Evolution Phase 1 — Universal Adversarial Analysis Core
+## Evolution Phase 1 — Analytical Arsenal & Cross-Domain Validation
 **Target:** TBD
-**Goal:** Zero-config analysis of project documents from any domain. Calibration conversation can lift an unfamiliar domain from L1 to L1.5/L2 within 3-5 questions. All three operating modes functional.
+**Goal:** Equip the persistent partner with The King's Hand's full adversarial analysis capability as an on-demand skill. Validate across multiple domains. Analysis results feed back into Living Work State.
 
 ### Deliverables
 
 | Item | Description |
 |:-----|:------------|
-| Domain inference engine | Full SKILL.md Step 0 implementation with multi-signal fusion (user statement > profile > terminology density > job titles > KPI types > document structure) |
-| Knowledge Depth Assessment (Step 0.5) | Self-assessment producing L1/L2/L3 rating; controls Top-Down vs Bottom-Up ratio across Steps 1–5 |
-| Calibration interview engine | Step 0 active-mode implementation: question generation logic (5 directions × templates + dynamic follow-up based on previous answer), answer→framework mapping in `<thinking>`, stop condition (framework key elements filled to L2 threshold) |
-| Three operating modes | Calibration, Quick Scan, and Full Report — complete implementation with routing logic |
-| Dynamic framework constructor | Real-time six-element framework construction in `<thinking>` block |
-| Generalized five-module report | Module titles, content guidelines, and confidence calibration dynamically adjusted per domain and knowledge depth level |
-| Analysis Foundation Statement | L1-mode reports include explicit declaration of knowledge depth, framework source, confidence distinctions, and recommendations for improving next analysis |
-| Cross-domain test suite | ≥ 3 non-IC-design domains with complete test cases and expected output baselines |
-| Cold-start experience test | Simulate new user's complete path: Calibration conversation → Quick Scan → Full Report; verify experience quality at each step |
-| Software startup domain pack | First non-IC-design complete domain knowledge pack (example + validation) |
-| Medical device domain pack | Second high-quality Domain Pack (enables more users to start at L2/L3, mitigating cold-start risk) |
+| Full Analysis mode | Complete five-step CoT + five-module report, triggered on-demand from within the partner context |
+| Step 0.5 Knowledge Depth Assessment | L1/L2/L3 self-assessment controlling Top-Down vs Bottom-Up ratio |
+| Analysis → Living Work State writeback | Key findings auto-summarized into the relevant task's history in Living Work State |
+| Domain inference engine | Multi-signal fusion: user statement > profile > terminology density > job titles > KPI types > document structure |
+| Dynamic framework constructor | Real-time six-element framework construction in `<thinking>` |
+| Analysis Foundation Statement | L1-mode reports include explicit depth declaration and improvement recommendations |
+| Software startup Domain Pack | First non-IC-design complete domain knowledge pack |
+| Medical device Domain Pack | Second high-quality Domain Pack (mitigates cold-start risk) |
+| Cross-domain test suite | ≥ 3 non-IC-design domains with test cases and expected output baselines |
+| Cold-start end-to-end test | Calibration → daily updates → quick scan → full analysis — complete path verified |
 
-### Domain Inference Classification
+### Analysis Trigger Logic
 
-| Result | Condition | Behavior |
-|:-------|:----------|:---------|
-| **Recognized Domain** | Built-in domain pack exists | Load full domain-specific references |
-| **Inferable Domain** | System can construct six-element framework from document | Dynamic framework construction, confidence levels noted |
-| **Unknown Domain** | Insufficient signals | Generic framework analysis; if no Profile, activate calibration conversation |
-
-### Test Domain Recommendations
-
-| Domain | Rationale |
-|:-------|:----------|
-| Software startup | High-frequency use case, Agile report formats widely available |
-| Medical device / Pharma | Regulation-driven organization, structurally similar "hard constraints" to IC design but entirely different domain |
-| Construction engineering | Traditional industry, validates applicability beyond tech sector (no pre-built Domain Pack — pure L1 → calibration conversation test) |
+| Trigger | What Happens |
+|:--------|:-------------|
+| User explicitly requests ("analyze this report") | Full five-module analysis |
+| User asks about a specific document/email | Quick Scan (Step 1 + Step 3 subset) |
+| Partner detects crisis signals from daily conversation | Suggest analysis: "Your recent updates on X suggest something may be hidden. Want me to look deeper?" |
+| Weekly report generation finds inconsistency | Flag contradiction in weekly report, recommend full analysis |
 
 ### Acceptance Criteria
 
 | Check | Target | Result |
 |:------|:-------|:-------|
-| Zero-config usability | Useful reports produced for 3 test domains with no Manager Profile and no Domain Pack | |
-| Domain inference accuracy | ≥ 90% on 10 blind-test documents across domains | |
-| Six-element framework completeness | All 6 elements populated and domain-plausible (expert review) | |
-| Knowledge depth self-assessment accuracy | IC design documents → L3; unfamiliar domain first contact → L1; partial Domain Pack → L2 (at least one test case per level) | |
-| Calibration interview effectiveness | Post-interview Step 0.5 re-assessment rises from L1 to ≥ L1.5; interview ≤ 5 questions; user does not feel interrogated (human experience evaluation) | |
-| Quick Scan usability | When user submits a text fragment + specific question, system provides targeted conversational analysis without forcing a full five-module report | |
-| Cold-start experience | Complete path from calibration conversation to first full report — no step makes user feel "this is just a generic tool" | |
-| L1 mode behavioral correctness | In L1 thin mode: system does not force-fit frameworks; report includes "Analysis Foundation Statement"; Q2–Q3 of soul questions are exploratory not precision strikes | |
-| L3-vs-L1 output quality difference is reasonable | L3 output assertive and precise; L1 output cautious but still valuable — difference reflects knowledge depth, not system capability | |
-| Soul questions cross-domain validity | All three questions pass "unanswerable with reassurance" test in non-IC domains | |
-| IC design zero regression | 16/16 regression pass | |
+| Analysis trigger accuracy | Daily conversation does NOT trigger analysis; explicit requests DO; system never analyzes without consent | |
+| Analysis → Living Work State | Key findings correctly written back to relevant task | |
+| Zero-config cross-domain | Useful reports for 3 test domains with no Manager Profile and no Domain Pack | |
+| Domain inference accuracy | ≥ 90% on 10 blind-test documents | |
+| Knowledge depth assessment | L3 for IC design, L1 for first contact, L2 for partial Pack | |
+| L1 behavioral correctness | No force-fit; Analysis Foundation Statement present; Q2-Q3 exploratory | |
+| Cross-domain soul questions | 3/3 unanswerable with reassurance per test case | |
+| Cold-start experience | No step in the full path feels "this is just a generic tool" | |
+| IC design regression | 16/16 pass | |
 
 ---
 
-## Evolution Phase 2 — Cross-Session Memory & Preference Learning
+## Evolution Phase 2 — Continuous Evolution
 **Target:** TBD
-**Goal:** The system learns from every interaction — remembers user preferences, communication style, focus areas — and gets more accurate over time.
+**Goal:** The partner gets smarter with every interaction. Preference learning, knowledge sedimentation (L1→L2→L3), auto-generated Domain Packs.
 
 ### Deliverables
 
 | Item | Description |
 |:-----|:------------|
-| Extended CALIBRATE.md | Incremental update mode, conflict resolution logic, confidence decay mechanism, cross-domain preference migration |
-| User Profile v2 structure | New sections: `style_preferences`, `priority_order`, `question_preferences`, `analysis_history` |
-| Implicit preference extraction | SKILL.md instructions for detecting preferences when user modifies output or follows up on specific areas |
-| Preference learning test suite | Simulated 5-interaction sequence verifying preference convergence |
+| Implicit preference learning | CIPHER-inspired: compare original output vs. user modifications, infer descriptive preferences |
+| Extended CALIBRATE.md | Incremental update, conflict resolution, confidence decay, cross-domain migration |
+| Domain Pack auto-generation | From ≥ 5 same-domain interactions, produce candidate Pack, request user confirmation |
+| Quality gate mechanism | Consistency check + minimum usage count (≥ 3) + user confirmation |
+| Knowledge sedimentation validation | Full L1→L2→L3 longitudinal test |
 
-### Preference Extraction Triggers
-
-| Trigger Event | Extraction | Storage |
-|:-------------|:-----------|:--------|
-| User modifies report wording | Original vs. modified → style preference | Profile `style_preferences` |
-| User follows up on a specific module/direction | Follow-up direction → priority inference | Profile `priority_order` |
-| User rejects an analysis conclusion | Rejection reason → domain knowledge correction | Domain Pack |
-| User provides unknown document type | Document structure → new input format rules | Domain Pack `input_formats` |
-| User indicates a question type is particularly useful | Question type preference | Profile `question_preferences` |
-
-### Design Principles
-
-- **White-Box Preferences:** All inferred preferences stored as natural language in the User Profile. Users can inspect, edit, or delete any preference at any time.
-- **Recency over Seniority:** `recent behavior > early behavior`, `explicit statement > inferred preference`
-- **Confidence Decay:** Preferences not re-validated after N interactions have their confidence level gradually reduced
-
-### Knowledge Sedimentation Loop (Tier 1 ↔ Tier 2 Structural Relationship)
-
-All Tier 2 mechanisms — preference learning, memory maintenance, skill expansion — serve a single purpose: **deposit Bottom-Up surfaced knowledge into Top-Down usable frameworks, driving knowledge depth from L1 toward L3.**
+### Knowledge Sedimentation Loop
 
 ```
 Interactions 1-3 (L1 Thin)
@@ -490,113 +533,82 @@ Interactions 1-3 (L1 Thin)
   └─ CALIBRATE.md extracts: domain terms, user focus areas, anomaly signals
 
 Interactions 4-8 (L2 Moderate)
-  ├─ Candidate knowledge passes quality gates, upgrades to confirmed
-  ├─ Patch pattern library gains concrete instances (not just abstractions)
+  ├─ Candidate knowledge passes quality gates → confirmed
+  ├─ Patch pattern library gains concrete instances
   ├─ Euphemism dictionary coverage rises
-  └─ Top-Down : Bottom-Up ratio approaches 50:50
+  └─ Top-Down : Bottom-Up approaches 50:50
 
 Interactions 9+ (toward L3 Deep)
-  ├─ Domain Pack accumulates sufficient verified knowledge
-  ├─ Override trigger rules gain quantified thresholds
-  ├─ Top-Down ratio increases; analysis precision and efficiency improve together
-  └─ System behavior converges on King's Hand IC design performance
+  ├─ Domain Pack accumulates verified knowledge
+  ├─ Override triggers gain quantified thresholds
+  └─ System converges on King's Hand IC design performance
 ```
 
-**The generalized system is not a weakened King's Hand — it is the King's Hand in its youth.** Given sufficient interactions and calibration, it grows equally sharp in any domain. Step 0.5 ensures honesty throughout growth — the system never pretends maturity it hasn't earned.
+**The generalized system is not a weakened King's Hand — it is the King's Hand in its youth.**
 
 ### Acceptance Criteria
 
 | Check | Target | Result |
 |:------|:-------|:-------|
-| Preference match after 5 interactions | Report style significantly better aligned with user preferences (human evaluation) | |
-| Knowledge depth climbing | An L1 domain upgrades to L2 after ≥ 8 interactions; Step 0.5 self-assessment correctly reflects the upgrade | |
-| Cross-session memory consistency | Session N+1 correctly references knowledge from session N | |
-| Preference transparency | User can find all inferred preferences in Profile, descriptions are understandable | |
-| Knowledge expansion quality | Dynamically expanded knowledge introduces no errors or contradictions | |
-| No regression | Preference learning does not degrade analysis quality (IC design 16-case regression) | |
+| Preference match | 5 interactions → report style significantly improved (human eval) | |
+| Knowledge depth climbing | L1 → L2 after ≥ 8 interactions; Step 0.5 reflects upgrade | |
+| Domain Pack auto-generation | Expert review accuracy ≥ 80% | |
+| Preference transparency | All inferences visible and editable in Profile | |
+| No regression | IC design 16-case regression pass | |
 
 ---
 
-## Evolution Phase 3 — Dynamic Skill Expansion & Multi-Domain Validation
+## Evolution Phase 3 — Proactive Intelligence
 **Target:** TBD
-**Goal:** The system solidifies interaction-learned domain knowledge into reusable Domain Packs and proves stability across multiple real-world domains.
+**Goal:** The partner starts speaking up. Stagnation detection, deadline alerts, auto-generated weekly reports, trend detection.
 
 ### Deliverables
 
 | Item | Description |
 |:-----|:------------|
-| Domain Pack auto-generation | From ≥ 5 same-domain interactions, auto-generate candidate Domain Pack and request user confirmation |
-| Quality gate mechanism | Three-layer gate: consistency check, minimum usage count (≥ 3 interactions), user confirmation |
-| 5 complete Domain Packs | IC design (existing) + 4 new domains, each with all four reference files |
-| Cross-domain stress test | Switch between 3 different domain documents within one Profile; verify no cross-contamination |
+| Stagnation detection engine | Living Work State stale-day thresholds → natural conversational reminders |
+| Deadline alert | Track commitments, remind before deadlines |
+| Auto weekly report | From week's daily conversations + Living Work State change history, generate structured weekly report |
+| Trend detection | Same task/project status compared across weeks; worsening/improving flagged |
+| Cross-project pattern matching | New project signals compared against historical crisis precursors |
 
-### Quality Gate Rules
+### Stagnation Alert Tone
 
-1. **Consistency check:** New knowledge must not contradict existing knowledge base (unless user explicitly overrides)
-2. **Minimum usage count:** An inferred preference or new knowledge point must be used in ≥ 3 interactions without being rejected to upgrade from "candidate" to "confirmed"
-3. **User confirmation:** Major knowledge base changes (e.g., new complete Domain Pack) notify user and request confirmation
+| Situation | Partner Says |
+|:----------|:-------------|
+| General task stale > 7 days | "By the way, the API proposal hasn't been updated in a week. Still waiting on the architecture committee, or is something else going on?" |
+| Deadline approaching | "You told the client you'd have the spec by Wednesday — that's tomorrow. Want me to help organize what we have so far?" |
+| Critical task deteriorating | "Build study is in its third week. Each time you mention it, the language gets vaguer. This might be the moment to raise it in the weekly meeting." |
 
 ### Acceptance Criteria
 
 | Check | Target | Result |
 |:------|:-------|:-------|
-| Auto-generated Domain Pack quality | Expert review accuracy ≥ 80% | |
-| Cross-domain switching stability | Analysis quality for each domain unaffected by other domains in Profile | |
-| Community contribution feasibility | Domain Pack format clear enough for a domain expert to complete in 2 hours | |
+| Weekly report quality | Auto-generated report covers all key progress and blockers (human eval) | |
+| Stagnation alert accuracy | Alerted tasks genuinely need attention (false positive < 20%) | |
+| Deadline alerts | All commitments with explicit deadlines are reminded before due | |
+| Trend detection | Correctly identify worsening/improving across 3 simulated weeks | |
 
 ---
 
-## Evolution Phase 4 — Trend Detection & Proactive Early Warning
+## Evolution Phase 4 — Multi-User & Community
 **Target:** TBD
-**Goal:** Evolve from single-shot analysis to longitudinal tracking — detect risk trends across repeated analyses and proactively warn before crises emerge.
+**Goal:** Domain Pack sharing, community ratings, multi-user collaboration.
 
 ### Deliverables
 
 | Item | Description |
 |:-----|:------------|
-| Analysis history summary | After each analysis, auto-write key findings to project history table |
-| Trend comparison section | Reports include "comparison with previous analysis" paragraph |
-| Cross-project pattern matching | New project signals compared against historical project crisis precursors |
-| Scheduled analysis reminder | Environment-appropriate scheduling support (Claude.ai reminder / Claude Code cron / MCP webhook) |
-
-### Deployment-Dependent Scheduling
-
-| Environment | Implementation | Limitation |
-|:------------|:---------------|:-----------|
-| Claude.ai conversation | Profile records "last analysis date" and "suggested next date"; remind on new conversation | No true background execution |
-| Claude Code + Cron | `crontab` schedules `analyze_pptx.sh --manager {user}`, output to designated path | Requires local environment |
-| MCP Server integration | Long-running service receives webhooks (Jira events, Git push), triggers analysis and push notification | Requires MCP infrastructure |
+| Domain Pack sharing | Opt-in sharing with auto-PII removal |
+| Pack rating & merge | Community scores, multi-contributor merge |
+| Privacy separation | Living Work State + User Profile strictly private; Domain Pack optionally shared |
 
 ### Acceptance Criteria
 
 | Check | Target | Result |
 |:------|:-------|:-------|
-| Trend detection | Correctly identify worsening/improving trends across 3 consecutive weeks of simulated data | |
-| Proactive alert false positive rate | < 20% | |
-| Cross-project pattern match hit rate | ≥ 80% on known crisis precursors | |
-
----
-
-## Evolution Phase 5 — Community Knowledge Sharing & Multi-User Collaboration
-**Target:** TBD
-**Goal:** Enable different users to share, rate, and merge Domain Packs, creating network effects in domain knowledge accumulation.
-
-### Deliverables
-
-| Item | Description |
-|:-----|:------------|
-| Domain Pack rating mechanism | Users can rate community-contributed Domain Packs |
-| Pack merge tool | Merge multiple users' Packs for the same domain into a more complete version |
-| Privacy separation | Strict separation: User Profile (private) vs. Domain Pack (opt-in sharing) |
-| Domain leaderboard | Display most active and highest-quality domain Packs |
-
-### Acceptance Criteria
-
-| Check | Target | Result |
-|:------|:-------|:-------|
-| Privacy enforcement | No personally identifiable information leaks from Profile to shared Packs | |
-| Merge quality | Merged Pack is more complete than any single contributor's Pack (expert review) | |
-| Contributor experience | Domain expert can contribute a Pack via a clear, documented process | |
+| Privacy enforcement | No PII leaks from Profile or Living Work State to shared Packs | |
+| Merge quality | Merged Pack more complete than any single contributor (expert review) | |
 
 ---
 
@@ -604,30 +616,32 @@ Interactions 9+ (toward L3 Deep)
 
 | Category | Metric | Target |
 |:---------|:-------|:-------|
-| Zero-config usability | Useful report from unknown-domain document | Actionable output with no prior setup |
-| Domain inference | Correct domain identification | ≥ 90% on blind test set |
-| Framework completeness | Six elements populated and plausible | 100% expert-verified |
-| Knowledge depth self-assessment | Correct L1/L2/L3 rating | At least one test case per level |
-| Calibration interview | Post-interview depth upgrade from L1 | ≥ L1.5, within ≤ 5 questions, user not interrogated |
-| Quick Scan usability | Targeted conversational analysis without full report | Fragment + question → useful response |
-| Cold-start experience | Full path feels personalized, not generic | Human experience evaluation |
-| L1 mode honesty | System does not force-fit frameworks; includes Analysis Foundation Statement | 100% on L1 test cases |
-| L3-vs-L1 quality gap | L3 assertive and precise, L1 cautious but valuable | Reasonable difference (expert review) |
-| Cross-domain question quality | Unanswerable with reassurance | 3/3 per case across domains |
-| IC design regression | No quality degradation | 16/16 test cases pass |
-| Knowledge depth climbing | L1 → L2 after ≥ 8 interactions | Step 0.5 correctly reflects upgrade |
-| Preference learning | Style match improvement over 5 interactions | Significant (human evaluation) |
-| Preference transparency | All inferences visible and editable | 100% |
-| Domain Pack auto-generation | Expert-reviewed accuracy | ≥ 80% |
+| **Tier 1: Persistent Partner** | | |
+| First-day dialogue | Manager Profile accuracy after 3-5 questions | Human-verified |
+| Daily update ingestion | Task status extraction accuracy from natural conversation | ≥ 90% |
+| Living Work State consistency | Accurate after 5 simulated days | Human-verified |
+| Existing user zero friction | Henry-class user → straight to Full Analysis, no calibration | Pass/fail |
+| **Tier 2: Analytical Arsenal** | | |
+| Analysis trigger accuracy | No false triggers on daily conversation | 100% |
+| Cross-domain analysis | Useful reports from unknown-domain documents | 3+ test domains |
+| Domain inference | Correct identification | ≥ 90% blind test |
+| Knowledge depth assessment | Correct L1/L2/L3 rating | One test per level |
+| Soul questions | Unanswerable with reassurance | 3/3 per case |
+| IC design regression | No degradation | 16/16 pass |
+| Knowledge depth climbing | L1 → L2 after ≥ 8 interactions | Step 0.5 reflects upgrade |
+| Preference learning | Style match improvement over 5 interactions | Significant (human eval) |
+| Domain Pack auto-generation | Expert accuracy | ≥ 80% |
+| **Tier 3: Proactive Intelligence** | | |
+| Weekly report quality | Covers all key progress and blockers | Human-verified |
+| Stagnation alert precision | False positive rate | < 20% |
+| Deadline alerts | All explicit deadlines reminded | 100% |
 | Trend detection | Correct trend identification | 3-week simulated data |
-| Proactive alert precision | False positive rate | < 20% |
-| Cross-project pattern matching | Known precursor hit rate | ≥ 80% |
 
 ---
 
 ## Security & Governance Principles
 
-1. **User Data Sovereignty:** User Profiles belong entirely to the user. Never shared without consent. Domain Pack sharing is opt-in; auto-strip PII before sharing.
+1. **User Data Sovereignty:** User Profiles and Living Work State belong entirely to the user. Living Work State contains tasks, commitments, and work progress — highly sensitive. Never shared without consent. Domain Pack sharing is opt-in; auto-strip PII before sharing.
 2. **Analysis Integrity:** No matter how the system evolves, the core oath stands — *"Will not comfort you, will not cover for anyone, will not fabricate a red light without evidence."* Preference learning can change report style, never analytical objectivity.
 3. **Preference ≠ Bias:** If a user's preferences create blind spots (e.g., preferring to ignore certain risk signals), the system follows the preference but explicitly flags: "This analysis has omitted the following signal types per your preference settings. Periodic unfiltered analysis recommended."
 4. **Dynamic Expansion Safety:** When deployment involves code execution (e.g., Claude Code automation scripts), all dynamically generated scripts must run in sandboxed environments.
@@ -649,3 +663,4 @@ Interactions 9+ (toward L3 Deep)
 | v2.0 | 2026-03-31 | Generalization initiative: "Make Everybody King or Queen." Added Evolution Phases 0–5 covering three tiers (Universal Adversarial Core, Continuous Evolution Engine, Proactive Intelligence). Defined generalized five-step CoT, five-module report, six-element domain framework, directory structure for `skills/universal-kings-hand/`, cross-domain test strategy, security & governance principles. Derived from `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.0. |
 | v2.1 | 2026-03-31 | Incorporated `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.1 updates: Step 0.5 Knowledge Depth Assessment (L1/L2/L3 levels controlling Top-Down vs Bottom-Up ratio), per-step behavior differences at each depth level, report confidence calibration (Analysis Foundation Statement at L1), knowledge sedimentation loop (Tier 1 ↔ Tier 2 structural relationship showing L1→L2→L3 progression), updated acceptance criteria for Evo Phases 0/1/2 and Generalization KPI Summary. |
 | v2.2 | 2026-04-01 | Incorporated `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.2 (chief of staff narrative reframing). Step 0 dual-mode design (passive inference + active calibration conversation). Three operating modes as trust evolution (Calibration → Quick Scan → Full Report). Two questioning capabilities distinguished (soul questions as sword vs. calibration conversation as first dinner). Updated Evo Phase 0 deliverables (dual-mode logic, three-mode routing). Updated Evo Phase 1 deliverables (calibration interview engine, cold-start experience test, medical device Domain Pack) and acceptance criteria. Updated Generalization KPI Summary. |
+| v3.0 | 2026-04-02 | **System identity pivot.** Incorporated `MAKE_EVERYBODY_KING_OR_QUEEN.md` v2.0. System foundation flipped from "analyst you consult" to "persistent working partner who is always there." Three-tier architecture restructured: Tier 1 = Persistent Partner Foundation (Living Work State, daily updates, first-day dialogue); Tier 2 = Analytical Arsenal & Continuous Evolution (King's Hand analysis as on-demand skill, preference learning); Tier 3 = Proactive Intelligence (stagnation detection, deadline alerts, auto weekly reports). Four operating modes (Calibration / Daily / Quick Scan / Full Analysis). Four-layer memory (Working / Living Work State / User Profile / Domain Knowledge). Development phases reduced from 6 to 5. Living Work State data structure defined. Analysis trigger logic defined. Generalization KPI Summary restructured by tier. |
