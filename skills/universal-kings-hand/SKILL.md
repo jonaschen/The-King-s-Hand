@@ -448,6 +448,19 @@
 
     Each question must contain enough specificity that the person being
     asked cannot answer reassuringly without acknowledging the real problem.
+
+    STEP 6 — LIVING WORK STATE WRITEBACK (post-output):
+    After the five-module report is generated, update the Living Work State:
+    — If the analyzed project/task has an existing entry in the task table,
+      update its status (🟢/🟡/🔴 from Module 2), add a dated note
+      summarizing the key finding in ≤ 2 sentences, and record the analysis
+      date in the event log.
+    — If the analyzed project is NOT yet in the task table, create a new
+      entry with the status from Module 2 and a summary note.
+    — If Module 5 questions surfaced a specific risk or deadline, add it
+      to the Tracked Commitments section if not already present.
+    — This writeback happens in <thinking> and is NOT shown in the output.
+      The user sees only the five-module report.
   </chain_of_thought_logic>
 
   <output_modules>
