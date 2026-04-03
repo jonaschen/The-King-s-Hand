@@ -7,11 +7,15 @@
 # USAGE:
 #   ./tools/kings-hand.sh                      # New user (triggers calibration)
 #   ./tools/kings-hand.sh --manager jonas       # Existing user with profile
-#   ./tools/kings-hand.sh --manager jonas --analyze report.pdf  # Direct analysis
+#   ./tools/kings-hand.sh --manager jonas --repo ~/projects/my-app
+#   ./tools/kings-hand.sh --manager jonas --analyze report.pdf
 #   ./tools/kings-hand.sh --manager jonas --ask "Is this email hiding something?"
 #
 # OPTIONS:
 #   --manager NAME    Load Manager Profile and Living Work State for NAME
+#   --repo PATH       Set working directory to PATH (for repo-aware features).
+#                     Claude will run git/gh commands relative to this path.
+#                     Can be specified multiple times for multi-repo context.
 #   --analyze FILE    Extract text from FILE and submit for Full Analysis
 #   --ask QUESTION    Start with a specific question (Quick Scan mode)
 #   --status          Show current Living Work State and exit
@@ -42,10 +46,12 @@ MANAGER_NAME=""
 ANALYZE_FILE=""
 ASK_QUESTION=""
 SHOW_STATUS=false
+REPO_PATHS=()
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --manager|-m)   MANAGER_NAME="$2"; shift 2 ;;
+        --repo|-r)      REPO_PATHS+=("$(realpath "$2")"); shift 2 ;;
         --analyze|-a)   ANALYZE_FILE="$2"; shift 2 ;;
         --ask|-q)       ASK_QUESTION="$2"; shift 2 ;;
         --status|-s)    SHOW_STATUS=true; shift ;;
@@ -142,6 +148,57 @@ SYSTEM_CONTEXT="$TMPDIR_WORK/system_context.md"
     done
     echo ""
 
+    # Append repo context snapshots (if --repo specified)
+    if [[ ${#REPO_PATHS[@]} -gt 0 ]]; then
+        echo "════════════════════════════════════════════════════════════════════════════════"
+        echo "REPOSITORY CONTEXT (auto-loaded — use tools to dig deeper):"
+        echo "════════════════════════════════════════════════════════════════════════════════"
+        echo ""
+        for rp in "${REPO_PATHS[@]}"; do
+            repo_name="$(basename "$rp")"
+            echo "── Repository: $repo_name ($rp) ──"
+            echo ""
+            if [[ -d "$rp/.git" ]]; then
+                echo "Recent commits (last 10):"
+                git -C "$rp" log --oneline -10 2>/dev/null || echo "  (git log failed)"
+                echo ""
+                uncommitted="$(git -C "$rp" status --short 2>/dev/null)"
+                if [[ -n "$uncommitted" ]]; then
+                    echo "Uncommitted changes:"
+                    echo "$uncommitted"
+                    echo ""
+                fi
+                if command -v gh &>/dev/null; then
+                    open_issues="$(gh issue list --repo "$rp" --limit 10 2>/dev/null)" || open_issues=""
+                    if [[ -n "$open_issues" ]]; then
+                        echo "Open issues (top 10):"
+                        echo "$open_issues"
+                        echo ""
+                    fi
+                    open_prs="$(gh pr list --repo "$rp" --limit 10 2>/dev/null)" || open_prs=""
+                    if [[ -n "$open_prs" ]]; then
+                        echo "Open PRs (top 10):"
+                        echo "$open_prs"
+                        echo ""
+                    fi
+                fi
+            else
+                echo "  (Not a git repository)"
+                echo ""
+            fi
+            # Include ROADMAP or TODO if present
+            for doc in ROADMAP.md TODO.md TODO.txt; do
+                if [[ -f "$rp/$doc" ]]; then
+                    echo "── $doc (first 50 lines) ──"
+                    head -50 "$rp/$doc"
+                    echo ""
+                    echo "[... truncated — use Read tool for full content]"
+                    echo ""
+                fi
+            done
+        done
+    fi
+
 } > "$SYSTEM_CONTEXT"
 
 # ─── Prepare initial message ────────────────────────────────────────────────
@@ -222,10 +279,22 @@ if [[ -n "$MANAGER_NAME" ]]; then
         echo "[kings-hand] Work state: $WORK_STATE_PATH" >&2
     fi
 fi
+if [[ ${#REPO_PATHS[@]} -gt 0 ]]; then
+    for rp in "${REPO_PATHS[@]}"; do
+        echo "[kings-hand] Repo context: $rp" >&2
+    done
+fi
 echo "" >&2
 
-if [[ -n "$INITIAL_MESSAGE" ]]; then
-    claude --system-prompt "$(cat "$SYSTEM_CONTEXT")" --initial-prompt "$INITIAL_MESSAGE"
-else
-    claude --system-prompt "$(cat "$SYSTEM_CONTEXT")"
+# Determine working directory: first --repo path, or current directory
+WORK_DIR="$(pwd)"
+if [[ ${#REPO_PATHS[@]} -gt 0 ]]; then
+    WORK_DIR="${REPO_PATHS[0]}"
 fi
+
+CLAUDE_ARGS=(--system-prompt "$(cat "$SYSTEM_CONTEXT")")
+if [[ -n "$INITIAL_MESSAGE" ]]; then
+    CLAUDE_ARGS+=(--initial-prompt "$INITIAL_MESSAGE")
+fi
+
+cd "$WORK_DIR" && exec claude "${CLAUDE_ARGS[@]}"
