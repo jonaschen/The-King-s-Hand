@@ -428,7 +428,11 @@
     — Q1 Defensive/Accountability: attacks the worst current risk, demands
       specific numbers or a named Plan B, cannot be deflected with
       reassurance. At all knowledge levels, this question fires on the
-      clearest contradiction found.
+      clearest contradiction found. IF NO CONTRADICTIONS EXIST (genuinely
+      clean project): shift Q1 to contingency focus — target the most
+      significant remaining dependency or single-point-of-failure, even
+      if currently on track. Frame as: "What is your contingency if [the
+      one thing that could still go wrong] happens?"
 
     — Q2 Scale-Out Strategic: challenges whether this project's deliverables
       can be modularized and reused across product lines or business units.
@@ -583,14 +587,16 @@
       Domain Pack is loaded
 
     IC design Domain Pack (the most complete pack):
-    — domain_packs/ic_design/value_chain_map.md (5-layer semiconductor
-      software stack)
-    — domain_packs/ic_design/patch_patterns.md (8 workaround patterns
-      with PPA costs)
-    — domain_packs/ic_design/override_triggers.md (quantified Red/Yellow/
-      Green rules)
-    — domain_packs/ic_design/euphemism_dictionary.md (25+ disguised
-      language patterns)
+    — domain_packs/ic_design/software_stack_map.md (5-layer semiconductor
+      software stack — value chain map equivalent)
+    — domain_packs/ic_design/workaround_taxonomy.md (8 workaround patterns
+      with PPA costs — patch patterns equivalent)
+    — domain_packs/ic_design/rag_status_criteria.md (quantified Red/Yellow/
+      Green rules — override triggers equivalent)
+    — domain_packs/ic_design/corporate_code_words.md (25+ disguised
+      language patterns — euphemism dictionary equivalent)
+    — domain_packs/ic_design/question_patterns.md (15 parameterized
+      question templates across the three question types)
 
     When no Domain Pack exists for the identified domain, the system
     operates at L1 or L2 and constructs the analytical framework from
