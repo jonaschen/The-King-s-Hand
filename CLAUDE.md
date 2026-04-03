@@ -4,15 +4,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**The King's Hand** is a Claude Agent Skill Set (single-agent system) designed to give decision-makers adversarial intelligence about project health. Originally built for senior IC design executives, it is evolving into a **universal adversarial analysis system** for any domain. It analyzes raw project data (Jira logs, Git commits, meeting notes, status reports, email threads) and produces a five-module executive report in Traditional Chinese (繁體中文), culminating in "The Three Soul-Searching Questions."
+**The King's Hand** is a persistent working partner — an AI chief of staff that is there every day, understands your world, tracks your reality, and deploys adversarial analysis when you need to cut through organizational fog. Originally built for IC design executives, it works across any domain (semiconductor, software startup, medical device, construction, finance).
 
-**Core problem:** In matrix organizations, project status reports are systematically filtered upward. Projects appear "green" externally while being "red" internally (the "Watermelon Effect"). This is not unique to semiconductors — it is the fate of every organization with layered reporting structures. The system overrides official statuses with evidence-based assessments.
+**Core problem:** In matrix organizations, project status reports are systematically filtered upward ("Watermelon Effect" — green outside, red inside). The system overrides official statuses with evidence-based assessments, and now also tracks your daily work reality to catch problems before they surface in reports.
 
-**Generalization initiative:** `MAKE_EVERYBODY_KING_OR_QUEEN.md` defines the plan to make the system work across any domain via automatic domain inference, a calibration conversation for new users, and progressive knowledge depth growth (L1 thin → L3 deep).
+**Generalization:** `MAKE_EVERYBODY_KING_OR_QUEEN.md` v2.0 defines the architecture. Evolution Phases 0–3 are complete. The system has four operating modes (Calibration, Daily Conversation, Quick Scan, Full Analysis), four-layer memory, and proactive intelligence.
 
 ## Current Status
 
-The project has completed all four original phases (accepted 2026-03-18) and is deployed for IC design analysis. The generalization initiative ("Make Everybody King or Queen") was launched 2026-03-31, entering Evolution Phase 0. All original deliverables:
+Original Phases 1–4 complete (2026-03-18). Evolution Phases 0–3 complete (2026-04-03). System ready for daily-driver deployment. Phase 4 (community) deferred.
+
+**Original deliverables** (IC design skill — preserved):
 
 ```
 the-kings-hand/
@@ -47,11 +49,30 @@ the-kings-hand/
     └── output_rules.json                  # ✅ Machine-readable formatting constraints
 ```
 
+**Generalized system** (universal-kings-hand — the active system):
+
+```
+skills/universal-kings-hand/
+├── SKILL.md                              # ✅ Unified system prompt (719 lines, 4 operating modes)
+├── CALIBRATE.md                          # ✅ Extended calibration engine (487 lines)
+├── references/
+│   ├── framework_templates.md            # ✅ 6-domain framework mappings
+│   └── domain_inference_signals.md       # ✅ Multi-signal domain classification
+├── domain_packs/
+│   ├── ic_design/                        # ✅ 5 reference files (original, verified)
+│   ├── software_startup/                 # ✅ 4 reference files (value chain, patches, triggers, euphemisms)
+│   ├── medical_device/                   # ✅ 4 reference files
+│   └── _template/                        # ✅ 4 blank templates for new domains
+├── tests/
+│   └── cross_domain/                     # ✅ 3 test cases (SaaS, medical, construction)
+└── work_state/                           # Living Work State persistence directory
+```
+
 ## Key Specification Documents
 
 - **`THE_KING_S_HAND_DEV_PLAN.md`** — Original master technical specification (671 lines). Read this before making any structural decisions about the IC design skill.
-- **`MAKE_EVERYBODY_KING_OR_QUEEN.md`** — Generalization specification (v1.2). Defines the three-tier architecture, six-element domain framework, Step 0 dual-mode design, three operating modes, and six evolution phases. Read this before making any generalization decisions.
-- **`ROADMAP.md`** — Unified roadmap (v2.2). Original phases 1-4 + evolution phases 0-5.
+- **`MAKE_EVERYBODY_KING_OR_QUEEN.md`** — Generalization specification (v2.0). Defines the persistent-partner architecture, Living Work State, four operating modes, and five evolution phases.
+- **`ROADMAP.md`** — Unified roadmap (v3.1). Original phases 1-4 + evolution phases 0-3 complete. Phase 4 deferred.
 - **`GEMINI.md`** — Project status, completed work, and development guidelines.
 - **`README.md`** — Bilingual (English/Chinese) concept overview.
 
@@ -59,7 +80,13 @@ the-kings-hand/
 
 The system is a **single agent** (not multi-agent). All reasoning occurs internally in `<thinking>` tags. Value comes from domain knowledge depth + structured reasoning + strict output constraints.
 
-**Internal Chain of Thought (Generalized):**
+**Four Operating Modes:**
+- **Calibration** — First meeting: 3-5 question conversation to understand user's world; builds Manager Profile + initial Living Work State
+- **Daily Conversation** — Ongoing: natural-language updates parsed into Living Work State; proactive stagnation/deadline alerts
+- **Quick Scan** — Specific question about a document fragment; conversational response, no full report
+- **Full Analysis** — Complete five-step CoT → five-module adversarial report (The King's Hand at full power)
+
+**Analytical Chain of Thought (Full Analysis mode):**
 0. Domain Inference & Manager Calibration (dual-mode: passive reading + active conversation)
 0.5. Knowledge Depth Assessment — L1/L2/L3 rating determines Top-Down vs Bottom-Up ratio
 1. Deconstruction & Noise Reduction — extract project state, flag anomaly signals
@@ -67,11 +94,10 @@ The system is a **single agent** (not multi-agent). All reasoning occurs interna
 3. Contradiction Detection — claims vs. evidence gaps, hidden patch costs, blame transfer traces
 4. Impact Extrapolation — translate internal issues to external consequences (Tier-1 relationships, irreversible milestones)
 5. Strategic Question Synthesis — design three unanswerable questions
+6. Living Work State Writeback — summarize findings back to task state
 
-**Three Operating Modes:**
-- **Calibration** — First meeting: 3-5 question conversation to understand user's world; builds initial Manager Profile
-- **Quick Scan** — Day-to-day: targeted analysis of a document fragment or specific question; conversational, no full report
-- **Full Report** — Deep trust: complete five-module analysis delivered as a pre-meeting weapon
+**Four-Layer Memory:**
+- Working Memory (session) → Living Work State (daily) → User Profile (slow) → Domain Knowledge Base (rare)
 
 **Five Output Modules (in Traditional Chinese):**
 1. 專案定位與戰略價值 — Value chain positioning (Markdown table)
@@ -130,18 +156,17 @@ Key translations that must be recognized:
 | 3 | Edge case handling for incomplete/messy inputs | ✅ Complete |
 | 4 | Real-format inputs, final README, evaluation rubric, deployment cadence | ✅ Complete |
 
-### Evolution Phases (Generalization — In Progress)
+### Evolution Phases (Generalization)
 
-| Phase | Goal |
-|-------|------|
-| Evo 0 | Architecture refactor: separate core from IC design domain pack; Step 0 dual-mode + three operating modes |
-| Evo 1 | Universal adversarial core: zero-config cross-domain analysis, calibration conversation, domain packs |
-| Evo 2 | Cross-session memory & preference learning |
-| Evo 3 | Dynamic skill expansion & multi-domain validation |
-| Evo 4 | Trend detection & proactive early warning |
-| Evo 5 | Community knowledge sharing & multi-user collaboration |
+| Phase | Goal | Status |
+|-------|------|--------|
+| Evo 0 | Persistent partner core: Living Work State, 4 operating modes, domain pack separation | ✅ Complete |
+| Evo 1 | Analytical arsenal: cross-domain analysis, software startup + medical device packs, test cases | ✅ Complete |
+| Evo 2 | Continuous evolution: preference learning, extended CALIBRATE.md, Domain Pack auto-generation | ✅ Complete |
+| Evo 3 | Proactive intelligence: stagnation detection, deadline alerts, weekly reports, trend detection | ✅ Complete |
+| Evo 4 | Multi-user & community: knowledge sharing, collaboration | Deferred |
 
-See `ROADMAP.md` for full details and acceptance criteria.
+See `ROADMAP.md` v3.1 for full details and acceptance criteria.
 
 ## Acceptance KPIs (Original)
 

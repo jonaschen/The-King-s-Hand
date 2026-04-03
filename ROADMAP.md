@@ -1,8 +1,8 @@
 # ROADMAP.md — The King's Hand
 
 **Project Start:** 2026-03-16
-**Specification Version:** v3.0 (see `THE_KING_S_HAND_DEV_PLAN.md`, `MAKE_EVERYBODY_KING_OR_QUEEN.md` v2.0)
-**Current Status:** Original Phases 1–4 complete (2026-03-18). Generalization initiative launched (2026-03-31). System identity pivot (2026-04-02): from occasional analyst to persistent working partner. Entering Evolution Phase 0.
+**Specification Version:** v3.1 (see `THE_KING_S_HAND_DEV_PLAN.md`, `MAKE_EVERYBODY_KING_OR_QUEEN.md` v2.0)
+**Current Status:** Original Phases 1–4 complete (2026-03-18). Evolution Phases 0–3 complete (2026-04-03). System ready for daily-driver deployment. Phase 4 (community) deferred until after real-world usage validation.
 
 ---
 
@@ -43,11 +43,11 @@ Five evolution phases to transform The King's Hand from an IC-design-specific an
 ```
 
 ```
-Evo Phase 0  → Persistent partner core: first-day dialogue + Living Work State + daily updates
-Evo Phase 1  → Analytical arsenal: adversarial analysis as skill + cross-domain validation
-Evo Phase 2  → Continuous evolution: preference learning + knowledge sedimentation + auto Domain Packs
-Evo Phase 3  → Proactive intelligence: stagnation detection + deadline alerts + auto weekly reports
-Evo Phase 4  → Multi-user & community: knowledge sharing + collaboration
+Evo Phase 0  ✅ Persistent partner core: first-day dialogue + Living Work State + daily updates
+Evo Phase 1  ✅ Analytical arsenal: adversarial analysis as skill + cross-domain validation
+Evo Phase 2  ✅ Continuous evolution: preference learning + knowledge sedimentation + auto Domain Packs
+Evo Phase 3  ✅ Proactive intelligence: stagnation detection + deadline alerts + auto weekly reports
+Evo Phase 4  → Multi-user & community: knowledge sharing + collaboration (deferred)
 ```
 
 **Four Operating Modes:**
@@ -664,3 +664,4 @@ Interactions 9+ (toward L3 Deep)
 | v2.1 | 2026-03-31 | Incorporated `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.1 updates: Step 0.5 Knowledge Depth Assessment (L1/L2/L3 levels controlling Top-Down vs Bottom-Up ratio), per-step behavior differences at each depth level, report confidence calibration (Analysis Foundation Statement at L1), knowledge sedimentation loop (Tier 1 ↔ Tier 2 structural relationship showing L1→L2→L3 progression), updated acceptance criteria for Evo Phases 0/1/2 and Generalization KPI Summary. |
 | v2.2 | 2026-04-01 | Incorporated `MAKE_EVERYBODY_KING_OR_QUEEN.md` v1.2 (chief of staff narrative reframing). Step 0 dual-mode design (passive inference + active calibration conversation). Three operating modes as trust evolution (Calibration → Quick Scan → Full Report). Two questioning capabilities distinguished (soul questions as sword vs. calibration conversation as first dinner). Updated Evo Phase 0 deliverables (dual-mode logic, three-mode routing). Updated Evo Phase 1 deliverables (calibration interview engine, cold-start experience test, medical device Domain Pack) and acceptance criteria. Updated Generalization KPI Summary. |
 | v3.0 | 2026-04-02 | **System identity pivot.** Incorporated `MAKE_EVERYBODY_KING_OR_QUEEN.md` v2.0. System foundation flipped from "analyst you consult" to "persistent working partner who is always there." Three-tier architecture restructured: Tier 1 = Persistent Partner Foundation (Living Work State, daily updates, first-day dialogue); Tier 2 = Analytical Arsenal & Continuous Evolution (King's Hand analysis as on-demand skill, preference learning); Tier 3 = Proactive Intelligence (stagnation detection, deadline alerts, auto weekly reports). Four operating modes (Calibration / Daily / Quick Scan / Full Analysis). Four-layer memory (Working / Living Work State / User Profile / Domain Knowledge). Development phases reduced from 6 to 5. Living Work State data structure defined. Analysis trigger logic defined. Generalization KPI Summary restructured by tier. |
+| v3.1 | 2026-04-03 | **Evolution Phases 0–3 complete.** Phase 0: SKILL.md (719 lines, 4 operating modes, Living Work State, analytical engine), framework templates (6 domains), domain inference signals, IC design pack separated, blank templates, work_state/ directory. Phase 1: software startup + medical device Domain Packs (1,674 lines), 3 cross-domain test cases (SaaS L3, medical L3, construction L1), Step 6 writeback. Phase 2: CALIBRATE.md v2 (487 lines — incremental update, conflict resolution, confidence decay, cross-domain migration, Domain Pack candidate generation), implicit preference learning in SKILL.md. Phase 3: proactive intelligence (stagnation detection, deadline alerts, tone drift detection, weekly report generation, trend detection). Regression tested: 4 representative IC design cases pass. Phase 4 (community) deferred pending real-world daily usage validation. |

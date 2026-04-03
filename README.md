@@ -7,11 +7,11 @@
 <a name="english"></a>
 ## English Version
 
-### Project Concept: Adversarial Intelligence for Decision-Makers
+### Project Concept: Your Persistent Working Partner
 
-**The King's Hand** is an AI Agent Skill Set that gives decision-makers adversarial intelligence about project health. Originally built for senior IC design executives, it is evolving into a **universal adversarial analysis system** that works across any domain — semiconductor, software startup, medical device, construction, finance, and beyond.
+**The King's Hand** is an AI Agent Skill Set that acts as a persistent working partner — a senior chief of staff who is there every day, understands your world, tracks your reality, and deploys adversarial analysis when you need to cut through the fog. Originally built for IC design executives, it now works across any domain — semiconductor, software startup, medical device, construction, finance, and beyond.
 
-Inspired by the historical and fictional role of the "Hand of the King," this system acts as a cold, objective Chief of Staff that serves truth, not comfort.
+It is not a document-in, report-out machine. It's a colleague who listens when you say "boss gave me a new project," remembers it, tracks progress, and at the end of the week helps you write your weekly report. When you need the blade — to analyze a status report, to detect hidden risks, to arm yourself with unanswerable questions — it's ready.
 
 #### The "Watermelon Effect"
 In complex matrix organizations, project reports are often "Green" on the outside (on track) but "Red" on the inside (in crisis). This is the **Watermelon Effect**. It is not unique to semiconductors — it is the fate of every organization with layered reporting structures. The King's Hand exists to pierce through this corporate fog.
@@ -19,17 +19,18 @@ In complex matrix organizations, project reports are often "Green" on the outsid
 It analyzes raw data — Jira logs, Git commits, meeting notes, status reports, email threads — to surface the truth that doesn't make it into the official slides.
 
 #### Key Capabilities
-- **Adversarial Analysis:** Detects hidden problems being masked by short-term fixes and organizational euphemisms.
-- **Domain Self-Adaptation:** Automatically infers the domain from submitted documents, constructs a domain-specific analytical framework, and calibrates its confidence based on knowledge depth (L1 thin → L3 deep).
-- **Calibration Conversation:** For new users in unfamiliar domains, the system conducts a brief 3-5 question conversation to understand your world — your role, anxieties, judgment criteria — before starting analysis. It maps your answers to its analytical framework without you ever seeing the technical scaffolding.
-- **Three Operating Modes:** Calibration (first meeting), Quick Scan (hallway question), Full Report (pre-meeting weapon) — evolving naturally with trust, not toggled as features.
-- **Implicit Cost Quantification:** Calculates the real cost of workarounds along the domain's core trade-off axes (e.g., PPA in IC design, speed-vs-quality-vs-debt in software startups).
-- **Cross-Functional Friction Detection:** Identifies where different teams' assumptions have diverged and where blame transfer is occurring.
-- **Strategic Arming:** Provides "The Three Soul-Searching Questions" — sharp, unanswerable questions that force accountability during review meetings.
+- **Persistent Presence:** Tracks your tasks, projects, commitments, and deadlines through natural daily conversation. Maintains a Living Work State that knows what's on your plate.
+- **Proactive Intelligence:** Detects stagnant tasks, approaching deadlines, and tone drift in your descriptions. Offers to help write your weekly report on Fridays.
+- **Adversarial Analysis (The Blade):** On demand, runs The King's Hand's full five-module adversarial analysis — contradiction detection, euphemism translation, cost quantification, and three unanswerable soul questions.
+- **Domain Self-Adaptation:** Automatically infers your domain, constructs an analytical framework, and calibrates confidence based on knowledge depth (L1 thin → L3 deep). Pre-built Domain Packs for IC design, software startups, and medical devices.
+- **Four Operating Modes:** Calibration (first meeting), Daily Conversation (ongoing updates), Quick Scan (specific question about a document), Full Analysis (complete adversarial report).
+- **Continuous Learning:** Gets smarter with every interaction — learns your preferences, vocabulary, and priorities. Never acts on a single data point; accumulates evidence before adjusting.
 
 #### Current State
 - **IC Design domain:** Fully operational with 16 verified test cases, complete domain knowledge pack, and battle-tested question patterns.
-- **Other domains:** Zero-config analysis available via automatic domain inference, calibration conversation, and dynamic framework construction. Quality improves progressively with each interaction (see `MAKE_EVERYBODY_KING_OR_QUEEN.md` for the generalization roadmap).
+- **Software Startup domain:** Complete Domain Pack (value chain, 10 patch patterns, override triggers, 25 euphemisms).
+- **Medical Device domain:** Complete Domain Pack (regulatory value chain, 10 patch patterns, override triggers, 25 euphemisms).
+- **Other domains:** Zero-config analysis via automatic domain inference and dynamic framework construction. Quality improves with each interaction.
 
 ---
 
@@ -198,11 +199,11 @@ This is by design. A suspected finding with an evidence gap is more valuable tha
 <a name="中文"></a>
 ## 中文版本
 
-### 專案概念：為決策者打造的敵對性情報系統
+### 專案概念：持續在場的工作夥伴
 
-**「國王之手 (The King's Hand)」** 是一套 AI 幕僚系統，為決策者提供專案健康度的敵對性情報。最初為 IC 設計高階主管打造，現正進化為**通用敵對性分析系統**——適用於半導體、軟體新創、醫療器材、營建工程、金融等任何領域。
+**「國王之手 (The King's Hand)」** 是一套 AI 幕僚系統——一位持續在場的資深幕僚長，每天都在你身邊、理解你的世界、追蹤你的現實，在你需要刺穿迷霧時拿出敵對性分析這把利刃。最初為 IC 設計高階主管打造，現已適用於半導體、軟體新創、醫療器材、營建工程、金融等任何領域。
 
-其命名源於歷史與奇幻史詩中「國王之手」的角色——一位冷靜、客觀的幕僚長，為真相服務，而非為安慰服務。
+它不是一台文件進、報告出的分析機器。它是一位同事——你跟他說「老闆給了新專案」，他記住；你說「build study 卡住了」，他更新狀態；週五到了，他幫你整理週報。當你需要那把刀時——分析一份狀態報告、偵測隱藏的風險、帶著無法迴避的問題走進會議室——它隨時準備好了。
 
 #### 「西瓜效應」的終結者
 在複雜的矩陣組織中，專案報告往往呈現「外綠內紅」的**西瓜效應**：表面上進度超前，實則危機四伏。西瓜效應不是半導體業的專利——它是所有存在層級彙報結構的組織的宿命。「國王之手」的使命是刺破這層資訊迷霧。
@@ -210,17 +211,18 @@ This is by design. A suspected finding with an evidence gap is more valuable tha
 它直接分析原始資料（Jira 日誌、Git 提交紀錄、會議記錄、狀態報告、郵件往來），挖掘出那些永遠不會出現在官方簡報中的真實情況。
 
 #### 核心能力
-- **敵對性分析：** 偵測被短期修補與組織話術掩蓋的深層問題。
-- **領域自適應：** 自動從提交文件推斷領域、建構領域專用分析框架，並根據知識厚度（L1 淺薄 → L3 深厚）校準分析信心。
-- **校準對話：** 對於陌生領域的新使用者，系統會先透過 3-5 個自然語言問題了解你的世界——你的角色、焦慮、判斷標準——然後才開始分析。你不會感受到任何技術框架，只會感受到一位幕僚在認真認識你。
-- **三種運作模式：** 校準對話（初識）、快速掃描（走廊上的問題）、完整報告（會議前的武器）——隨信任自然演進，而非功能切換。
-- **隱性成本量化：** 沿領域核心取捨軸計算臨時修補的真實代價（IC 設計中為 PPA；軟體新創中為速度-品質-技術債）。
-- **跨職能摩擦監測：** 識別不同團隊的假設何時發生脫節、責任轉嫁在何處發生。
-- **戰略武裝：** 提供「靈魂三問」——犀利且無法閃躲的問題，迫使團隊在審查會議中面對現實。
+- **持續在場：** 透過日常自然對話追蹤你的任務、專案、承諾與截止日期。維護一份「活的工作狀態」，隨時知道你手上有什麼。
+- **主動式智慧：** 偵測停滯的任務、即將到期的承諾、描述語氣的漂移。週五主動提議幫你整理週報。
+- **敵對性分析（那把刀）：** 按需執行完整五模組敵對性分析——矛盾偵測、術語翻譯、成本量化、三個無法迴避的靈魂提問。
+- **領域自適應：** 自動推斷領域、建構分析框架，根據知識厚度（L1 淺薄 → L3 深厚）校準信心。內建 IC 設計、軟體新創、醫療器材三套完整領域知識包。
+- **四種運作模式：** 校準對話（初識）、日常對話（持續更新）、快速掃描（針對特定文件的問題）、完整分析（敵對性報告）。
+- **持續進化：** 每次互動都讓系統更懂你——學習你的偏好、術語、優先順序。不會根據單一數據點調整，累積證據後才行動。
 
 #### 目前狀態
 - **IC 設計領域：** 已全面運作，具備 16 個驗證測試案例、完整領域知識包、經實戰校準的提問模板。
-- **其他領域：** 透過自動領域推斷、校準對話與動態框架建構提供零配置分析。品質隨每次互動持續提升（詳見 `MAKE_EVERYBODY_KING_OR_QUEEN.md` 通用化路線圖）。
+- **軟體新創領域：** 完整領域知識包（價值鏈、10 種補丁模式、覆寫觸發規則、25 條術語翻譯）。
+- **醫療器材領域：** 完整領域知識包（法規價值鏈、10 種補丁模式、覆寫觸發規則、25 條術語翻譯）。
+- **其他領域：** 透過自動領域推斷與動態框架建構提供零配置分析。品質隨每次互動持續提升。
 
 ---
 
@@ -279,8 +281,11 @@ This is by design. A suspected finding with an evidence gap is more valuable tha
 
 ## Technical Core / 技術核心
 
-- **Analysis Engine:** Five-module intelligence report with knowledge-depth-calibrated confidence (五大模組情報報告，依知識厚度校準信心等級).
-- **Reasoning Chain:** Steps 0 → 0.5 → 1 → 2 → 3 → 4 → 5 — domain inference, knowledge depth assessment, deconstruction, value chain positioning, contradiction detection, impact extrapolation, soul questions.
+- **System Prompt:** `skills/universal-kings-hand/SKILL.md` (719 lines) — unified prompt with four operating modes, Living Work State, and full analytical engine.
+- **Operating Modes:** Calibration → Daily Conversation → Quick Scan → Full Analysis (四種運作模式：校準 → 日常 → 快速掃描 → 完整分析).
+- **Analysis Engine:** Steps 0 → 0.5 → 1 → 2 → 3 → 4 → 5 → 6 — domain inference, knowledge depth assessment, deconstruction, value chain positioning, contradiction detection, impact extrapolation, soul questions, Living Work State writeback.
 - **Domain Framework:** Six-element universal framework — Hard Constraint, Patch Pattern, Irreversible Milestone, Trade-off Axes, Tier-1 Relationship, Blame Transfer Seam.
-- **IC Design Domain Pack:** Full semiconductor software stack (Bootloader to AI SDK) with 16 verified test cases.
-- **Goal:** Transform hidden risks into executive accountability — in any domain.
+- **Domain Packs:** IC Design (16 test cases) / Software Startup / Medical Device (三套完整領域知識包).
+- **Calibration Engine:** `CALIBRATE.md` (487 lines) — incremental profile updates, confidence decay, cross-domain migration, Domain Pack candidate generation.
+- **Proactive Intelligence:** Stagnation detection, deadline alerts, tone drift detection, weekly report auto-generation, trend tracking.
+- **Goal:** Be your persistent working partner. Transform hidden risks into accountability — in any domain.
