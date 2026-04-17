@@ -1,5 +1,7 @@
 # THE_KINGS_HAND_DEV_PLAN.md
 
+> **Archived specification.** This is the original Phase 1-4 specification for the IC design version of The King's Hand. For the current system manifest, see `AGENTS.md`. For the generalization architecture, see `MAKE_EVERYBODY_KING_OR_QUEEN.md`. For the development roadmap, see `ROADMAP.md`.
+
 **Document Version:** v1.0  
 **Date:** 2026-03-16  
 **Audience:** Claude (AI Developer) — read this fully before writing a single line of code, prompt, or schema  

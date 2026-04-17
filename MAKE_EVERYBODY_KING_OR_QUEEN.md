@@ -1,5 +1,7 @@
 # MAKE_EVERYBODY_KING_OR_QUEEN.md
 
+> **Generalization specification (v2.0).** Defines the persistent-partner architecture, Living Work State, four operating modes, and domain framework. For the current system manifest, see `AGENTS.md`. For the development roadmap, see `ROADMAP.md`.
+
 **文件版本：** v2.0  
 **日期：** 2026-04-02  
 **前置文件：** `THE_KING_S_HAND_DEV_PLAN.md` v1.0、`AI_助手進化開發計畫.md`、`ROADMAP.md` v1.6  

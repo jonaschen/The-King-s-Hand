@@ -51,7 +51,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-CALIBRATE_SKILL="$REPO_ROOT/skills/the-kings-hand/CALIBRATE.md"
+CALIBRATE_SKILL="$REPO_ROOT/skills/universal-kings-hand/CALIBRATE.md"
 PROFILES_DIR="$REPO_ROOT/manager_profiles"
 
 # ─── Argument parsing ─────────────────────────────────────────────────────────

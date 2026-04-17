@@ -1,20 +1,33 @@
 # The King's Hand — Agent System Manifest
 
 ## Identity
-The King's Hand is a senior executive intelligence system for IC design company leadership.
-It analyzes semiconductor project documents and produces adversarial intelligence reports
-that surface hidden technical risks, cross-department accountability gaps, and strategic
-blind spots that standard project status reporting conceals.
+The King's Hand is a persistent working partner — a senior chief of staff that understands
+your world, tracks your reality, and deploys adversarial analysis when you need to cut
+through organizational fog. Originally forged in IC design, the system works across any
+domain (semiconductor, software startup, medical device, construction, finance).
 
 ## Entry Point
-All input enters through: `skills/the-kings-hand/SKILL.md`
+All input enters through: `skills/universal-kings-hand/SKILL.md`
+
+> The original IC-design-only skill (formerly `skills/the-kings-hand/`) has been
+> consolidated into `skills/universal-kings-hand/`. IC design reference files
+> are preserved in `domain_packs/ic_design/`.
+
+## Four Operating Modes
+
+| Mode | Trigger | What it does |
+|------|---------|-------------|
+| **Calibration** | First meeting (no Manager Profile) | 3-5 question conversation to understand your world; builds Manager Profile + initial Living Work State |
+| **Daily Conversation** | Ongoing chat with existing profile | Parses natural-language updates into Living Work State; proactive stagnation/deadline alerts |
+| **Quick Scan** | Specific question about a document fragment | Conversational response with targeted analysis, no full report |
+| **Full Analysis** | Substantial document package submitted | Complete five-step CoT producing five-module adversarial report |
 
 ## Operating Principles
 1. Always override official status when technical evidence demands a worse classification
-2. Never accept a software workaround as a "fix" — always quantify its PPA cost and debt
+2. Never accept a surface fix as a "fix" — always quantify its cost along the domain's trade-off axes
 3. Never attribute cross-team failure to "misalignment" — name the decision and who made it
 4. The three questions must be unanswerable with reassuring generalities
-5. All output in Traditional Chinese (繁體中文), all analysis in narrative prose (no bullet lists)
+5. All output in Traditional Chinese (繁體中文), all analysis in narrative prose (no bullet lists in Modules 3-4)
 
 ## Input Types Accepted
 - Project weekly status reports (any format — plain text, email, document paste)
@@ -25,92 +38,86 @@ All input enters through: `skills/the-kings-hand/SKILL.md`
 - Cross-team meeting notes
 - FAE escalation reports
 - Internal engineering reports (DV closure, characterization, verification)
+- Natural-language daily updates ("the build study is stuck," "boss gave me a new project")
 - Any combination of the above in a single submission
 
 ## Output
-Five-module Markdown report in Traditional Chinese (繁體中文).
-No preamble. Begins directly with Module 1.
+- **Full Analysis:** Five-module Markdown report in Traditional Chinese (繁體中文). No preamble.
+- **Daily Conversation:** Natural-language response + Living Work State update
+- **Quick Scan:** Conversational analysis with targeted findings
+- **Calibration:** Interactive Q&A producing Manager Profile
 
 ## Skill Set Structure
 ```
-skills/the-kings-hand/
-├── SKILL.md                      — Core system prompt (XML-structured)
-└── references/
-    ├── software_stack_map.md     — Semiconductor software stack knowledge base
-    ├── workaround_taxonomy.md    — Hardware-to-software workaround classification
-    ├── rag_status_criteria.md    — Red/Yellow/Green rules with override triggers (R1–R8, Y1–Y7)
-    ├── corporate_code_words.md   — 25+ disguised language patterns mapped to ground truth
-    └── question_patterns.md      — 15 parameterized question templates (3 types × 5 each)
+skills/universal-kings-hand/
+├── SKILL.md                          — Core system prompt (4 operating modes, 6-step CoT)
+├── CALIBRATE.md                      — Meta-skill for Manager Profile generation/update
+├── references/
+│   ├── framework_templates.md        — 6-domain framework mappings
+│   └── domain_inference_signals.md   — Multi-signal domain classification
+├── domain_packs/
+│   ├── ic_design/                    — 5 reference files (verified, complete)
+│   ├── software_startup/             — 4 reference files
+│   ├── medical_device/               — 4 reference files
+│   └── _template/                    — 4 blank templates for new domains
+├── tests/
+│   └── cross_domain/                 — 3 cross-domain test cases (SaaS, medical, construction)
+└── work_state/                       — Living Work State persistence (per-user .md files)
 ```
 
-## Reference Knowledge Base
-Domain knowledge is stored in `skills/the-kings-hand/references/` and loaded contextually:
-- **software_stack_map.md** — Five-layer stack (Bootloader → AI SDK) with failure modes and business value
-- **workaround_taxonomy.md** — 8 workaround patterns with PPA cost estimates and debt classification
-- **rag_status_criteria.md** — Strict Red/Yellow/Green criteria with override-to-Red (R1–R8) and override-to-Yellow (Y1–Y7) triggers
-- **corporate_code_words.md** — 25 disguised language patterns mapped to ground truth and status classification
-- **question_patterns.md** — 15 parameterized question templates; fill with project-specific numbers, team names, and worst-case scenarios
+## Domain Packs
+Domain-specific knowledge loaded contextually based on Step 0 domain inference:
+
+| Domain | Files | Coverage |
+|--------|-------|----------|
+| IC Design | 5 (stack map, workarounds, status criteria, code words, question patterns) | Full — verified against 16 test cases |
+| Software Startup | 4 (value chain, patches, triggers, euphemisms) | Full |
+| Medical Device | 4 (value chain, patches, triggers, euphemisms) | Full |
+| _template | 4 blank templates | For creating new domain packs |
+
+When no Domain Pack matches, the system falls back to L1 (thin knowledge) mode with cautious tone.
+
+## Living Work State
+The system maintains persistent state across sessions in `work_state/{user}.md`:
+- Active tasks with status indicators and stale-day counts
+- Tracked commitments and deadlines
+- Proactive alerts: stagnation detection, deadline warnings, tone drift
+- Weekly report draft (auto-offered on Fridays)
 
 ## Test Cases
-Located in `tests/test_cases/` — 16 cases across 4 phases:
+**IC Design (16 cases)** — Located in `tests/test_cases/`:
+- TC-001 through TC-004: Core detection (status overrides, watermelon effect)
+- TC-005 through TC-010: Tone and question calibration (thermal, BMS, Wi-Fi 7, PCIe, True Green, codec)
+- TC-011 through TC-013: Edge case robustness (incomplete input, technical-only, sanitized)
+- TC-014 through TC-016: Real-format inputs (Jira CSV, PowerPoint, email thread)
 
-**Phase 1 — Core detection:**
-- `project_adas_x9.md` (TC-001) — Yellow-to-Red override (AXI bandwidth, ASIL-D risk)
-- `project_smartlink_iot.md` (TC-002) — Green-to-Yellow override (hidden polling, power regression)
-- `project_valkyrie_npu.md` (TC-003) — Multi-layer friction (NPU performance model divergence)
-- `project_greenlight_trap.md` (TC-004) — Pure watermelon effect (all-green concealing crisis)
-
-**Phase 2 — Tone and question calibration:**
-- `project_nova_ap.md` (TC-005) — Android AP thermal throttle
-- `project_titan_ev.md` (TC-006) — EV BMS ASIL-B violation at temperature
-- `project_helios_wifi7.md` (TC-007) — Wi-Fi 7 serial certification failures
-- `project_clearwater_pcie.md` (TC-008) — PCIe Gen5 NVMe race condition
-- `project_athena_true_green.md` (TC-009) — True Green (false-positive control)
-- `project_mercury_codec.md` (TC-010) — Video codec hardware constraint
-
-**Phase 3 — Edge case robustness:**
-- `project_stratos_rf_incomplete.md` (TC-011) — Incomplete input (PM report only)
-- `project_ironclad_ddr_technical.md` (TC-012) — Technical-only input (DV closure report)
-- `project_apex_ml_sanitized.md` (TC-013) — Adversarially sanitized (all anomaly keywords removed)
-
-**Phase 4 — Real-format inputs:**
-- `project_crestline_hpc_jira.md` (TC-014) — Raw Jira CSV export
-- `project_eon_ai_slides.md` (TC-015) — PowerPoint-to-text export
-- `project_typhoon_5g_email.md` (TC-016) — Email thread with internal/external split
+**Cross-Domain (3 cases)** — Located in `skills/universal-kings-hand/tests/cross_domain/`:
+- `project_aurora_saas.md` — SaaS platform analysis
+- `project_vanguard_stent.md` — Medical device analysis
+- `project_summit_tower.md` — Construction project analysis
 
 ## Document Preprocessing Tools
-Located in `tools/` — convert real-format inputs before submission:
+Located in `tools/`:
+- `tools/kings-hand.sh` — Main runner: launches interactive session with Manager Profile and Living Work State. Supports `--manager`, `--repo`, `--analyze`, `--ask`, `--status`.
+- `tools/calibrate.sh` — Updates Manager Profile from session transcript: `./tools/calibrate.sh --manager henry --session session.txt`
+- `tools/analyze_pptx.sh` — Extract text from .pptx. Supports `--manager NAME`. Usage: `./tools/analyze_pptx.sh file.pptx [--manager henry]`
+- `tools/markitdown_analyze.sh` — Extract text from .pdf/.docx/.xlsx/.pptx to Markdown. Supports `--manager NAME`.
+- `tools/pptx_to_text.py` — Python extractor for structured .pptx → [SLIDE N] formatted text.
 
-- `tools/analyze_pptx.sh` — Extract text from .pptx files. Supports `--manager NAME` for profile prepending. Output to stdout or `--output FILE`. Usage: `./tools/analyze_pptx.sh file.pptx [--manager henry]`
-- `tools/markitdown_analyze.sh` — Extract text from .pdf/.docx/.xlsx/.pptx to Markdown. Supports `--manager NAME`. Usage: `./tools/markitdown_analyze.sh file.pdf [--manager henry]` (requires `pip install markitdown`)
-- `tools/pptx_to_text.py` — Python extractor for structured .pptx → [SLIDE N] formatted text for manual submission. Usage: `python3 tools/pptx_to_text.py file.pptx` (requires `pip install python-pptx`)
+## Daily Automation
+`tools/daily_kings_hand_assessment.sh` — Runs daily at 7:30am Asia/Taipei. Performs adversarial assessment of tracked projects by gathering recent commits, checking ROADMAP blockers and gate conditions, detecting watermelon patterns, and updating tracking memory files.
 
 ## Self-Adjustment / Domain Calibration
 The King's Hand adapts to any domain and any manager without manual reconfiguration.
 
 **How it works:**
-1. On every analysis, SKILL.md Step 0 infers the domain from the submitted documents (vocabulary, titles, metrics) and constructs a domain-equivalent framework mapping Hard Constraint, Patch Pattern, Irreversible Milestone, Trade-Off Axes, Tier-1 Relationship, and Blame Transfer Seam.
-2. If a Manager Profile is prepended to the input, Step 0A applies the manager's vocabulary mappings, priority weights, and question style preferences directly.
-3. After each session, run `tools/calibrate.sh` to distill what was learned into an updated Manager Profile that enriches future sessions.
+1. On every analysis, SKILL.md Step 0 infers the domain from submitted documents (vocabulary, titles, metrics) and constructs a six-element framework mapping.
+2. If a Manager Profile is prepended, Step 0A applies vocabulary mappings, priority weights, and question style preferences.
+3. After each session, run `tools/calibrate.sh` to distill learnings into an updated Manager Profile.
 
 **Files:**
-- `skills/the-kings-hand/CALIBRATE.md` — Meta-skill invoked by calibrate.sh; reads a session transcript and produces a structured Manager Profile
-- `manager_profiles/[name].md` — Per-manager profile: domain context, vocabulary table, priorities, calibration rules, historical patterns, session log
-- `tools/calibrate.sh` — Updates a Manager Profile from a session transcript: `./tools/calibrate.sh --manager henry --session session.txt`
-
-**Usage cycle:**
-```
-# Week 1: first session (no profile yet)
-./tools/analyze_pptx.sh weekly_report.pptx
-
-# After session: calibrate from the conversation transcript
-./tools/calibrate.sh --manager henry --session session_transcript.txt
-
-# Week 2+: analysis uses manager profile automatically
-./tools/analyze_pptx.sh weekly_report.pptx --manager henry
-```
-
-**Starter profile:** `manager_profiles/henry.md` — pre-seeded from Phases 1–4 test suite calibration with full IC design domain vocabulary, priorities, and historical patterns.
+- `skills/universal-kings-hand/CALIBRATE.md` — Meta-skill for profile generation (Mode A: fresh, Mode B: incremental update)
+- `manager_profiles/[name].md` — Per-manager profiles with domain context, vocabulary, priorities, calibration rules, historical patterns
 
 ## Compliance
 Machine-readable formatting rules in `compliance/output_rules.json`.

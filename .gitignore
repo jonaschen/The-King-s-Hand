@@ -1,0 +1,20 @@
+# Assessment logs (generated daily)
+logs/
+
+# Claude Code session state
+.claude/
+
+# Ephemeral notes
+note.txt
+
+# Living Work State (per-user, not shared)
+work_state/*.md
+!work_state/.gitkeep
+!work_state/_template.md
+
+# Python
+*.pyc
+__pycache__/
+
+# Environment
+.env

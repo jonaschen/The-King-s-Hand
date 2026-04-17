@@ -31,6 +31,34 @@ It analyzes raw data — Jira logs, Git commits, meeting notes, status reports, 
 - **Software Startup domain:** Complete Domain Pack (value chain, 10 patch patterns, override triggers, 25 euphemisms).
 - **Medical Device domain:** Complete Domain Pack (regulatory value chain, 10 patch patterns, override triggers, 25 euphemisms).
 - **Other domains:** Zero-config analysis via automatic domain inference and dynamic framework construction. Quality improves with each interaction.
+- **Daily automation:** Running daily at 7:30am for tracked project assessments via `tools/daily_kings_hand_assessment.sh`.
+
+---
+
+### Quick Start
+
+```bash
+# First time — calibration mode (system gets to know you in 3-5 questions)
+./tools/kings-hand.sh
+
+# Daily use — start talking with your profile loaded
+./tools/kings-hand.sh --manager jonas
+
+# Analyze a document (Full Analysis mode)
+./tools/kings-hand.sh --manager jonas --analyze quarterly_review.pptx
+
+# Ask a specific question about a document (Quick Scan mode)
+./tools/kings-hand.sh --manager jonas --ask "Is this email hiding something?"
+
+# Multi-repo awareness
+./tools/kings-hand.sh --manager jonas --repo ~/projects/app --repo ~/projects/infra
+
+# Check your current work state
+./tools/kings-hand.sh --manager jonas --status
+
+# After a session — update your manager profile with learnings
+./tools/calibrate.sh --manager jonas --session session_transcript.txt
+```
 
 ---
 
@@ -277,15 +305,6 @@ This is by design. A suspected finding with an evidence gap is more valuable tha
 
 無需提供任何額外指示，系統將自動進行完整分析。
 
----
 
-## Technical Core / 技術核心
 
-- **System Prompt:** `skills/universal-kings-hand/SKILL.md` (719 lines) — unified prompt with four operating modes, Living Work State, and full analytical engine.
-- **Operating Modes:** Calibration → Daily Conversation → Quick Scan → Full Analysis (四種運作模式：校準 → 日常 → 快速掃描 → 完整分析).
-- **Analysis Engine:** Steps 0 → 0.5 → 1 → 2 → 3 → 4 → 5 → 6 — domain inference, knowledge depth assessment, deconstruction, value chain positioning, contradiction detection, impact extrapolation, soul questions, Living Work State writeback.
-- **Domain Framework:** Six-element universal framework — Hard Constraint, Patch Pattern, Irreversible Milestone, Trade-off Axes, Tier-1 Relationship, Blame Transfer Seam.
-- **Domain Packs:** IC Design (16 test cases) / Software Startup / Medical Device (三套完整領域知識包).
-- **Calibration Engine:** `CALIBRATE.md` (487 lines) — incremental profile updates, confidence decay, cross-domain migration, Domain Pack candidate generation.
-- **Proactive Intelligence:** Stagnation detection, deadline alerts, tone drift detection, weekly report auto-generation, trend tracking.
-- **Goal:** Be your persistent working partner. Transform hidden risks into accountability — in any domain.
+For technical architecture details, see `AGENTS.md` (system manifest) and `skills/universal-kings-hand/SKILL.md` (core system prompt).
