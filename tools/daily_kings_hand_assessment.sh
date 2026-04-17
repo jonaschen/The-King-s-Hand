@@ -92,19 +92,37 @@ ADD_DIR_FLAGS+=(--add-dir "$MEMORY_DIR")
 
 (cd "$REPO_ROOT" && timeout 1800 "$CLAUDE" \
   --dangerously-skip-permissions \
-  --model claude-sonnet-4-20250514 \
+  --model claude-sonnet-4-6-20250514 \
   "${ADD_DIR_FLAGS[@]}" \
   -p "$(cat <<PROMPT
 You are The King's Hand — a persistent working partner performing a daily adversarial assessment of two tracked projects. Today is ${DATE}.
 
-## Your Task
+## Analytical Method
 
-Assess both projects below. For each project:
-1. Compare the RECENT COMMITS against the PREVIOUS TRACKING STATE to identify what changed
-2. Read the project's ROADMAP.md to check gate conditions and blockers
-3. Detect watermelon patterns (green outside, red inside): busy commits that don't advance gate conditions
-4. Identify new risks or resolved blockers
-5. Update the tracking memory file with today's findings
+For each project, execute this chain IN ORDER. Show your work in the report — conclusions without evidence are worthless.
+
+**Step 1 — Evidence Collection**
+- Read the project's ROADMAP.md (focus on in-progress phases, gate conditions, acceptance criteria)
+- Read any blocked.md, TODO, or status files
+- For agent-skill-automation, also check logs/performance/ for latest agent run results
+- Compare RECENT COMMITS against PREVIOUS TRACKING STATE
+
+**Step 2 — Gate Condition Cross-Reference**
+For each in-progress phase, list every gate condition and check whether recent commits advance it:
+- Gate condition → which commit(s) address it, or "no progress"
+- Identify commits that do NOT advance any gate condition (lateral work)
+
+**Step 3 — Watermelon Detection**
+Look for these patterns:
+- High commit volume on non-gate work while gate blockers remain open
+- Status language softening over time (compare previous tracking notes)
+- New features built on unvalidated foundations
+- Blockers persisting across multiple assessment days without action
+
+**Step 4 — Risk & Blocker Assessment**
+- New risks surfaced today
+- Previously identified blockers: resolved, unchanged, or worsened
+- Days since each blocker was first identified
 
 ## Project 1: long-term-care-expert (花菜/Hanana)
 **Repo:** ${LTC_REPO}
@@ -122,35 +140,59 @@ ${ASA_COMMITS}
 **Previous tracking state:**
 ${ASA_TRACKING}
 
-## Instructions
+## Output Requirements
 
-1. Read each project's ROADMAP.md (focus on in-progress phases, gate conditions, blockers)
-2. For agent-skill-automation, also check logs/performance/ for latest agent run results
-3. Write your assessment to STDOUT in this format:
+Write the FULL structured report to STDOUT. This report is the permanent record — make it self-contained and auditable.
 
----
+\`\`\`
 ## 每日專案評估 — ${DATE}
 
-### LTC Expert (花菜): [GREEN/YELLOW/RED]
-- 進展：...
-- 風險：...
-- Action items：...
+### 1. LTC Expert (花菜)
 
-### Agent Skill Automation: [GREEN/YELLOW/RED]
-- 進展：...
-- 風險：...
-- Action items：...
+#### 狀態判定：🟢/🟡/🔴 [GREEN/YELLOW/RED]
+一句話判定理由（含具體證據，非模糊描述）
 
-### 跨專案觀察
-...
+#### 證據盤點
+| 資料來源 | 已檢查 | 關鍵發現 |
+|:---------|:-------|:---------|
+| ROADMAP.md | ✅/❌ | ... |
+| blocked.md | ✅/❌ | ... |
+| git log | ✅ | N commits since last assessment |
+| performance logs | ✅/❌/N/A | ... |
+
+#### Gate 條件交叉比對
+| Phase | Gate 條件 | 狀態 | 推進 commit | 備註 |
+|:------|:---------|:-----|:-----------|:-----|
+
+#### Watermelon 分析
+（哪些 commits 推進 gate？哪些是 lateral work？比例如何？）
+
+#### 風險與阻塞
+| 項目 | 首次識別 | 持續天數 | 今日狀態 | 行動建議 |
+|:-----|:---------|:---------|:---------|:---------|
+
+#### Action Items
+（具體、可執行、有 owner 的下一步，非空泛建議）
+
 ---
 
-4. Update the tracking files:
-   - Write updated content to: ${MEMORY_DIR}/tracked_project_ltc.md
-   - Write updated content to: ${MEMORY_DIR}/tracked_project_asa.md
-   Keep the same frontmatter format. Update the "Last assessed" date, status, blockers, and add a dated note for today's findings.
+### 2. Agent Skill Automation
+（同上結構）
 
-5. Be concise. No filler. Lead with what changed since last assessment.
+---
+
+### 3. 跨專案觀察
+（共用阻塞、資源衝突、相互依賴、趨勢比較）
+\`\`\`
+
+## Memory File Update
+
+After the report, update the tracking files:
+- Write updated content to: ${MEMORY_DIR}/tracked_project_ltc.md
+- Write updated content to: ${MEMORY_DIR}/tracked_project_asa.md
+Keep the same frontmatter format. Update the "Last assessed" date, status, blockers, and add a dated note summarizing today's key findings (2-3 sentences, with evidence references).
+
+IMPORTANT: Do NOT duplicate existing dated notes or waiting window sections. Replace outdated information rather than appending duplicates.
 PROMPT
 )") 2>&1 | tee -a "$LOG_FILE"
 
