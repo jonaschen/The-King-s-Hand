@@ -1,9 +1,10 @@
 #!/bin/bash
 # daily_kings_hand_assessment.sh — King's Hand daily assessment of tracked projects
 #
-# Runs a King's Hand adversarial analysis on the two highest-priority side projects:
+# Runs a King's Hand adversarial analysis on tracked side projects:
 #   1. long-term-care-expert (花菜/Hanana)
-#   2. agent-skill-automation
+#   2. agent-skill-automation (gemini-home branch)
+#   3. agent-skill-automation (claude-home branch)
 #
 # Checks recent commits, ROADMAP blockers, gate conditions, and updates
 # the tracking memory files in The King's Hand repo.
@@ -33,6 +34,7 @@ fi
 # Tracked project repos
 LTC_REPO="/home/jonas/gemini-home/long-term-care-expert"
 ASA_REPO="/home/jonas/gemini-home/agent-skill-automation"
+ASA_CLAUDE_REPO="/home/jonas/claude-home/agent-skill-automation"
 
 # Derive memory dir from repo root path (matches Claude Code's project path convention)
 REPO_PATH_SLUG="$(echo "$REPO_ROOT" | sed 's|/|-|g; s|^-||')"
@@ -49,6 +51,7 @@ echo "Start: $(date '+%Y-%m-%d %H:%M:%S')" | tee -a "$LOG_FILE"
 # Pre-flight checks — verify repos exist before gathering data
 SKIP_LTC=false
 SKIP_ASA=false
+SKIP_ASA_CLAUDE=false
 
 if [ ! -d "$LTC_REPO/.git" ]; then
   echo "WARNING: LTC repo not found at $LTC_REPO — skipping" | tee -a "$LOG_FILE"
@@ -60,7 +63,12 @@ if [ ! -d "$ASA_REPO/.git" ]; then
   SKIP_ASA=true
 fi
 
-if [ "$SKIP_LTC" = true ] && [ "$SKIP_ASA" = true ]; then
+if [ ! -d "$ASA_CLAUDE_REPO/.git" ]; then
+  echo "WARNING: ASA (claude-home) repo not found at $ASA_CLAUDE_REPO — skipping" | tee -a "$LOG_FILE"
+  SKIP_ASA_CLAUDE=true
+fi
+
+if [ "$SKIP_LTC" = true ] && [ "$SKIP_ASA" = true ] && [ "$SKIP_ASA_CLAUDE" = true ]; then
   echo "ERROR: No tracked repos available. Nothing to assess." | tee -a "$LOG_FILE"
   exit 1
 fi
@@ -76,10 +84,22 @@ fi
 
 if [ "$SKIP_ASA" = false ]; then
   ASA_COMMITS=$(cd "$ASA_REPO" && git log --oneline -10 2>/dev/null)
+  ASA_BRANCH=$(cd "$ASA_REPO" && git branch --show-current 2>/dev/null)
   ASA_TRACKING=$(cat "$MEMORY_DIR/tracked_project_asa.md" 2>/dev/null || echo "No tracking file found")
 else
   ASA_COMMITS=""
+  ASA_BRANCH=""
   ASA_TRACKING=""
+fi
+
+if [ "$SKIP_ASA_CLAUDE" = false ]; then
+  ASA_CLAUDE_COMMITS=$(cd "$ASA_CLAUDE_REPO" && git log --oneline -10 2>/dev/null)
+  ASA_CLAUDE_BRANCH=$(cd "$ASA_CLAUDE_REPO" && git branch --show-current 2>/dev/null)
+  ASA_CLAUDE_TRACKING=$(cat "$MEMORY_DIR/tracked_project_asa_claude.md" 2>/dev/null || echo "No tracking file found")
+else
+  ASA_CLAUDE_COMMITS=""
+  ASA_CLAUDE_BRANCH=""
+  ASA_CLAUDE_TRACKING=""
 fi
 
 START_TIME=$(date +%s)
@@ -88,6 +108,7 @@ START_TIME=$(date +%s)
 ADD_DIR_FLAGS=()
 [ "$SKIP_LTC" = false ] && ADD_DIR_FLAGS+=(--add-dir "$LTC_REPO")
 [ "$SKIP_ASA" = false ] && ADD_DIR_FLAGS+=(--add-dir "$ASA_REPO")
+[ "$SKIP_ASA_CLAUDE" = false ] && ADD_DIR_FLAGS+=(--add-dir "$ASA_CLAUDE_REPO")
 ADD_DIR_FLAGS+=(--add-dir "$MEMORY_DIR")
 
 (cd "$REPO_ROOT" && timeout 1800 "$CLAUDE" \
@@ -95,7 +116,7 @@ ADD_DIR_FLAGS+=(--add-dir "$MEMORY_DIR")
   --model claude-sonnet-4-6-20250514 \
   "${ADD_DIR_FLAGS[@]}" \
   -p "$(cat <<PROMPT
-You are The King's Hand — a persistent working partner performing a daily adversarial assessment of two tracked projects. Today is ${DATE}.
+You are The King's Hand — a persistent working partner performing a daily adversarial assessment of tracked projects. Today is ${DATE}.
 
 ## Analytical Method
 
@@ -132,13 +153,28 @@ ${LTC_COMMITS}
 **Previous tracking state:**
 ${LTC_TRACKING}
 
-## Project 2: agent-skill-automation
+## Project 2: agent-skill-automation (gemini-home)
 **Repo:** ${ASA_REPO}
+**Branch:** ${ASA_BRANCH}
 **Recent commits:**
 ${ASA_COMMITS}
 
 **Previous tracking state:**
 ${ASA_TRACKING}
+
+## Project 3: agent-skill-automation (claude-home)
+**Repo:** ${ASA_CLAUDE_REPO}
+**Branch:** ${ASA_CLAUDE_BRANCH}
+**Recent commits:**
+${ASA_CLAUDE_COMMITS}
+
+**Previous tracking state:**
+${ASA_CLAUDE_TRACKING}
+
+NOTE: Projects 2 and 3 are the SAME codebase on DIFFERENT branches. Pay special attention to:
+- Branch divergence: commits in one that are missing from the other
+- Conflicting directions: features or refactors that would conflict on merge
+- Which branch is ahead and by how much
 
 ## Output Requirements
 
@@ -176,12 +212,22 @@ Write the FULL structured report to STDOUT. This report is the permanent record 
 
 ---
 
-### 2. Agent Skill Automation
+### 2. Agent Skill Automation (gemini-home)
 （同上結構）
 
 ---
 
-### 3. 跨專案觀察
+### 3. Agent Skill Automation (claude-home)
+（同上結構）
+
+---
+
+### 4. ASA 分支比較分析
+（分支分歧、commit 差異、合併風險、哪個分支領先）
+
+---
+
+### 5. 跨專案觀察
 （共用阻塞、資源衝突、相互依賴、趨勢比較）
 \`\`\`
 
@@ -190,6 +236,7 @@ Write the FULL structured report to STDOUT. This report is the permanent record 
 After the report, update the tracking files:
 - Write updated content to: ${MEMORY_DIR}/tracked_project_ltc.md
 - Write updated content to: ${MEMORY_DIR}/tracked_project_asa.md
+- Write updated content to: ${MEMORY_DIR}/tracked_project_asa_claude.md
 Keep the same frontmatter format. Update the "Last assessed" date, status, blockers, and add a dated note summarizing today's key findings (2-3 sentences, with evidence references).
 
 IMPORTANT: Do NOT duplicate existing dated notes or waiting window sections. Replace outdated information rather than appending duplicates.
